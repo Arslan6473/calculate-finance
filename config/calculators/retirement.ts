@@ -1,0 +1,151 @@
+import type { CalculatorConfig } from './types'
+
+export const retirementConfig: CalculatorConfig = {
+  slug: 'retirement-calculator',
+  name: 'Retirement Calculator',
+  shortName: 'Retirement',
+  category: 'investment',
+  summary: 'Find out if you are on track for retirement, and how long your savings will last.',
+  inputs: [
+    {
+      name: 'currentAge',
+      label: 'Current age',
+      type: 'number',
+      defaultValue: 30,
+      min: 16,
+      max: 100,
+      step: 1,
+      unit: 'years',
+    },
+    {
+      name: 'retirementAge',
+      label: 'Retirement age',
+      type: 'number',
+      defaultValue: 65,
+      min: 16,
+      max: 100,
+      step: 1,
+      unit: 'years',
+    },
+    {
+      name: 'currentSavings',
+      label: 'Current retirement savings',
+      type: 'currency',
+      defaultValue: 40_000,
+      min: 0,
+      max: 100_000_000,
+      step: 1_000,
+    },
+    {
+      name: 'monthlyContribution',
+      label: 'Monthly contribution',
+      type: 'currency',
+      defaultValue: 800,
+      min: 0,
+      max: 1_000_000,
+      step: 25,
+    },
+    {
+      name: 'employerMatchPercent',
+      label: 'Employer match',
+      type: 'percent',
+      defaultValue: 50,
+      min: 0,
+      max: 200,
+      step: 5,
+      help: 'As a percentage of your own contribution, e.g. 50% means a $0.50 match per $1.',
+    },
+    {
+      name: 'preRetirementReturn',
+      label: 'Expected return before retirement',
+      type: 'percent',
+      defaultValue: 7,
+      min: -20,
+      max: 30,
+      step: 0.1,
+      group: 'Assumptions',
+    },
+    {
+      name: 'postRetirementReturn',
+      label: 'Expected return during retirement',
+      type: 'percent',
+      defaultValue: 5,
+      min: -20,
+      max: 30,
+      step: 0.1,
+      help: 'Usually lower, reflecting a more conservative portfolio.',
+      group: 'Assumptions',
+    },
+    {
+      name: 'annualInflation',
+      label: 'Expected inflation',
+      type: 'percent',
+      defaultValue: 3,
+      min: 0,
+      max: 20,
+      step: 0.1,
+      group: 'Assumptions',
+    },
+    {
+      name: 'desiredAnnualIncome',
+      label: 'Desired annual income in retirement',
+      type: 'currency',
+      defaultValue: 60_000,
+      min: 0,
+      max: 10_000_000,
+      step: 1_000,
+      help: "In today's money — this calculator inflates it to your retirement date.",
+      group: 'Assumptions',
+    },
+    {
+      name: 'lifeExpectancy',
+      label: 'Plan until age',
+      type: 'number',
+      defaultValue: 90,
+      min: 60,
+      max: 120,
+      step: 1,
+      unit: 'years',
+      group: 'Assumptions',
+    },
+  ],
+  faqs: [
+    {
+      question: 'How does this calculator know if I am "on track"?',
+      answer:
+        'It projects your balance at retirement, then works out the lump sum needed to fund your desired income for every year from retirement to your planned life expectancy, accounting for continued growth and inflation. If your projected balance meets or exceeds that target, you are on track.',
+    },
+    {
+      question: 'What does an employer match do?',
+      answer:
+        'A match adds free money on top of your own contribution — entering 50%, for example, adds fifty cents for every dollar you contribute. That extra amount compounds alongside your own savings for the rest of your working years.',
+    },
+    {
+      question: 'Why does desired income get inflated to my retirement date?',
+      answer:
+        "You enter your desired income in today's dollars because that's a figure you can reason about. The calculator then inflates it forward to what that same purchasing power will cost in nominal dollars by the time you retire, which is the number actually used to size your target portfolio.",
+    },
+    {
+      question: 'What happens if my money runs out before life expectancy?',
+      answer:
+        "The calculator simulates your portfolio being drawn down year by year in retirement. If withdrawals exceed what the remaining balance can sustain, it reports the age at which the money is projected to run out, so you can see the shortfall clearly rather than assuming a flat 4% rule always works.",
+    },
+    {
+      question: 'Why is the pre-retirement return higher than the post-retirement return by default?',
+      answer:
+        'Many people shift toward a more conservative, lower-risk portfolio as they approach and enter retirement to reduce the chance of a market downturn derailing withdrawals. You can set both rates equal if you plan to stay invested the same way throughout.',
+    },
+  ],
+  related: [
+    'investment-calculator',
+    'compound-interest-calculator',
+    'salary-calculator',
+    'roi-calculator',
+  ],
+  seo: {
+    title: 'Retirement Calculator — Are You On Track? | Calcxs',
+    description:
+      'Free retirement calculator. See if your savings are on track, how long your money will last, and what income you can sustainably withdraw.',
+    keywords: ['retirement calculator', '401k calculator', 'retirement savings calculator'],
+  },
+}
