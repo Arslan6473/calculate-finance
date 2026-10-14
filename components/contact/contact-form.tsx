@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-const CONTACT_EMAIL = 'hello@calcxs.com'
+// Not rendered anywhere on the page — only used as the mailto target on submit.
+const CONTACT_EMAIL = 'arslansarwarwebdev@gmail.com'
 
 /**
  * A validated contact form with no backend wired up yet. On successful

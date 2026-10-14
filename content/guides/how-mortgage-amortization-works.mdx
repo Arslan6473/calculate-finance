@@ -1,7 +1,10 @@
 Look at the first payment on a 30-year mortgage and you might be surprised how
 little of it goes toward the loan balance. That's not a mistake or a hidden
 fee — it's how amortization works, and understanding it explains a lot about
-mortgages that otherwise seems counterintuitive.
+mortgages that otherwise seems counterintuitive. This guide shows how the
+payment is calculated, follows a real loan from the first payment to the
+last, and explains what amortization means for equity, mortgage insurance,
+and refinancing.
 
 ## The Core Mechanic: Interest on the Current Balance
 
@@ -11,6 +14,32 @@ so the interest charge is also at its highest point. Because your monthly
 payment is fixed, whatever's left after covering that interest is what goes
 toward principal. High balance means high interest means a small principal
 portion, especially in the loan's first years.
+
+## How the Monthly Payment Is Calculated
+
+A fixed-rate mortgage payment is set so that, if every payment is made on
+schedule, the balance reaches exactly zero with the final payment. The
+standard formula is:
+
+```
+Payment = P × r × (1 + r) ^ n ÷ ((1 + r) ^ n − 1)
+```
+
+- **P** is the amount borrowed.
+- **r** is the monthly interest rate — the annual rate divided by 12.
+- **n** is the total number of monthly payments (360 for a 30-year loan).
+
+For a $320,000 loan at an example rate of 6.5%, r is 0.065 ÷ 12, or about
+0.005417, and n is 360. The formula gives a monthly principal-and-interest
+payment of **$2,022.62**. Each month's split is then simple arithmetic:
+
+```
+Interest this month  = remaining balance × r
+Principal this month = payment − interest this month
+New balance          = remaining balance − principal this month
+```
+
+This is the whole engine of amortization.
 
 ## Why the Split Shifts Over Time
 
@@ -29,6 +58,116 @@ makes up over 85% of that first payment. By the final year of the loan, that
 ratio has essentially flipped, with the overwhelming majority of each payment
 reducing principal.
 
+Here are the first three payments:
+
+| Payment | Interest | Principal | Remaining balance |
+| --- | --- | --- | --- |
+| 1 | $1,733.33 | $289.28 | $319,710.72 |
+| 2 | $1,731.77 | $290.85 | $319,419.86 |
+| 3 | $1,730.19 | $292.43 | $319,127.44 |
+
+Principal grows by only about $1.50 a month at first. Zooming out to whole
+years shows how the pace picks up:
+
+| Year | Interest paid that year | Principal paid that year | Balance at year end |
+| --- | --- | --- | --- |
+| 1 | $20,695 | $3,577 | $316,423 |
+| 5 | $19,636 | $4,636 | $299,555 |
+| 10 | $17,861 | $6,410 | $271,284 |
+| 15 | $15,407 | $8,864 | $232,189 |
+| 20 | $12,014 | $12,257 | $178,129 |
+| 25 | $7,322 | $16,949 | $103,373 |
+| 30 | $833 | $23,438 | $0 |
+
+A few milestones on this loan are worth noticing:
+
+- **After 5 years** you've paid about $121,357, but only $20,445 of it has
+  reduced the balance; the other $100,912 was interest.
+- **After 10 years** you've paid down $48,716 — about 15% of the loan.
+- **The crossover** — the first month in which principal exceeds interest —
+  doesn't arrive until payment 233, in the 20th year.
+- **Half the balance** is paid off only at payment 257, about 21 years and 5
+  months in.
+- **Total interest** over the full 30 years comes to about $408,142, more
+  than the amount borrowed.
+
+The [15 vs. 30-year mortgage](/guides/15-vs-30-year-mortgage) guide shows how
+much faster this curve moves on a shorter term.
+
+## What Amortization Means for Your Equity
+
+Your home equity is the home's value minus what you owe. Amortization is one
+of two ways it grows — the other is any change in the home's value, which
+isn't guaranteed. Because principal paydown is slow early on, a buyer who
+sells after a few years usually has built relatively little equity through
+payments alone, and selling costs can consume much of it.
+
+Amortization also governs when private mortgage insurance (PMI) can end on a
+conventional loan. Under the Homeowners Protection Act, you can ask the
+servicer to cancel PMI once the balance falls to 80% of the home's original
+value, and it terminates automatically at 78% if you're current on payments.
+Suppose you bought a $400,000 home with a $360,000 loan at the same example
+6.5% rate (a payment of $2,275.44). Making only the scheduled payments:
+
+- The balance reaches 80% of the original value ($320,000) at **payment 95**,
+  about 7 years and 11 months in.
+- It reaches 78% ($312,000) at **payment 109**, about 9 years and 1 month
+  in.
+
+Extra principal payments pull both dates closer. The guide to [how extra
+mortgage payments save interest](/guides/how-extra-mortgage-payments-save-interest)
+covers that strategy in detail.
+
+## Refinancing Restarts the Clock
+
+When you refinance, the remaining balance is amortized again from scratch over
+the new term. That can lower the payment, but it also puts you back at the
+interest-heavy start of a new schedule.
+
+Take the $320,000 loan above after 5 years, with $299,555 still owed and
+$307,230 of interest left to pay on the original schedule. Suppose you could
+refinance at an example rate of 5.5% (closing costs not included):
+
+| Option | Monthly payment | Interest from here on |
+| --- | --- | --- |
+| Keep original loan (25 years left) | $2,022.62 | $307,230 |
+| Refinance into a new 30-year | $1,700.84 | $312,748 |
+| Refinance into a new 25-year | $1,839.53 | $252,304 |
+
+The new 30-year loan cuts the payment by about $322 a month, yet you'd pay
+slightly *more* total interest than if you'd kept the original loan, because
+the balance is stretched over five extra years. Matching the remaining term
+keeps most of the rate benefit — about $54,926 less interest before closing
+costs. Neither choice is wrong, but compare total cost as well as the payment.
+The [refinance calculator](/calculators/refinance-calculator) runs this
+comparison with your closing costs included.
+
+## Amortization on Other Loans
+
+Auto loans and personal installment loans amortize the same way, but shorter
+terms make the pattern much less lopsided. A $30,000 auto loan at an example
+7% rate over 5 years has a payment of $594.04. The first payment is $175.00
+interest and $419.04 principal — principal exceeds interest from the very
+first month — and total interest over the loan is about $5,642. The [loan
+calculator](/calculators/loan-calculator) and [auto loan
+calculator](/calculators/auto-loan-calculator) show the full schedules.
+
+Not every loan fully amortizes. With an **interest-only** loan, early
+payments cover only interest and the balance doesn't fall. With **negative
+amortization**, payments are smaller than the interest due, and the unpaid
+interest is added to the balance, so you owe more over time. If a loan offer
+mentions either feature, read the terms closely.
+
+## Common Misconceptions
+
+**"The bank charges more interest at the start."** The rate is constant. More
+interest is paid early only because more is owed early.
+
+**"My payment includes taxes and insurance, so they're amortizing too."**
+Many payments include escrow amounts for property taxes and homeowners
+insurance, but those aren't part of the amortization schedule. They can rise
+or fall from year to year even when your principal and interest stay fixed.
+
 ## Why Extra Payments Are So Effective Early On
 
 Because so little of an early payment reduces principal, any extra amount you
@@ -46,3 +185,24 @@ calculator](/calculators/mortgage-calculator) generates for any loan amount,
 rate, and term you enter, including the effect of any extra monthly payment.
 The [loan calculator](/calculators/loan-calculator) produces the same
 breakdown for non-mortgage instalment loans.
+
+When you read one, look for the year when principal overtakes interest, the
+balance at the point you might sell or refinance, and the total interest over
+the life of the loan. Those three numbers say more about a loan than the
+monthly payment alone.
+
+## Putting It Together
+
+Amortization is simple arithmetic repeated hundreds of times: interest on the
+current balance, the rest of the fixed payment to principal. On a long
+mortgage, that makes the early years overwhelmingly interest and the later
+years overwhelmingly principal. Knowing where you are on that curve helps with
+real decisions — how much equity you'll have if you sell, when PMI can end,
+whether a refinance actually saves money, and how much an extra payment is
+worth today.
+
+## Sources
+
+- [Understanding Amortization — Freddie Mac](https://myhome.freddiemac.com/owning/understanding-amortization)
+- [A Consumer's Guide to Mortgage Refinancings: Glossary (Amortization) — Federal Reserve](https://www.federalreserve.gov/pubs/refinancings/glossary.htm)
+- [Mortgages (Homeowners Protection Act and PMI cancellation) — FDIC](https://www.fdic.gov/consumer-resource-center/mortgages)

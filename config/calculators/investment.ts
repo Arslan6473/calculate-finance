@@ -5,6 +5,7 @@ export const investmentConfig: CalculatorConfig = {
   name: 'Investment Calculator',
   shortName: 'Investment',
   category: 'investment',
+  updated: '2026-10-14',
   summary: 'Project your portfolio growth with contributions, fees, and inflation.',
   inputs: [
     {

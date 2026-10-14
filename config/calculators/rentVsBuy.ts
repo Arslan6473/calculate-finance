@@ -5,6 +5,7 @@ export const rentVsBuyConfig: CalculatorConfig = {
   name: 'Rent vs Buy Calculator',
   shortName: 'Rent vs Buy',
   category: 'real-estate',
+  updated: '2026-10-14',
   summary: 'Compare the true net cost of renting versus buying over the years you plan to stay.',
   inputs: [
     {

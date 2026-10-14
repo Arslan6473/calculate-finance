@@ -1,0 +1,106 @@
+Inflation is the gradual rise in the general level of prices, and its
+effect is easy to underestimate because it happens a little at a time. A
+few percent a year barely registers at the grocery store, but compounded
+over a decade or two it changes what your savings, salary, and retirement
+income can actually buy. This calculator shows that effect in dollars: what
+today's purchases will cost in the future, how much buying power your money
+will lose, and what today's amount was equivalent to in the past.
+
+## How to Use This Inflation Calculator
+
+First choose what you want to know. **Future** mode projects forward: enter
+an amount in today's dollars, an annual inflation rate, and a number of
+years to see what the same goods will cost then and what your money will be
+worth in today's terms. **Past** mode looks back: it shows what today's
+amount was equivalent to a given number of years ago at the rate you enter.
+
+The default inflation rate is 3%. You can change it to any rate you want to
+test, including a negative rate for deflation. Results include cumulative
+inflation over the whole period, the share of purchasing power lost, and a
+chart of how prices and buying power move year by year.
+
+## How Inflation Is Calculated
+
+Inflation compounds just like interest. Each year's price increase applies
+to prices that already include every earlier year's increases, so a
+constant rate produces accelerating growth in dollar terms. The calculator
+applies a single assumed rate every year. Projecting forward multiplies by
+the compounding factor; looking back, or measuring purchasing power,
+divides by it.
+
+## Inflation Formula
+
+```
+Future cost       = Amount × (1 + r)^n
+Purchasing power  = Amount ÷ (1 + r)^n
+Cumulative inflation  = (1 + r)^n − 1
+Purchasing power lost = 1 − 1 ÷ (1 + r)^n
+```
+
+**r** is the annual inflation rate as a decimal and **n** is the number of
+years. Past mode uses the purchasing power line: an amount today divided by
+(1 + r)^n is what it was equivalent to n years ago.
+
+## Example Calculation
+
+Take $1,000 at 3% annual inflation over 10 years. The compounding factor is
+1.03^10 ≈ 1.3439.
+
+- **Future cost**: $1,000 × 1.3439 = **$1,343.92**. Goods that cost $1,000
+  today would cost about $1,344 in ten years.
+- **Purchasing power**: $1,000 ÷ 1.3439 = **$744.09**. Ten years from now,
+  $1,000 will buy only what $744.09 buys today.
+- **Cumulative inflation**: prices rise **34.39%** in total — more than the
+  30% you would get by simply adding up ten years of 3%.
+- **Purchasing power lost**: **25.59%**. The loss is smaller than the price
+  rise because each dollar now buys 1 ÷ 1.3439 of what it did.
+
+Looking back instead, $100 today at the same 3% rate was equivalent to about
+**$55.37** twenty years ago.
+
+## Why This Calculator Uses an Assumed Rate
+
+Official inflation figures in the United States come from the Consumer
+Price Index, published monthly by the U.S. Bureau of Labor Statistics. The
+CPI is the right source for exact historical comparisons, such as what a
+specific amount from a specific year is worth today. This calculator
+deliberately does not embed a copy of those tables, because a stored copy
+goes out of date every month and cannot be checked at a glance. Instead it
+uses a rate you choose, which makes the assumption visible and is the
+natural tool for planning ahead, where no official figure exists yet. For a
+precise historical answer, look up the CPI values for the two dates
+directly from the Bureau of Labor Statistics.
+
+## Factors to Consider When Choosing a Rate
+
+- **The Federal Reserve's target** — the Fed aims for 2% inflation over the
+  longer run, measured by the price index for personal consumption
+  expenditures. It is a target, not a guarantee.
+- **Recent experience** — inflation has run well above and below 2% in
+  different periods. Testing a higher rate shows how sensitive a long-term
+  plan is.
+- **Your own spending** — the official indexes measure a broad basket of
+  goods and services. Costs that matter most to you, such as housing,
+  health care, or tuition, can rise faster or slower than the average.
+- **Time horizon** — small differences in the rate compound into large
+  differences over 20 or 30 years.
+
+## Common Mistakes to Avoid
+
+- **Adding instead of compounding** — 3% for 10 years is 34.39% in total,
+  not 30%. The gap grows with longer periods and higher rates.
+- **Confusing price rise with purchasing power loss** — a 34.39% price
+  increase is a 25.59% loss of buying power, not a 34.39% loss.
+- **Planning in today's dollars only** — a retirement or college target
+  that ignores inflation will fall short of the real cost.
+- **Assuming one average rate fits every expense** — some categories inflate
+  much faster than the overall index.
+- **Using an assumed rate for exact history** — for a precise past
+  comparison, use official CPI figures rather than an average rate.
+
+## Sources
+
+- [Consumer Price Index (CPI) — U.S. Bureau of Labor Statistics](https://www.bls.gov/cpi/)
+- [Why does the Federal Reserve aim for inflation of 2 percent over the longer run? — Federal Reserve](https://www.federalreserve.gov/faqs/economy_14400.htm)
+- [Inflation (PCE) — Federal Reserve Economy at a Glance](https://www.federalreserve.gov/economy-at-a-glance-inflation-pce.htm)
+- [Current versus Constant (or Real) Dollars — U.S. Census Bureau](https://www.census.gov/topics/income-poverty/income/guidance/current-vs-constant-dollars.html)

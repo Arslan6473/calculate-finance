@@ -1,0 +1,162 @@
+import type { CalculatorConfig } from './types'
+
+export const homeAffordabilityConfig: CalculatorConfig = {
+  slug: 'home-affordability-calculator',
+  name: 'Home Affordability Calculator',
+  shortName: 'Home Affordability',
+  category: 'real-estate',
+  updated: '2026-10-14',
+  summary: 'Find the most expensive home your income and debts support under the 28/36 rule.',
+  inputs: [
+    {
+      name: 'annualIncome',
+      label: 'Gross annual income',
+      type: 'currency',
+      defaultValue: 100_000,
+      min: 0,
+      max: 100_000_000,
+      step: 1_000,
+      help: 'Household income before tax, as a lender would count it.',
+      group: 'Income & debts',
+    },
+    {
+      name: 'monthlyDebts',
+      label: 'Monthly debt payments',
+      type: 'currency',
+      defaultValue: 500,
+      min: 0,
+      max: 1_000_000,
+      step: 25,
+      help: 'Minimum payments on car loans, student loans, credit cards and other debts. Exclude rent.',
+      group: 'Income & debts',
+    },
+    {
+      name: 'downPayment',
+      label: 'Down payment',
+      type: 'currency',
+      defaultValue: 60_000,
+      min: 0,
+      max: 20_000_000,
+      step: 1_000,
+      group: 'Loan details',
+    },
+    {
+      name: 'annualRate',
+      label: 'Interest rate',
+      type: 'percent',
+      defaultValue: 6.5,
+      min: 0,
+      max: 25,
+      step: 0.01,
+      group: 'Loan details',
+    },
+    {
+      name: 'termYears',
+      label: 'Loan term',
+      type: 'select',
+      defaultValue: 30,
+      options: [
+        { label: '30 years', value: 30 },
+        { label: '20 years', value: 20 },
+        { label: '15 years', value: 15 },
+      ],
+      group: 'Loan details',
+    },
+    {
+      name: 'propertyTaxRate',
+      label: 'Property tax rate',
+      type: 'percent',
+      defaultValue: 1.1,
+      min: 0,
+      max: 10,
+      step: 0.05,
+      help: 'Annual property tax as a percentage of the home price.',
+      group: 'Housing costs',
+    },
+    {
+      name: 'annualHomeInsurance',
+      label: 'Annual home insurance',
+      type: 'currency',
+      defaultValue: 1_500,
+      min: 0,
+      max: 100_000,
+      step: 50,
+      group: 'Housing costs',
+    },
+    {
+      name: 'monthlyHoa',
+      label: 'Monthly HOA fee',
+      type: 'currency',
+      defaultValue: 0,
+      min: 0,
+      max: 5_000,
+      step: 10,
+      group: 'Housing costs',
+    },
+    {
+      name: 'frontEndDti',
+      label: 'Front-end DTI limit',
+      type: 'percent',
+      defaultValue: 28,
+      min: 1,
+      max: 60,
+      step: 1,
+      help: 'Maximum share of gross monthly income for housing costs alone.',
+      group: 'Lender limits',
+    },
+    {
+      name: 'backEndDti',
+      label: 'Back-end DTI limit',
+      type: 'percent',
+      defaultValue: 36,
+      min: 1,
+      max: 60,
+      step: 1,
+      help: 'Maximum share of gross monthly income for housing plus all other debt payments.',
+      group: 'Lender limits',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What is the 28/36 rule?',
+      answer:
+        'It is a long-standing guideline for conventional mortgages: your housing payment (principal, interest, property tax, insurance and HOA) should be no more than 28% of your gross monthly income, and your housing payment plus all other monthly debt payments should be no more than 36%. This calculator applies both and uses whichever gives the lower budget.',
+    },
+    {
+      question: 'Do all lenders use 28% and 36%?',
+      answer:
+        'No. They are conventional starting points, not hard limits. Many lenders approve back-end ratios of 43% or higher, and government-backed programs such as FHA loans often allow more, especially with strong credit or cash reserves. Adjust the two limits to match a specific lender or program.',
+    },
+    {
+      question: 'What does "binding rule" mean?',
+      answer:
+        'It is the limit that actually caps your price. If you have little existing debt, the 28% housing limit usually binds. If your car, student loan or card payments are large, the 36% total-debt limit leaves less room for housing and becomes the binding rule.',
+    },
+    {
+      question: 'Does the result include PMI or closing costs?',
+      answer:
+        'No. With less than 20% down, most conventional lenders add private mortgage insurance, which would reduce the price you can afford a little. Closing costs are paid in cash at purchase, so keep enough set aside on top of the down payment you enter here.',
+    },
+    {
+      question: 'Is the maximum price what I should spend?',
+      answer:
+        'Not necessarily. It is the most a lender is likely to approve under these rules, based on gross income. It does not know about childcare, retirement saving, maintenance, or other goals, so many buyers choose a price comfortably below the maximum.',
+    },
+  ],
+  related: [
+    'mortgage-calculator',
+    'rent-vs-buy-calculator',
+    'rent-affordability-calculator',
+    'debt-payoff-calculator',
+  ],
+  seo: {
+    title: 'Home Affordability Calculator — How Much House Can I Afford? | Calcxs',
+    description:
+      'Free home affordability calculator using the 28/36 debt-to-income rule. See your maximum home price, monthly payment, and which limit binds.',
+    keywords: [
+      'home affordability calculator',
+      'how much house can i afford',
+      '28/36 rule calculator',
+    ],
+  },
+}

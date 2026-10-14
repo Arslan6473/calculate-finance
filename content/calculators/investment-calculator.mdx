@@ -12,7 +12,8 @@ annual return, and how many years you plan to stay invested. In the advanced
 section, add an annual fee or expense ratio if your investment carries one, an
 annual percentage increase to your contribution (to model rising income), and
 an expected inflation rate to see your result in today's purchasing power
-alongside the nominal figure.
+alongside the nominal figure. The results show your final balance, total
+contributions, total growth, total fees paid, and a year-by-year chart.
 
 ## How Investment Growth Is Calculated
 
@@ -20,8 +21,26 @@ Each month, this calculator applies your expected return to the current
 balance, deducts any fee from that same balance, and then adds your
 contribution. Fees are charged on assets under management — the balance
 before that month's contribution — which is how expense ratios actually work
-in practice. Contributions can also increase annually if you specify a rate,
-modeling a saver whose contribution grows alongside their income.
+in practice. If you set a contribution increase, the monthly amount rises by
+that percentage at the start of each new year.
+
+## Investment Growth Formula
+
+Each month, the balance moves forward by:
+
+```
+Balance = Balance × (1 + (R − F) / 12) + C
+Real value = Final balance / (1 + I)^Y
+```
+
+- **R** is the expected annual return, as a decimal (7% is 0.07).
+- **F** is the annual fee or expense ratio, as a decimal. Subtracting it from
+  R gives the net return your money actually earns.
+- **C** is the monthly contribution for the current year.
+- **I** is the annual inflation rate, and **Y** is the number of years.
+
+The second line restates the nominal result in today's money by discounting
+it for inflation over the full term.
 
 ## The Effect of Fees and Inflation
 
@@ -36,10 +55,21 @@ dollars, discounted by your assumed inflation rate.
 ## Example Calculation
 
 $10,000 invested with a $500 monthly contribution, a 7% expected annual
-return, and a 0.5% fee, over 25 years, grows to roughly $436,000 nominal.
-Assuming 3% average inflation over that period, that balance is worth about
-$208,000 in today's purchasing power — a useful reminder that a large future
-number and its real value can differ substantially.
+return, and a 0.5% fee, over 25 years, grows to $424,980.24. You'd have
+contributed $160,000, and fees would have cost $20,383.10 along the way.
+Assuming 3% average inflation, that balance is worth $202,972.93 in today's
+purchasing power — a useful reminder that a large future number and its real
+value can differ substantially.
+
+Change the fee and everything else held constant:
+
+- **0.1% fee:** the balance reaches $454,532.18, and fees total $4,268.58.
+- **1% fee:** the balance reaches $391,146.68, and fees total $38,524.45.
+
+The gap between a 0.1% and a 1% fee is more than $63,000 on the same
+contributions. Separately, raising the contribution by 3% a year (with the
+original 0.5% fee) lifts the final balance to $545,904.51, on total
+contributions of $228,755.59.
 
 ## What Affects Your Investment Outcome
 
@@ -47,7 +77,36 @@ number and its real value can differ substantially.
   more compounding, and compounding accelerates rather than staying flat.
 - **Contribution amount** — for most people investing over decades,
   contributions matter as much as or more than the return rate itself.
+- **Contribution growth** — increasing contributions as your income rises
+  adds both principal and years of compounding on that principal.
 - **Fees** — a seemingly small percentage becomes a large dollar cost over a
   long enough horizon.
 - **Inflation** — doesn't change your account balance, but changes what that
-  balance is actually worth when you go to spend it.
+  balance is actually worth when you go to spend it. The Federal Reserve aims
+  for 2% inflation over the longer run; the 3% default here is a more
+  cautious assumption.
+
+## Common Mistakes to Avoid
+
+- **Treating the return as guaranteed.** The calculator applies the same
+  return every month. Real markets move unevenly, and a bad stretch near the
+  end of your horizon affects the result more than one near the start. Run a
+  lower-return scenario alongside your main one.
+- **Leaving the fee at zero.** Most funds charge an expense ratio, listed in
+  the prospectus fee table. Advisory and account fees come on top. Enter the
+  total you actually pay.
+- **Reading the nominal balance as spending power.** In the example,
+  $424,980 in 25 years buys roughly what $203,000 buys today at 3% inflation.
+  Plan around the inflation-adjusted figure.
+- **Mixing real and nominal assumptions.** If you enter a return that's
+  already net of inflation, also entering an inflation rate counts it twice.
+  Use a nominal return with an inflation rate, or a real return with
+  inflation set to zero.
+- **Forgetting taxes.** Gains, dividends, and withdrawals may be taxed
+  depending on the account type. This calculator shows pre-tax values.
+
+## Sources
+
+- [How Fees and Expenses Affect Your Investment Portfolio — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated)
+- [Expense Ratio (glossary) — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/investing-basics/glossary/expense-ratio)
+- [Why Does the Federal Reserve Aim for Inflation of 2 Percent Over the Longer Run? — Federal Reserve](https://www.federalreserve.gov/faqs/economy_14419.htm)

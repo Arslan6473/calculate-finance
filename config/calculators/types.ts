@@ -57,6 +57,8 @@ export interface CalculatorConfig {
   /** Short label for nav/breadcrumb chips where the full name is too long. */
   shortName: string
   category: CategorySlug
+  /** ISO date (YYYY-MM-DD) the calculator or its explanation was last meaningfully revised. */
+  updated: string
   /** One sentence for search results and category cards. */
   summary: string
   inputs: InputField[]

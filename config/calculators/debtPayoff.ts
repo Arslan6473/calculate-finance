@@ -12,6 +12,7 @@ export const debtPayoffConfig: CalculatorConfig = {
   name: 'Debt Payoff Calculator',
   shortName: 'Debt Payoff',
   category: 'debt',
+  updated: '2026-10-14',
   summary: 'Compare the snowball and avalanche strategies to pay off multiple debts fastest.',
   inputs: [
     {

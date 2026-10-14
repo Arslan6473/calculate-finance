@@ -1,4 +1,4 @@
-import { SITE } from '@/config/site'
+import { EDITORIAL, SITE } from '@/config/site'
 import type { CalculatorConfig, CalculatorFaq } from '@/config/calculators/types'
 import type { GuideConfig } from '@/config/guides'
 
@@ -43,6 +43,8 @@ export function calculatorWebApplicationSchema(config: CalculatorConfig) {
     name: config.name,
     url: `${SITE.url}/calculators/${config.slug}`,
     description: config.summary,
+    dateModified: config.updated,
+    author: { '@type': 'Organization', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -56,6 +58,8 @@ export function guideArticleSchema(guide: GuideConfig) {
     headline: guide.title,
     description: guide.description,
     url: `${SITE.url}/guides/${guide.slug}`,
-    publisher: { '@type': 'Organization', name: SITE.name },
+    dateModified: guide.updated,
+    author: { '@type': 'Organization', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
   }
 }

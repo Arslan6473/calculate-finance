@@ -1,7 +1,10 @@
 Compound interest is often summarized as "interest on interest," which is
 accurate but doesn't quite convey why it matters so much. The real story is
 about acceleration: growth that starts slow and keeps speeding up, for as
-long as the money stays invested.
+long as the money stays invested. This guide walks through the formula, shows
+how the growth unfolds year by year, and covers the factors that help or hurt
+compounding in real life — rate, time, fees, inflation, and regular
+contributions.
 
 ## Simple Interest vs. Compound Interest
 
@@ -13,6 +16,28 @@ $1,000 at 5% compounded annually earns $50 in year one, bringing the balance
 to $1,050. In year two, the 5% applies to $1,050, not $1,000 — earning $52.50
 instead. The gap seems tiny at first, but it widens every year.
 
+For a deeper side-by-side comparison of the two methods, including where
+you'll encounter each one, see [simple vs. compound
+interest](/guides/simple-vs-compound-interest).
+
+## The Compound Interest Formula
+
+The balance after compounding is:
+
+```
+Future value = P × (1 + r ÷ n) ^ (n × t)
+```
+
+- **P** is the starting principal.
+- **r** is the stated annual rate, as a decimal (7% = 0.07).
+- **n** is the number of times interest compounds per year (1 for annually,
+  12 for monthly, 365 for daily).
+- **t** is the number of years.
+
+With annual compounding, n is 1 and the formula simplifies to P × (1 + r) ^ t.
+The exponent is what makes compounding powerful: time isn't multiplied into
+the result, it's raised as a power.
+
 ## Why the Effect Accelerates Over Time
 
 Because each period's interest is added to a slightly larger base than the
@@ -23,6 +48,41 @@ interest over 30 years grows to $31,000. The same $10,000 at 7% compounded
 annually grows to about $76,000 — more than double, purely from interest
 building on interest.
 
+Here's what that $10,000 at 7% looks like along the way:
+
+| Year | Interest earned that year | Balance at year end |
+| --- | --- | --- |
+| 1 | $700.00 | $10,700.00 |
+| 2 | $749.00 | $11,449.00 |
+| 5 | $917.56 | $14,025.52 |
+| 10 | $1,286.92 | $19,671.51 |
+| 20 | $2,531.57 | $38,696.84 |
+| 30 | $4,979.98 | $76,122.55 |
+
+Two things stand out. First, the interest earned in year 30 is about seven
+times the interest earned in year 1, at exactly the same rate. Second, the
+balance grows by about $37,426 in the final 10 years alone — more than the
+$28,697 it grew in the first 20 years combined. Compounding back-loads its
+rewards, which is why cutting the last decade off a plan costs far more than
+cutting off the first one.
+
+## The Rate Matters More Than It Looks
+
+Small differences in the annual rate turn into large differences over long
+periods, because the rate is compounded on itself every year. Here's $10,000
+left alone for 30 years at different annual rates (examples, not forecasts):
+
+| Annual rate | Balance after 30 years |
+| --- | --- |
+| 4% | $32,434 |
+| 6% | $57,435 |
+| 8% | $100,627 |
+| 10% | $174,494 |
+
+Doubling the rate from 4% to 8% more than triples the ending balance. That
+asymmetry cuts both ways — it's also why fees and inflation, covered below,
+do more damage than their size suggests.
+
 ## Compounding Frequency Matters, But Less Than Time Does
 
 Interest can compound annually, monthly, daily, or on almost any schedule a
@@ -32,14 +92,124 @@ its own interest sooner. The effect is real, but it's modest compared to the
 two variables that matter far more: the rate itself, and — above all — how
 long the money stays invested.
 
-## The Practical Takeaway
+You can see the effect in the **annual percentage yield (APY)**, which savings
+accounts disclose so you can compare them on equal terms. APY converts a
+stated rate and compounding schedule into the equivalent yield for one year:
+
+```
+APY = (1 + r ÷ n) ^ n − 1
+```
+
+A savings account paying a 4.5% stated rate (an example rate) works out to:
+
+- **Compounded monthly:** an APY of about 4.59%.
+- **Compounded daily:** an APY of about 4.60%.
+
+The difference between monthly and daily compounding here is less than a
+hundredth of a percentage point. When comparing accounts, compare APYs
+directly and don't pay much attention to the compounding schedule itself.
+
+## Starting Early: A Worked Example
+
+Consider two savers, both earning an assumed 7% a year, compounded annually,
+with each deposit made at the end of the year:
+
+- **Saver A** invests $5,000 a year from age 25 to 35 — 10 deposits, $50,000
+  in total — then stops contributing and leaves the money alone.
+- **Saver B** waits until 35, then invests $5,000 a year until 65 — 30
+  deposits, $150,000 in total.
+
+| | Saver A | Saver B |
+| --- | --- | --- |
+| Years contributing | 10 | 30 |
+| Total contributed | $50,000 | $150,000 |
+| Balance at 35 | $69,082 | $0 |
+| Balance at 65 | $525,872 | $472,304 |
+
+Saver A put in one-third as much money and still finishes ahead, because
+those early dollars had 30 extra years to compound. In practice the best
+outcome is to start early *and* keep going — but the example shows how much
+time is worth compared with the size of the deposits.
+
+Regular contributions compound too. Investing $300 a month at an assumed 7%
+annual rate, compounded monthly, grows to about $365,991 after 30 years, from
+$108,000 of contributions. The [savings goal
+calculator](/calculators/savings-goal-calculator) works this problem in
+reverse, telling you what to save each month to hit a target.
+
+## What Works Against Compounding
+
+The headline rate is rarely what you actually keep. Three things quietly
+lower the effective rate that compounds:
+
+- **Fees.** An investment that earns 7% before costs but charges 1% a year
+  effectively compounds at about 6%. Over 30 years, $10,000 grows to about
+  $57,435 instead of $76,123 — a difference of about $18,688, almost twice
+  the original deposit. Fees compound against you just as returns compound
+  for you.
+- **Inflation.** A 7% nominal return with 3% annual inflation is a real
+  return of about 3.9% (1.07 ÷ 1.03 − 1). In today's purchasing power, the
+  $76,123 from the earlier example is worth only about $31,361. The
+  [inflation calculator](/calculators/inflation-calculator) and the guide to
+  [how inflation affects savings](/guides/how-inflation-affects-savings) go
+  further into this.
+- **Taxes and withdrawals.** Money taken out — whether to pay taxes on
+  earnings each year or to spend — stops compounding. Tax-advantaged
+  retirement accounts are valuable partly because they let more of the
+  growth stay invested.
+
+## Common Misconceptions
+
+**"Compounding means my investments grow by a fixed percentage."** Savings
+accounts and CDs pay a stated rate, but stocks and funds don't. Their returns
+vary year to year, and a few bad years can set the balance back. Long-run
+projections use an assumed average rate as a planning tool, not a promise.
+
+**"I've missed my chance, so there's no point starting."** Compounding still
+works on every dollar from the day it's invested. Starting later means you
+need to contribute more to reach the same goal, not that the effort is
+wasted.
+
+**"Compounding only helps savers."** Credit cards and some loans compound
+too. A high-rate balance left unpaid grows the same way an investment does —
+just against you.
+
+## Solving for Time or Rate
+
+The formula can be rearranged to answer practical questions:
+
+```
+Years needed = ln(target ÷ starting amount) ÷ ln(1 + r)
+Rate needed  = (target ÷ starting amount) ^ (1 ÷ years) − 1
+```
+
+At an assumed 7% a year, $10,000 takes about 23.8 years to grow to $50,000
+and about 10.2 years to double. To turn $10,000 into $25,000 in 15 years, you
+need an annual return of about 6.3%. The [CAGR
+calculator](/calculators/cagr-calculator) does the second calculation for any
+start value, end value, and time period.
+
+## Putting It Together
 
 Compound interest rewards time more than almost anything else. Starting
 early, even with a small amount, often outperforms starting later with a
 much larger sum, simply because the earlier money has had more compounding
-periods to work through.
+periods to work through. Beyond time, the levers are the rate you actually
+keep after fees and inflation and how much you keep adding; compounding
+frequency is a minor fourth.
 
 Try the numbers for your own situation with the [compound interest
 calculator](/calculators/compound-interest-calculator), or see how compounding
 plays out inside a full portfolio projection with the [investment
-calculator](/calculators/investment-calculator).
+calculator](/calculators/investment-calculator). If you're saving for
+retirement, the [retirement calculator](/calculators/retirement-calculator)
+shows how compounding interacts with contributions and withdrawals over a
+working life.
+
+## Sources
+
+- [What Is Compound Interest? — Investor.gov (SEC)](https://www.investor.gov/additional-resources/information/youth/teachers-classroom-resources/what-compound-interest)
+- [Compound Interest Calculator — Investor.gov (SEC)](https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator)
+- [12 CFR Appendix A to Part 1030, Annual Percentage Yield Calculation (Truth in Savings) — Cornell LII](https://www.law.cornell.edu/cfr/text/12/appendix-A_to_part_1030)
+- [Compound Interest (Glossary) — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest)
+- [Understanding Fees — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/getting-started/understanding-fees)

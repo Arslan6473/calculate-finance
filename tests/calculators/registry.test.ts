@@ -14,10 +14,10 @@ describe('calculator registry', () => {
     expect(() => assertRegistryIntegrity()).not.toThrow()
   })
 
-  it('has ten MVP calculators, each with a unique slug', () => {
-    expect(CALCULATORS).toHaveLength(10)
+  it('has twenty-two calculators, each with a unique slug', () => {
+    expect(CALCULATORS).toHaveLength(22)
     const slugs = new Set(CALCULATORS.map((c) => c.slug))
-    expect(slugs.size).toBe(10)
+    expect(slugs.size).toBe(22)
   })
 
   it('resolves every related slug to a real calculator', () => {
@@ -36,6 +36,13 @@ describe('calculator registry', () => {
   it('assigns every calculator to a category that exists', () => {
     for (const config of CALCULATORS) {
       expect(config.category in CATEGORIES).toBe(true)
+    }
+  })
+
+  it('gives every calculator a valid last-updated date', () => {
+    for (const config of CALCULATORS) {
+      expect(config.updated).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+      expect(Number.isNaN(new Date(config.updated).getTime())).toBe(false)
     }
   })
 

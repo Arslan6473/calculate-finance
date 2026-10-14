@@ -152,8 +152,10 @@ export function calculateRetirement(input: RetirementInput): RetirementResult {
     // Withdraw at the start of the year, then grow the remainder.
     drawdownBalance -= withdrawal
     if (drawdownBalance <= 0) {
+      // A shortfall of under a cent is rounding, not running out: a portfolio
+      // that exactly equals the target should fund the final year in full.
+      if (drawdownBalance < -0.01 && moneyRunsOutAtAge === null) moneyRunsOutAtAge = retirementAge + year
       drawdownBalance = 0
-      if (moneyRunsOutAtAge === null) moneyRunsOutAtAge = retirementAge + year
     } else {
       drawdownBalance += drawdownBalance * postAnnualRate
     }
@@ -175,7 +177,8 @@ export function calculateRetirement(input: RetirementInput): RetirementResult {
   /*
     Target portfolio: the lump sum at retirement that exactly funds the inflating
     withdrawal stream for `retirementYears`. This is the present value of a
-    growing annuity, discounted at the post-retirement return.
+    growing annuity *due* — withdrawals come at the start of each year, matching
+    the drawdown loop above — discounted at the post-retirement return.
 
     When the real return is zero (return equals inflation) the growing-annuity
     formula divides by zero, and the answer collapses to income × years.
@@ -188,7 +191,9 @@ export function calculateRetirement(input: RetirementInput): RetirementResult {
       targetPortfolio = incomeNeededAtRetirement * retirementYears
     } else {
       targetPortfolio =
-        incomeNeededAtRetirement * ((1 - Math.pow((1 + g) / (1 + r), retirementYears)) / (r - g))
+        incomeNeededAtRetirement *
+        ((1 - Math.pow((1 + g) / (1 + r), retirementYears)) / (r - g)) *
+        (1 + r)
     }
     targetPortfolio = Math.min(Math.max(targetPortfolio, 0), MAX_MONEY)
   }
@@ -204,7 +209,7 @@ export function calculateRetirement(input: RetirementInput): RetirementResult {
     const annuityFactor =
       Math.abs(r - g) < 1e-9
         ? retirementYears
-        : (1 - Math.pow((1 + g) / (1 + r), retirementYears)) / (r - g)
+        : ((1 - Math.pow((1 + g) / (1 + r), retirementYears)) / (r - g)) * (1 + r)
     sustainableAnnualIncome = annuityFactor > 0 ? balanceAtRetirement / annuityFactor : 0
   }
 

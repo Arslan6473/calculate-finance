@@ -8,10 +8,14 @@ balance than everything you put in.
 
 Enter your starting deposit and the annual interest rate you expect to earn,
 then choose how often interest compounds — daily, monthly, quarterly,
-semiannually, or annually. If you plan to add money regularly, enter the
-contribution amount and how often you'll make it; the calculator handles a
-different compounding and contribution schedule at the same time (for
-example, a monthly deposit into an account that compounds quarterly).
+semiannually, or annually. Set the number of years you plan to leave the
+money in place. If you plan to add money regularly, enter the contribution
+amount and how often you'll make it (monthly, quarterly, or annually); the
+calculator handles a different compounding and contribution schedule at the
+same time — for example, a monthly deposit into an account that compounds
+quarterly. The results show your final balance, how much of it you
+contributed, how much is interest, the effective annual rate, and a
+year-by-year breakdown.
 
 ## How Compound Interest Is Calculated
 
@@ -19,8 +23,10 @@ Each time interest compounds, it's calculated on the current balance —
 including any interest already added in previous periods — and then added to
 that balance. The next compounding period earns interest on this new, larger
 total. This calculator steps through your chosen term period by period,
-applying interest and contributions in the order you specify, rather than
-using a single formula that would have to approximate irregular schedules.
+applying interest and contributions in order, rather than using a single
+formula that would have to approximate irregular schedules. Contributions are
+treated as deposits made at the end of each contribution period, so a deposit
+starts earning interest from the following compounding period.
 
 ## Compound Interest Formula
 
@@ -30,21 +36,43 @@ For compounding with no contributions, the balance after **t** years is:
 A = P × (1 + r/n)^(n×t)
 ```
 
-**P** is the principal, **r** is the annual interest rate (as a decimal),
-**n** is the number of times interest compounds per year, and **t** is the
-number of years. When contributions are added, this calculator uses the
-step-by-step method described above rather than a single closed-form
-extension of this equation, since it needs to support contribution schedules
-that don't line up with the compounding schedule.
+- **A** is the ending balance.
+- **P** is the principal — your opening deposit.
+- **r** is the annual interest rate as a decimal (6% is 0.06).
+- **n** is the number of times interest compounds per year: 1 for annually,
+  4 for quarterly, 12 for monthly, 365 for daily.
+- **t** is the number of years.
+
+The calculator also reports the effective annual rate, which converts any
+compounding frequency into a single comparable yearly figure:
+
+```
+Effective annual rate = (1 + r/n)^n − 1
+```
+
+When contributions are added, the calculator uses the step-by-step method
+described above rather than a closed-form extension of the formula, since it
+needs to support contribution schedules that don't line up with the
+compounding schedule.
 
 ## Example Calculation
 
 $5,000 deposited at 6% annual interest, compounded monthly, with no further
-contributions, grows to about $16,470 after 20 years — more than triple the
-original deposit, with $11,470 of that being interest alone. Add a $200
-monthly contribution to the same scenario, and the ending balance climbs to
-roughly $109,000, most of it from the contributions themselves compounding
-alongside the initial deposit.
+contributions, grows to $16,551.02 after 20 years — more than three times the
+original deposit, with $11,551.02 of that being interest. The effective
+annual rate is 6.17%, slightly above the stated 6% because interest is added
+twelve times a year.
+
+The compounding frequency matters, but less than people expect. The same
+$5,000 at 6% for 20 years ends at $16,035.68 with annual compounding and
+$16,598.95 with daily compounding — a difference of about $563 over two
+decades.
+
+Contributions matter far more. Add $200 a month to the original monthly
+compounding scenario and the ending balance reaches $108,959.20. You'd have
+deposited $53,000 in total, and the remaining $55,959.20 is interest. Cut the
+same plan to 10 years and the balance is $41,872.85, of which only $12,872.85
+is interest — the second decade produces most of the growth.
 
 ## What Affects Compound Growth
 
@@ -58,3 +86,31 @@ alongside the initial deposit.
   interest starts earning its own interest sooner.
 - **Contributions** — regular deposits, even modest ones, often add more to
   your final balance over a long horizon than the interest rate itself.
+- **Withdrawals** — taking money out resets part of the compounding base;
+  interest you withdraw can no longer earn interest of its own.
+
+## Common Mistakes to Avoid
+
+- **Comparing accounts by stated rate when compounding differs.** A rate
+  compounded daily and the same rate compounded annually aren't equal. Use
+  the effective annual rate to compare them on the same footing.
+- **Assuming a savings rate will hold for decades.** Rates on savings
+  accounts and CDs change over time. A 20-year projection at today's rate is
+  an illustration, not a forecast; try a lower rate to see a cautious case.
+- **Overestimating the frequency effect.** Moving from annual to daily
+  compounding added about $563 in the example. Adding to your deposits or
+  extending the term usually matters far more.
+- **Ignoring taxes on interest.** Interest on bank accounts and CDs is
+  generally taxable income, which reduces what's left to compound in a
+  taxable account. This calculator shows pre-tax growth.
+- **Forgetting inflation.** A balance that triples in nominal terms buys less
+  than three times as much if prices rise over the same period.
+- **Starting later to save a little more.** The 10-year versus 20-year
+  example shows why: most of the interest arrives in the later years, and
+  those years can't be recovered by contributing more at the end.
+
+## Sources
+
+- [What Is Compound Interest? — Investor.gov (SEC)](https://www.investor.gov/additional-resources/information/youth/teachers-classroom-resources/what-compound-interest)
+- [Compound Interest Calculator — Investor.gov (SEC)](https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator)
+- [Topic No. 403, Interest Received — IRS](https://www.irs.gov/taxtopics/tc403)

@@ -19,6 +19,8 @@ const BENEFITS = [
 ]
 
 export const metadata: Metadata = {
+  // Kept under 60 characters so it isn't truncated in search results.
+  title: { absolute: `Free Financial Calculators – Mortgage, Loan & ROI | ${SITE.name}` },
   alternates: { canonical: '/' },
 }
 
@@ -109,6 +111,43 @@ export default function HomePage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="container-page max-w-3xl py-16">
+        <h2 className="mb-4 text-2xl font-semibold text-ink">
+          Free Calculators for Everyday Money Decisions
+        </h2>
+        <div className="space-y-4 text-ink-muted">
+          <p>
+            {SITE.name} is a collection of free financial calculators for the questions people
+            actually ask before a big money decision: what a mortgage will really cost each month,
+            how much house or rent fits a budget, how long it takes to pay off a credit card, what a
+            raise or an hourly wage works out to per year, and whether savings and investments are
+            on track for retirement.
+          </p>
+          <p>
+            Every calculator runs in your browser, needs no signup, and shows a full breakdown
+            rather than a single number — amortization schedules, payment splits, and charts that
+            show how results change over time. Below each tool you&apos;ll find a plain-language
+            explanation of the formula it uses, a worked example with real numbers, and answers to
+            common questions, so you can check the math and understand what drives the result.
+          </p>
+          <p>
+            The site is written for everyday borrowers, savers, renters, home buyers, and workers —
+            not finance professionals. Our{' '}
+            <Link href="/guides" className="text-accent underline underline-offset-2">
+              guides
+            </Link>{' '}
+            go deeper on topics like compound interest, APR, amortization, and paying off debt.
+            Salary and tax calculations follow US federal rules; most other calculators work for any
+            currency. Results are estimates for general information, not financial advice — see
+            our{' '}
+            <Link href="/editorial-policy" className="text-accent underline underline-offset-2">
+              editorial policy
+            </Link>{' '}
+            for how content is researched and checked.
+          </p>
         </div>
       </section>
 

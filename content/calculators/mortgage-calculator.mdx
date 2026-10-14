@@ -7,11 +7,13 @@ money goes and how much of it builds equity versus how much is interest.
 ## How to Use This Mortgage Calculator
 
 Enter the home price and your planned down payment; the calculator subtracts
-one from the other to find your loan amount. Choose a loan term — 15, 20, or
-30 years are the most common — and enter the interest rate your lender has
-quoted or that you're comparing. If you know your annual property tax and
-home insurance costs, add them to see your full monthly payment rather than
-just principal and interest. The extra monthly payment field is optional: use
+one from the other to find your loan amount. Choose a loan term — 10, 15, 20,
+or 30 years — and enter the interest rate your lender has quoted or that
+you're comparing. If you know your annual property tax and home insurance
+costs, add them to see your full monthly payment rather than just principal
+and interest. Add a monthly HOA fee if the property has one, and a PMI rate if
+your down payment is under 20% (0.5% a year is the default, but your lender's
+quote is the number to use). The extra monthly payment field is optional: use
 it to see exactly how much time and interest an extra payment each month
 would save.
 
@@ -33,31 +35,78 @@ The monthly principal-and-interest payment is:
 M = P × [ i(1 + i)^n ] / [ (1 + i)^n − 1 ]
 ```
 
-Where **P** is the loan amount, **i** is the monthly interest rate (annual
-rate ÷ 12), and **n** is the total number of monthly payments (loan term in
-years × 12). This calculator applies that formula, then adds property tax,
-insurance, HOA, and PMI as separate monthly costs on top.
+- **M** is the monthly principal-and-interest payment.
+- **P** is the loan amount — the home price minus your down payment.
+- **i** is the monthly interest rate: the annual rate divided by 12, as a
+  decimal (6.5% becomes 0.065 ÷ 12, or about 0.0054).
+- **n** is the total number of monthly payments: the term in years × 12.
+
+This calculator then adds property
+tax and insurance (each divided by 12), any HOA fee, and PMI as separate
+monthly costs on top. PMI is charged as your annual PMI rate × the original
+loan amount ÷ 12, and the calculator walks the amortization schedule month by
+month to find when your balance falls to 80% of the original home price — at
+that point PMI drops out of the total.
 
 ## Example Calculation
 
-A $400,000 home with a $80,000 down payment (20%) leaves a $320,000 loan. At
-6.5% over 30 years, principal and interest come to about $2,023 a month. Add
-$400 a month in property tax and $125 in insurance, and the total monthly
-payment lands around $2,548 — with no PMI required, since the down payment
-already clears the 20% equity threshold.
+A $400,000 home with an $80,000 down payment (20%) leaves a $320,000 loan. At
+6.5% over 30 years, principal and interest come to $2,022.62 a month. Add
+$4,800 a year in property tax ($400 a month) and $1,500 in insurance ($125 a
+month), and the total monthly payment is $2,547.62 — with no PMI, since the
+down payment already clears the 20% threshold. Over 30 years you'd pay
+$408,142.36 in interest on top of the $320,000 borrowed.
+
+Now change one thing at a time:
+
+- **Put 10% down instead.** The loan grows to $360,000, principal and
+  interest rise to $2,275.44, and PMI at 0.5% adds $150 a month. The total is
+  $2,950.44. PMI lasts 95 months — just under eight years — before the
+  balance reaches 80% of the price.
+- **Add $200 a month in extra principal** to the original 20%-down loan. The
+  loan is paid off in 281 months instead of 360, and total interest falls to
+  $302,713.69 — a saving of about $105,400.
+- **Choose a 15-year term** at the same 6.5% rate. Principal and interest
+  rise to $2,787.54 a month, but total interest drops to $181,757.84. Freddie
+  Mac's weekly rate survey reports 15-year rates below 30-year rates, so the
+  real gap is often wider.
 
 ## What Affects Your Monthly Mortgage Payment?
 
-- **Loan amount** — a larger loan means a larger payment, roughly in
-  proportion, since the amortization formula scales linearly with principal.
+- **Loan amount** — the payment scales in direct proportion to the amount
+  borrowed.
 - **Interest rate** — even a small change compounds significantly over a
-  30-year term; a 1-point difference on a $320,000 loan changes the monthly
-  payment by more than $200.
-- **Loan term** — a 15-year loan carries a lower rate and far less total
-  interest, but a meaningfully higher monthly payment than a 30-year loan for
-  the same amount.
+  30-year term; on a $320,000 loan, moving from 6.5% to 7.5% raises the
+  monthly payment from $2,022.62 to $2,237.49.
+- **Loan term** — a shorter term means a higher monthly payment but far less
+  total interest, because the balance is outstanding for fewer years.
 - **Property tax and insurance** — these vary by location and coverage, and
   are often the most-overlooked piece of "how much house can I afford."
 - **Down payment** — beyond reducing the loan amount, a down payment below
   20% typically triggers PMI, an added monthly cost that disappears once
   you've built 20% equity.
+
+## Common Mistakes to Avoid
+
+- **Budgeting on principal and interest alone.** Lenders quote the P&I figure,
+  but your escrow payment for taxes and insurance comes out of the same
+  checking account. In the example above it adds $525 a month.
+- **Treating property tax as fixed.** Assessments and tax rates change, and
+  insurance premiums are repriced at renewal, so your escrow payment is
+  recalculated over time. Leave room in your budget for increases.
+- **Forgetting PMI on a low down payment.** At 10% down in the example, PMI
+  costs $150 a month for nearly eight years. Ask your lender for the actual
+  PMI rate rather than relying on the default.
+- **Comparing loans with different terms by monthly payment only.** A 30-year
+  loan always looks cheaper per month than a 15-year loan; compare total
+  interest as well, which this calculator shows alongside the payment.
+- **Assuming extra payments go to principal automatically.** Some servicers
+  apply extra money to the next scheduled payment unless you tell them
+  otherwise. Confirm it is credited to principal, or the savings shown here
+  won't materialize.
+
+## Sources
+
+- [Down Payments and PMI — Freddie Mac](https://myhome.freddiemac.com/buying/down-payments-and-pmi)
+- [Homeownership Costs: PMI, Taxes, Insurance and HOAs — Freddie Mac](https://myhome.freddiemac.com/owning/homeownership-costs)
+- [Primary Mortgage Market Survey (weekly mortgage rates) — Freddie Mac](https://www.freddiemac.com/pmms)

@@ -5,6 +5,7 @@ export const creditCardConfig: CalculatorConfig = {
   name: 'Credit Card Payoff Calculator',
   shortName: 'Credit Card Payoff',
   category: 'debt',
+  updated: '2026-10-14',
   summary: 'See how long a credit card balance takes to pay off, and the minimum-payment trap.',
   inputs: [
     {

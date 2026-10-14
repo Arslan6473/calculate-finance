@@ -8,11 +8,13 @@ effective APR once an origination fee is factored in.
 ## How to Use This Loan Calculator
 
 Enter the amount you're borrowing, the annual interest rate (APR), and the
-term in months. If your loan includes an origination fee — common with
-personal loans — enter it too; the calculator shows how much cash you'll
-actually receive and what that fee does to your true cost of borrowing. Add an
-extra monthly payment to see how much sooner you'd be debt-free and how much
-interest you'd avoid.
+term — from 2 to 7 years. If your loan includes an origination fee — common
+with personal loans — enter it in dollars; the calculator shows how much cash
+you'll actually receive and what that fee does to your true cost of
+borrowing. Add an extra monthly payment to see how much sooner you'd be
+debt-free and how much interest you'd avoid. The results include your
+monthly payment, total interest, total repaid, interest as a percentage of
+the amount borrowed, and a full amortization schedule.
 
 ## How Loan Payments Are Calculated
 
@@ -20,7 +22,8 @@ Like a mortgage, an instalment loan is amortized: the payment stays level, but
 the interest and principal portions shift every month as the balance falls.
 The amount of interest owed each month is simply the remaining balance
 multiplied by the monthly rate, so a larger balance early in the loan means a
-larger interest share of that month's payment.
+larger interest share of that month's payment. Whatever is left of the
+payment after interest reduces the balance.
 
 ## Loan Payment Formula
 
@@ -28,24 +31,45 @@ larger interest share of that month's payment.
 M = L × [ i(1 + i)^n ] / [ (1 + i)^n − 1 ]
 ```
 
-**L** is the loan amount, **i** is the monthly interest rate, and **n** is the
-number of monthly payments. When an origination fee is present, the effective
-APR is solved separately: it's the rate that makes the present value of your
-payment stream equal to the amount you actually received, rather than the
-amount you're contractually repaying.
+- **M** is the scheduled monthly payment.
+- **L** is the loan amount — the full amount you owe, including any
+  origination fee deducted from your proceeds.
+- **i** is the monthly interest rate: the annual rate ÷ 12, as a decimal.
+- **n** is the number of monthly payments in the term.
+
+When an origination fee is present, the effective APR is solved separately.
+It's the annual rate at which the present value of your payment stream equals
+the cash you actually received, rather than the amount you're contractually
+repaying. There's no closed-form solution, so the calculator finds that rate
+numerically. An extra monthly payment doesn't change the effective APR: it
+shortens the loan, but the cost of the credit you were offered is measured
+against the scheduled payment.
 
 ## Example Calculation
 
 A $25,000 loan at 8% APR over 5 years (60 months) has a monthly payment of
-about $507, with total interest of roughly $5,404 over the life of the loan.
-Add a $500 origination fee, and the amount actually disbursed drops to
-$24,500 — while the required payment stays the same, because it's still based
-on the full $25,000 owed. That gap between what you owe and what you received
-is what pushes the effective APR above the stated 8%.
+$506.91, with total interest of $5,414.59 — about 21.7% of the amount
+borrowed.
+
+Add a $1,000 origination fee, and the amount actually disbursed drops to
+$24,000, while the required payment stays at $506.91, because it's still
+based on the full $25,000 owed. Measured against the cash you received, the
+effective APR is 9.74%. A smaller $500 fee produces an effective APR of
+8.86%.
+
+Two other variations on the same loan:
+
+- **Pay an extra $100 a month.** The loan is repaid in 49 months instead of
+  60, and total interest falls to $4,325.29 — about $1,089 less.
+- **Stretch the term to 7 years (84 months).** The payment drops to $389.66,
+  but total interest rises to $7,731.05, roughly 43% more than the 5-year
+  loan.
 
 ## What Affects the Total Cost of a Loan
 
-- **Interest rate** — the single biggest lever on total interest paid.
+- **Interest rate** — the single biggest lever on total interest paid. Rates
+  also differ by loan type: the Federal Reserve's consumer credit release
+  reports average personal loan rates well above new-car loan rates.
 - **Term length** — a longer term lowers the monthly payment but increases
   total interest, since the balance stays higher for longer.
 - **Origination fees** — reduce the cash you receive without reducing what
@@ -53,3 +77,30 @@ is what pushes the effective APR above the stated 8%.
   matters.
 - **Extra payments** — any amount paid above the required payment goes
   straight to principal, shortening the loan and cutting future interest.
+- **Loan amount** — the payment and total interest both scale in proportion
+  to what you borrow, so borrowing only what you need is the simplest saving.
+
+## Common Mistakes to Avoid
+
+- **Comparing offers by interest rate instead of APR.** Two loans at 8% can
+  cost very different amounts if one deducts a fee upfront. Under the Truth
+  in Lending rules, prepaid finance charges such as origination fees are
+  reflected in the disclosed APR, so APR is the fairer comparison.
+- **Borrowing exactly what you need when a fee is deducted.** If you need
+  $25,000 in hand and the lender deducts a $1,000 fee, a $25,000 loan leaves
+  you $1,000 short. Check the disbursed amount, not just the loan amount.
+- **Choosing the longest term to get the lowest payment.** In the example,
+  going from 5 to 7 years cuts the payment by about $117 a month but adds
+  more than $2,300 in interest.
+- **Assuming extra payments are applied to principal.** Confirm with your
+  lender how extra money is credited, and whether the loan carries a
+  prepayment penalty, before relying on the savings shown here.
+- **Ignoring how interest is front-loaded.** Because interest is charged on
+  the current balance, early payments are interest-heavy. Paying a loan off
+  halfway through the term saves less interest than half the total.
+
+## Sources
+
+- [Regulation Z: Truth in Lending (Consumer Compliance Handbook) — Federal Reserve](https://www.federalreserve.gov/boarddocs/supmanual/cch/til.pdf)
+- [Consumer Credit G.19: Terms of Credit — Federal Reserve](https://www.federalreserve.gov/releases/g19/current/default.htm)
+- [Take Charge of Your Credit Cards (how APR works) — FDIC](https://www.fdic.gov/consumer-resource-center/2024-08/take-charge-your-credit-cards)

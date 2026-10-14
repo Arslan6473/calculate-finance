@@ -10,6 +10,7 @@ import { getCalculator } from '@/config/calculators'
 import { SITE } from '@/config/site'
 import { readGuideContent } from '@/lib/content/read-content'
 import { mdxComponents } from '@/components/content/mdx-components'
+import { EditorialByline } from '@/components/content/editorial-byline'
 import { Breadcrumbs } from '@/components/seo/breadcrumbs'
 import { JsonLd } from '@/components/seo/json-ld'
 import { breadcrumbSchema, guideArticleSchema } from '@/lib/seo/schema'
@@ -66,6 +67,7 @@ export default async function GuidePage({ params }: PageProps<'/guides/[slug]'>)
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-ink sm:text-4xl">{guide.title}</h1>
           <p className="mt-2 text-lg text-ink-muted">{guide.description}</p>
+          <EditorialByline updated={guide.updated} />
         </header>
 
         <MDXRemote

@@ -1,0 +1,118 @@
+"How much house can I afford?" usually means "how much will a lender let me
+borrow?" — and lenders answer that mostly with two debt-to-income ratios. This
+calculator applies both, works out which one actually limits you, and solves
+for the highest home price whose full monthly payment fits: principal,
+interest, property tax, insurance and HOA, not just the loan payment.
+
+## How to Use This Home Affordability Calculator
+
+Enter your gross annual income — before tax, the way a lender counts it — and
+the minimum monthly payments on any existing debts such as a car loan,
+student loans or credit cards. Leave out rent, since the new housing payment
+replaces it. Add the cash you plan to put down, the interest rate and loan
+term you expect, and your local property tax rate, home insurance cost and
+any HOA fee. The two DTI limits default to 28% and 36%; change them if your
+lender or loan program uses different numbers.
+
+## The 28/36 Rule
+
+The 28/36 rule is a long-standing guideline for conventional mortgages:
+
+- **Front-end ratio (28%)** — your total housing payment should be no more
+  than 28% of gross monthly income.
+- **Back-end ratio (36%)** — your housing payment *plus* all other monthly
+  debt payments should be no more than 36% of gross monthly income.
+
+Both have to be satisfied, so the one that leaves less room for housing is
+the one that binds. With little existing debt, the 28% rule usually binds.
+Once other debt payments exceed 8% of income, the 36% rule takes over.
+
+These are guidelines, not law. Fannie Mae, for example, caps total DTI at
+36% for manually underwritten loans but allows up to 45% with qualifying
+credit and reserves, and up to 50% through its automated underwriting.
+Approval also depends on credit score, cash reserves and your down payment.
+Treat the result as a realistic starting point, then check with a lender.
+
+## How the Maximum Price Is Calculated
+
+The monthly cost of a home rises in a straight line with its price, which
+means the price can be solved for exactly:
+
+```
+Max price = D + (B − I − H − t × D) ÷ (f + t)
+```
+
+Where **B** is the monthly housing budget from the binding rule, **D** is the
+down payment, **I** and **H** are monthly insurance and HOA, **t** is the
+monthly property tax rate (annual rate ÷ 12), and **f** is the monthly loan
+payment per dollar borrowed from the standard amortization formula. The
+result is rounded down to the dollar so the payment never exceeds the limit.
+
+## Example Calculation
+
+Take a household earning $100,000 a year with $500 a month in car and
+student loan payments, $60,000 saved for a down payment, a 6.5% 30-year
+mortgage, a 1.1% property tax rate, $1,500 a year in insurance and no HOA.
+
+Gross monthly income is $8,333.33. The 28% front-end limit allows $2,333.33
+for housing. The 36% back-end limit allows $3,000 for all debts, which
+leaves $2,500 for housing after the $500 of existing payments. The front-end
+limit is lower, so it binds.
+
+Solving for the price gives a maximum of **$357,530**, with a loan of
+$297,530. The monthly payment at that price breaks down as:
+
+| Component | Monthly |
+| --- | --- |
+| Principal and interest | $1,880.59 |
+| Property tax | $327.74 |
+| Home insurance | $125.00 |
+| **Total** | **$2,333.33** |
+
+Now raise the existing debt payments to $1,000 a month. The back-end limit
+drops to $3,000 − $1,000 = $2,000, below the $2,333.33 front-end limit, so
+the 36% rule binds and the maximum price falls to **$311,473**.
+
+The $60,000 down payment in the first case is about 16.8% of the price,
+below 20%, so most conventional lenders would also charge private mortgage
+insurance. That cost is not included here and would lower the maximum
+slightly.
+
+## Common Mistakes to Avoid
+
+- **Entering take-home pay instead of gross income.** Both ratios are
+  measured against income before tax, so using net pay understates what a
+  lender would allow, and the comparison no longer matches the rule.
+- **Leaving out small debts.** A $150 minimum card payment counts toward the
+  back-end limit just like a car loan, and once that limit binds it cuts the
+  housing budget by the same $150.
+- **Treating the maximum as the target.** The result is the most the
+  ratios allow, not what fits your budget once childcare, savings and
+  repairs are counted.
+- **Forgetting mortgage insurance.** With less than 20% down, a conventional
+  loan usually adds a monthly premium that this calculation doesn't include.
+- **Spending the whole down payment.** Closing costs, moving and early
+  repairs also need cash, so keep some savings back instead of putting every
+  dollar into the price.
+
+## What Affects How Much House You Can Afford
+
+- **Income** — both limits are percentages of gross income, so the budget
+  scales directly with what you earn.
+- **Existing debt payments** — every dollar of monthly debt above the gap
+  between the two limits removes a dollar from your housing budget.
+- **Interest rate** — at 6.5% a 30-year loan costs about $6.32 a month per
+  $1,000 borrowed; at 7.5% it is about $6.99, which shrinks the loan you can
+  carry by roughly a tenth.
+- **Down payment** — cash adds to the price one-for-one, and a larger share
+  down can also avoid PMI.
+- **Property tax, insurance and HOA** — these use part of the same monthly
+  budget, so high-tax areas or condo fees reduce the price you can afford.
+- **Loan term** — a 15-year loan has a lower rate but a much higher payment,
+  so it supports a lower price than a 30-year loan on the same income.
+
+## Sources
+
+- [Selling Guide B3-6-02, Debt-to-Income Ratios — Fannie Mae](https://selling-guide.fanniemae.com/sel/b3-6-02/debt-income-ratios)
+- [Selling Guide B7-1-01, Provision of Mortgage Insurance — Fannie Mae](https://selling-guide.fanniemae.com/sel/b7-1-01/provision-mortgage-insurance)
+- [Primary Mortgage Market Survey (weekly mortgage rates) — Freddie Mac](https://www.freddiemac.com/pmms)

@@ -11,6 +11,7 @@ import { SITE } from '@/config/site'
 import { AFFILIATE_PLACEMENTS } from '@/config/affiliate'
 import { readCalculatorContent } from '@/lib/content/read-content'
 import { mdxComponents } from '@/components/content/mdx-components'
+import { EditorialByline } from '@/components/content/editorial-byline'
 import { CALCULATOR_COMPONENTS } from '@/components/calculators/instances'
 import { Breadcrumbs } from '@/components/seo/breadcrumbs'
 import { JsonLd } from '@/components/seo/json-ld'
@@ -80,6 +81,7 @@ export default async function CalculatorPage({ params }: PageProps<'/calculators
       <header className="mb-8 max-w-3xl">
         <h1 className="text-3xl font-bold text-ink sm:text-4xl">{config.name}</h1>
         <p className="mt-2 text-lg text-ink-muted">{config.summary}</p>
+        <EditorialByline updated={config.updated} />
       </header>
 
       {CalculatorComponent && <CalculatorComponent />}

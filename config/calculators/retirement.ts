@@ -5,6 +5,7 @@ export const retirementConfig: CalculatorConfig = {
   name: 'Retirement Calculator',
   shortName: 'Retirement',
   category: 'investment',
+  updated: '2026-10-14',
   summary: 'Find out if you are on track for retirement, and how long your savings will last.',
   inputs: [
     {

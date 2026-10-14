@@ -5,6 +5,7 @@ export const loanConfig: CalculatorConfig = {
   name: 'Loan Calculator',
   shortName: 'Loan',
   category: 'loans-mortgages',
+  updated: '2026-10-14',
   summary: 'Calculate the payment, total interest, and effective APR on any instalment loan.',
   inputs: [
     {

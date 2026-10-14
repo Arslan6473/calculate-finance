@@ -14,6 +14,8 @@ const STATIC_ROUTES = [
   { path: '/calculators', changeFrequency: 'weekly' as const, priority: 0.9 },
   { path: '/guides', changeFrequency: 'weekly' as const, priority: 0.7 },
   { path: '/about', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/editorial-policy', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/changelog', changeFrequency: 'monthly' as const, priority: 0.3 },
   { path: '/disclaimer', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
   { path: '/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
@@ -32,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...CALCULATORS.map((calc) => ({
       url: `${SITE.url}/calculators/${calc.slug}`,
-      lastModified: now,
+      lastModified: new Date(calc.updated),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
@@ -44,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...GUIDES.map((guide) => ({
       url: `${SITE.url}/guides/${guide.slug}`,
-      lastModified: now,
+      lastModified: new Date(guide.updated),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),

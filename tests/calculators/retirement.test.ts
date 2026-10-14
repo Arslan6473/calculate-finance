@@ -110,4 +110,29 @@ describe('calculateRetirement', () => {
     expect(Number.isFinite(result.balanceAtRetirement)).toBe(true)
     expect(Number.isFinite(result.targetPortfolio)).toBe(true)
   })
+  it('sizes the target so that exactly that portfolio funds every year of retirement', () => {
+    const base = {
+      currentAge: 40,
+      retirementAge: 65,
+      currentSavings: 50_000,
+      monthlyContribution: 800,
+      preRetirementReturn: 7,
+      postRetirementReturn: 5,
+      desiredAnnualIncome: 60_000,
+      annualInflation: 3,
+      lifeExpectancy: 90,
+    }
+    const { targetPortfolio, incomeNeededAtRetirement } = calculateRetirement(base)
+
+    // Replay the drawdown from exactly the target, withdrawing at the start of each year.
+    let balance = targetPortfolio
+    let withdrawal = incomeNeededAtRetirement
+    for (let year = 1; year <= 25; year++) {
+      balance -= withdrawal
+      expect(balance).toBeGreaterThan(-1)
+      balance *= 1.05
+      withdrawal *= 1.03
+    }
+    expect(Math.abs(balance)).toBeLessThan(1)
+  })
 })

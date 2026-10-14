@@ -2,7 +2,8 @@ Credit card debt behaves differently from a mortgage or auto loan, and that
 difference is exactly what makes minimum payments so dangerous. Because the
 minimum is usually a percentage of your current balance, it shrinks as your
 balance shrinks — so an ever-smaller share of each payment goes to principal,
-and payoff can stretch out for decades.
+and payoff can stretch out for decades. This calculator simulates your balance
+month by month to show how long a payment plan really takes and what it costs.
 
 ## How to Use This Credit Card Payoff Calculator
 
@@ -13,6 +14,34 @@ uses (check a recent statement — 2% of the balance with a $25 floor is
 typical). If you expect to keep charging the card, add an estimated monthly
 purchase amount to see its effect on payoff time.
 
+The results show the number of months to reach zero, the total interest, the
+total you'll pay, and interest as a percentage of the starting balance. When
+you choose a fixed payment, the calculator also runs the minimum-payment plan
+on the same balance so you can see exactly what the difference is worth.
+
+## How the Payoff Is Calculated
+
+Credit card interest is charged on the balance each month, so the calculator
+works through the debt one month at a time rather than using a single
+formula:
+
+```
+Each month:
+  balance  = balance + new purchases
+  interest = balance × (APR ÷ 12)
+  balance  = balance + interest
+  payment  = your fixed amount, or the minimum:
+             the larger of (minimum % × balance) and the dollar floor
+  balance  = balance − payment
+Repeat until the balance reaches zero, or for at most 600 months.
+```
+
+In plain terms: new spending is added first, a month of interest is charged
+on the result, and then your payment comes off. The final payment is trimmed
+to whatever is left. Card issuers
+typically work out interest from daily balances, so your statements may
+differ by a few cents, but the timeline and total cost will be very close.
+
 ## The Minimum-Payment Trap
 
 A fixed payment stays the same every month, so as your balance falls, a
@@ -21,7 +50,9 @@ minimum payment does the opposite: it's recalculated from the current
 balance each month, so it shrinks right along with your progress, and an
 ever-smaller share goes to principal. On a high-rate balance, this can mean
 the payoff timeline stretches past what most people would expect from looking
-at the balance alone.
+at the balance alone. Federal law recognizes the problem: since the Credit
+CARD Act of 2009, statements must carry a minimum payment warning and show
+how long the minimum-only plan would take.
 
 ## How This Calculator Determines If Payoff Is Even Possible
 
@@ -30,21 +61,58 @@ then the payment is applied. If the payment doesn't exceed that month's
 interest, the balance cannot decrease — it can only grow or stay flat. This
 calculator checks for that condition and reports plainly when a payment plan
 cannot pay off the balance, rather than showing a misleadingly distant payoff
-date.
+date. It also stops after 50 years and reports the plan as unable to clear
+the balance if it hasn't reached zero by then.
 
 ## Example Calculation
 
-A $5,000 balance at 22% APR, paid down with a fixed $250 a month, clears in
-about 23 months and costs roughly $686 in interest. The same balance under a
-2%-of-balance minimum payment with a $25 floor would take dramatically
-longer and cost several times as much in interest — a direct, numeric
-illustration of the minimum-payment trap.
+Take a $5,000 balance at 22% APR, paid down with a fixed $250 a month and no
+new purchases.
+
+- First month's interest: $5,000 × 0.22 ÷ 12 = **$91.67**
+- First month's principal: $250 − $91.67 = **$158.33**
+- Time to pay off: **26 months**, with a final payment of $35.72
+- Total interest: **$1,285.72**, or about 26% of the starting balance
+- Total paid: **$6,285.72**
+
+Raising the payment to $350 clears the same balance in 17 months for $851.20
+of interest. Dropping it to $150 stretches payoff to 52 months and $2,798.05
+of interest. A payment of $90 is below the first month's interest, so the
+balance would grow and the calculator reports that it can't be paid off.
+
+Now compare the card's minimum of 2% of the balance with a $25 floor. The
+first required payment is just $101.83, and because it falls with the
+balance, the debt is still not gone after 50 years: about $1,474 remains
+after $35,314.61 of payments, $31,788.93 of which is interest. Continuing to
+charge $100 a month while paying a fixed $250, by contrast, still clears the
+original balance — but it takes 54 months and $2,961.95 of interest.
+
+## Common Mistakes to Avoid
+
+- **Entering a payment below the interest charge.** At 22% APR, a $5,000
+  balance accrues about $92 of interest in a month. Any payment at or below
+  that amount can never reduce the balance.
+- **Guessing the minimum-payment formula.** Issuers calculate minimums in
+  different ways, and some add that month's interest and fees to a small
+  percentage. Copy the method from your cardholder agreement or statement.
+- **Using a promotional rate as the long-term APR.** If a 0% or reduced rate
+  is about to expire, run the plan again at the rate that follows it.
+- **Forgetting ongoing spending.** A plan that ignores regular purchases on
+  the same card will look faster than it really is.
+- **Lowering the payment as the balance falls.** Keeping the payment fixed is
+  what makes payoff accelerate; letting it drift down with the balance
+  recreates the minimum-payment trap.
 
 ## What Affects Your Payoff Time and Cost
 
 - **Payment size relative to balance** — the single biggest factor; even a
   modest fixed payment above the minimum can cut years off the payoff time.
-- **APR** — credit card rates are often far higher than other debt, so
-  interest can dominate the total cost if payoff is slow.
+- **APR** — credit card rates are often far higher than other consumer debt,
+  so interest can dominate the total cost if payoff is slow.
 - **New purchases** — ongoing spending on the card competes directly with
   your payment for reducing the balance.
+
+## Sources
+
+- [Credit CARD Act of 2009, including the minimum payment warning — U.S. Government Publishing Office](https://www.govinfo.gov/content/pkg/PLAW-111publ24/html/PLAW-111publ24.htm)
+- [Consumer Credit (G.19), including credit card interest rates — Federal Reserve](https://www.federalreserve.gov/releases/g19/current/default.htm)

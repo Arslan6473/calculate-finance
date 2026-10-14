@@ -5,6 +5,7 @@ export const roiConfig: CalculatorConfig = {
   name: 'ROI Calculator',
   shortName: 'ROI',
   category: 'investment',
+  updated: '2026-10-14',
   summary: 'Calculate return on investment, annualized ROI, and break-even time.',
   inputs: [
     {

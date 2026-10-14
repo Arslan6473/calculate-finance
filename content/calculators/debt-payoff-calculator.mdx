@@ -11,7 +11,8 @@ minimum payment. Choose a strategy — avalanche targets the highest interest
 rate first, snowball targets the smallest balance first — and enter how much
 extra you can put toward debt each month beyond the minimums. The calculator
 simulates every debt month by month under your chosen strategy and shows the
-comparison against the alternative.
+comparison against the alternative: your debt-free date, total interest,
+total paid, and the month each debt is cleared.
 
 ## How the Snowball Effect Works
 
@@ -20,6 +21,31 @@ it doesn't disappear, it rolls into the extra payment attacking whichever debt
 is next in line. That rollover is what makes both strategies accelerate over
 time rather than progressing at a constant pace, and it's the main reason
 either one beats paying only minimums on every debt indefinitely.
+
+## How the Payoff Is Calculated
+
+Each month, the simulation runs these steps:
+
+```
+Interest on each debt = Balance × (APR ÷ 12)
+Monthly budget        = Sum of all original minimums + Extra payment
+Target payment        = Budget − Minimums paid on every other debt
+```
+
+- **Balance** is what's left on a debt after last month's payment, and
+  **APR** is its annual interest rate as a decimal.
+- **Sum of all original minimums** stays in the budget even after a debt is
+  cleared — that's the rollover.
+- **Target** is the first debt in the strategy's order: highest APR for
+  avalanche, smallest balance for snowball. When two debts tie, avalanche
+  picks the smaller balance and snowball the higher rate.
+
+Interest is added to every debt first, then each non-target debt gets its
+minimum, and everything left goes to the target. The simulation repeats until
+every balance reaches zero. Before it starts, the calculator checks whether
+your total monthly payment exceeds the interest accruing across all debts.
+If it doesn't, the balance can never shrink, and the calculator says so
+rather than showing a payoff date that doesn't exist.
 
 ## Snowball vs. Avalanche
 
@@ -32,18 +58,63 @@ lowest-cost path in pure dollar terms.
 
 ## Example Calculation
 
-Three debts — a $4,500 credit card at 22%, a $1,200 store card at 27%, and a
-$12,000 car loan at 6.5% — with a combined $425 in minimum payments and $200
-extra a month, would have avalanche attack the 27% store card first (despite
-its smaller balance being incidental), while snowball would also start there
-since it happens to be the smallest balance too. The two strategies would
-diverge once the store card is cleared and the next target differs.
+Take three debts with $260 in combined minimums and $200 extra a month, for
+$460 in total:
+
+- A $6,000 credit card at 24% APR, $150 minimum.
+- A $2,500 personal loan at 11% APR, $80 minimum.
+- A $900 store card at 19% APR, $30 minimum.
+
+**Avalanche** attacks the 24% credit card first and clears it in month 22,
+then the store card in month 24 and the personal loan in month 27. Total
+interest: $2,089.93.
+
+**Snowball** clears the $900 store card in month 5 and the personal loan in
+month 13, then finishes the credit card in month 27. Total interest:
+$2,609.86.
+
+Both are debt-free in 27 months, but snowball costs $519.93 more, because the
+24% card gets only its minimum payment for the first 13 months. The extra $200
+is what drives the timeline: with no extra payment, avalanche takes 59 months
+and $5,787.96 in interest on the same debts.
+
+Order doesn't always matter. When the smallest balance also carries the
+highest rate, the next-smallest the next-highest, and so on, both strategies
+pick the same targets and produce identical results. The calculator's
+starting debts are an example: either way, they're cleared in 41 months with
+$3,496.63 in total interest.
 
 ## What Determines How Much a Strategy Saves
 
 - **Spread between interest rates** — when your highest-rate debt is far
   above the others, avalanche's savings over snowball are largest.
+- **Where the high rate sits** — the gap is widest when the highest-rate
+  debt is also the largest, as in the example, because snowball leaves it
+  for last.
 - **Extra payment size** — a larger extra payment shortens payoff time for
   both strategies and shrinks the dollar gap between them.
 - **Number of debts** — more debts mean more rollover events, amplifying the
   snowball effect for whichever strategy you choose.
+
+## Common Mistakes to Avoid
+
+- **Spending a freed-up minimum payment.** When a debt is cleared, its
+  minimum must roll into the next target. Absorbing it into everyday
+  spending removes the effect that makes both strategies work.
+- **Entering the current minimum as if it were fixed.** Credit card minimums
+  usually fall as the balance falls. The simulation keeps your total payment
+  at the starting level, so to match it, keep paying at least that amount.
+- **Adding new charges while paying down.** The simulation assumes balances
+  only go down. New purchases on a card you're paying off push the debt-free
+  date back.
+- **Choosing snowball without checking the cost.** Snowball's quick wins
+  have a price that depends on your debts — $519.93 in the example. Compare
+  both results before committing, so you know what the motivation costs.
+- **Ignoring promotional rates that expire.** A 0% balance-transfer or
+  introductory rate will rise when the promotion ends. Enter the rate you'll
+  actually pay, or rerun the plan when it changes.
+
+## Sources
+
+- [Take Charge of Your Credit Cards — FDIC](https://www.fdic.gov/consumer-resource-center/2024-08/take-charge-your-credit-cards)
+- [Consumer Credit G.19: Terms of Credit (credit card and auto loan rates) — Federal Reserve](https://www.federalreserve.gov/releases/g19/current/default.htm)

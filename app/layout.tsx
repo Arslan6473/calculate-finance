@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 
 import { SITE } from '@/config/site'
 import { THEME_INIT_SCRIPT, ThemeProvider } from '@/components/theme-provider'
@@ -59,6 +60,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             </TooltipProvider>
           </CurrencyProvider>
         </ThemeProvider>
+        {/* Cookieless page-view analytics — consistent with the privacy policy's
+            "no individual profiles" commitment. Inactive outside Vercel. */}
+        <Analytics />
       </body>
     </html>
   )

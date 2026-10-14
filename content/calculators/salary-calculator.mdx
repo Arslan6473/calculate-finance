@@ -8,10 +8,12 @@ a single flat-percentage estimate.
 
 Enter your pay as an annual salary, a monthly amount, or an hourly rate — if
 hourly, also enter your typical hours per week. Choose how often you're
-actually paid and your filing status, since both change the numbers. Enter
-your combined state and local tax rate as a flat percentage; add any pre-tax
-deductions (like a 401(k) or HSA) and post-tax deductions (like a Roth
-401(k)) if they apply to you.
+actually paid (weekly, every two weeks, twice a month, or monthly) and your
+filing status, since both change the numbers. Enter your combined state and
+local tax rate as a flat percentage; add any annual pre-tax deductions (like
+a traditional 401(k)) and post-tax deductions (like a Roth 401(k)) if they
+apply to you. The results show your take-home pay per year, per month, and
+per paycheck, along with each tax and your effective and marginal rates.
 
 ## How Take-Home Pay Is Calculated
 
@@ -21,26 +23,60 @@ standard deduction from your gross income. Social Security is 6.2% of wages
 up to the annual wage base, and Medicare is 1.45% of all wages, with an
 additional 0.9% surtax above a filing-status threshold — both calculated on
 your full gross wages, since 401(k) contributions reduce income tax but not
-FICA. State and local tax is applied as the flat rate you provide, since it
-varies too much by location to compute precisely without knowing your state.
+FICA. State and local tax is applied as the flat rate you provide, to income
+after pre-tax deductions, since it varies too much by location to compute
+precisely without knowing your state.
+
+## Take-Home Pay Formula
+
+```
+Taxable income = Gross − Pre-tax deductions − Standard deduction
+Federal tax    = Σ (income within each bracket × that bracket's rate)
+FICA           = 6.2% × wages up to $184,500 + 1.45% × all wages
+                 + 0.9% × wages above the Additional Medicare threshold
+State tax      = State rate × (Gross − Pre-tax deductions)
+Take-home      = Gross − Federal tax − FICA − State tax
+                 − Pre-tax deductions − Post-tax deductions
+```
+
+- **Gross** is your annual pay before anything is taken out. Hourly pay is
+  converted as rate × hours per week × 52.
+- **Standard deduction** for 2026 is $16,100 for single filers and married
+  filing separately, $32,200 for married filing jointly, and $24,150 for
+  heads of household.
+- **Σ** means "add up": each slice of taxable income is taxed only at the
+  rate of the bracket it falls in.
+- The Additional Medicare threshold is $200,000 for single filers and heads
+  of household, $250,000 for married filing jointly, and $125,000 for
+  married filing separately.
 
 ## Marginal Rate vs. Effective Rate
 
 Your marginal tax rate is what you pay on your next dollar of income — the
-rate of your highest tax bracket. Your effective rate is your total tax
-divided by your total income, and it's always lower than your marginal rate,
-because every dollar below your top bracket is taxed at a lower rate. This
-calculator shows both, because conflating them is one of the most common
-misunderstandings about how income tax actually works.
+rate of your highest federal bracket. Your federal effective rate is your
+income tax divided by your gross income, and it's always lower than your
+marginal rate, because every dollar below your top bracket is taxed at a
+lower rate. This calculator shows both, but its effective rate includes FICA
+and state tax too, so it reflects everything taken for taxes — which is why
+it can end up above the marginal federal rate, as in the example below.
 
 ## Example Calculation
 
-A single filer earning $85,000 a year with no pre-tax deductions and a 5%
-state tax rate would owe federal tax calculated across the 10%, 12%, and 22%
-brackets on their taxable income after the standard deduction, plus 6.2%
-Social Security and 1.45% Medicare on the full $85,000, plus 5% state tax on
-their taxable income. The combination typically leaves a take-home percentage
-in the high 70s, though the exact figure depends on all the inputs above.
+A single filer earning $85,000 a year, paid every two weeks, with a 5% state
+tax rate and no deductions:
+
+- Taxable income is $68,900 after the $16,100 standard deduction.
+- Federal tax is $9,870: $1,240 at 10%, $4,560 at 12%, and $4,070 at 22%.
+- Social Security is $5,270 and Medicare is $1,232.50.
+- State tax is $4,250.
+
+Total tax is $20,622.50, leaving $64,377.50 a year — $2,476.06 per biweekly
+paycheck, or 75.74% of gross. The effective tax rate is 24.26%; the marginal
+federal rate is 22%.
+
+Now add a $6,000 traditional 401(k) contribution. Federal tax falls to $8,550
+and state tax to $3,950, while FICA is unchanged. Take-home drops to
+$59,997.50 — only $4,380 less, even though $6,000 went into savings.
 
 ## What Affects Your Take-Home Pay
 
@@ -50,5 +86,31 @@ in the high 70s, though the exact figure depends on all the inputs above.
   but not the wages FICA is calculated on.
 - **State and local tax** — varies enormously by location; a handful of
   states charge none at all.
-- **Income level** — higher earners cross into higher brackets and,
-  eventually, the additional Medicare surtax.
+- **Income level** — higher earners cross into higher brackets, stop paying
+  Social Security tax above the wage base, and eventually owe the additional
+  Medicare surtax.
+
+## Common Mistakes to Avoid
+
+- **Thinking a raise into a higher bracket lowers take-home pay.** Only the
+  income above the bracket threshold is taxed at the higher rate, so bracket
+  math alone never makes a raise shrink your after-tax pay.
+- **Using your marginal rate to estimate total tax.** In the example, the
+  22% bracket applies to just $18,500 of income; the effective rate is what
+  determines your paycheck.
+- **Assuming 401(k) contributions avoid all taxes.** Traditional 401(k)
+  deferrals reduce income tax but are still subject to Social Security and
+  Medicare tax.
+- **Ignoring unpaid time off on hourly pay.** The calculator multiplies
+  your hourly rate by 52 weeks. If you take unpaid weeks off, your real
+  annual gross is lower.
+- **Expecting your paycheck to match exactly.** Employers withhold using
+  IRS withholding tables and your W-4, and benefits such as health premiums
+  vary. This is an estimate of annual liability, not a pay stub.
+
+## Sources
+
+- [IRS Releases Tax Inflation Adjustments for Tax Year 2026 — IRS](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill)
+- [Topic No. 751, Social Security and Medicare Withholding Rates — IRS](https://www.irs.gov/taxtopics/tc751)
+- [Questions and Answers for the Additional Medicare Tax — IRS](https://www.irs.gov/businesses/small-businesses-self-employed/questions-and-answers-for-the-additional-medicare-tax)
+- [Topic No. 424, 401(k) Plans — IRS](https://www.irs.gov/taxtopics/tc424)

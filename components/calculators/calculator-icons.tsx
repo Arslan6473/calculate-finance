@@ -1,15 +1,27 @@
 import type { LucideIcon } from 'lucide-react'
 import {
+  ArrowUpRight,
   Briefcase,
+  Building,
   Building2,
   Calculator,
+  CarFront,
+  ChartNoAxesCombined,
+  Clock,
   CreditCard,
+  HandCoins,
   Home,
+  KeyRound,
   Landmark,
   LineChart,
   Percent,
+  Target,
   PiggyBank,
+  RefreshCcw,
+  Scale,
+  TrendingDown,
   TrendingUp,
+  Timer,
   Wallet,
 } from 'lucide-react'
 
@@ -32,6 +44,18 @@ const CALCULATOR_ICONS: Record<string, LucideIcon> = {
   'credit-card-payoff-calculator': CreditCard,
   'roi-calculator': Percent,
   'rent-vs-buy-calculator': Building2,
+  'hourly-to-salary-calculator': Clock,
+  'raise-calculator': ArrowUpRight,
+  'overtime-calculator': Timer,
+  'home-affordability-calculator': HandCoins,
+  'rent-affordability-calculator': KeyRound,
+  'rental-property-calculator': Building,
+  'savings-goal-calculator': Target,
+  'inflation-calculator': TrendingDown,
+  'cagr-calculator': ChartNoAxesCombined,
+  'auto-loan-calculator': CarFront,
+  'refinance-calculator': RefreshCcw,
+  'debt-to-income-calculator': Scale,
 }
 
 const CATEGORY_ICONS: Record<CategorySlug, LucideIcon> = {

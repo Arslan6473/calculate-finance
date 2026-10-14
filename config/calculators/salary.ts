@@ -5,6 +5,7 @@ export const salaryConfig: CalculatorConfig = {
   name: 'Salary Calculator',
   shortName: 'Salary',
   category: 'salary-income',
+  updated: '2026-10-14',
   summary: 'Estimate your take-home pay after 2026 US federal tax and FICA.',
   inputs: [
     {
@@ -123,7 +124,7 @@ export const salaryConfig: CalculatorConfig = {
   ],
   related: ['retirement-calculator', 'debt-payoff-calculator', 'loan-calculator', 'investment-calculator'],
   seo: {
-    title: 'Salary Calculator — Take-Home Pay After Tax | Calcxs',
+    title: 'US Salary Calculator — 2026 Take-Home Pay | Calcxs',
     description:
       'Free salary calculator using real 2026 US federal tax brackets and FICA. See your take-home pay, effective tax rate, and per-paycheck amount.',
     keywords: ['salary calculator', 'take home pay calculator', 'paycheck calculator', 'net pay calculator'],

@@ -1,7 +1,9 @@
 Every loan advertisement shows an interest rate, and most show an APR too —
 and they're almost never the same number. Knowing what separates them is the
 difference between comparing loans accurately and being misled by whichever
-number happens to look better.
+number happens to look better. This guide works through the math that turns
+fees into an APR, what the law counts as a finance charge, and where APR can
+point you the wrong way.
 
 ## What the Interest Rate Tells You
 
@@ -20,6 +22,10 @@ receive the full amount in cash when a fee is deducted upfront, the true cost
 of borrowing is higher than the interest rate alone suggests. APR is the
 number designed to reflect that.
 
+In the U.S., APR is defined by the Truth in Lending Act and its implementing
+rule, **Regulation Z**, which requires lenders to disclose it on consumer
+loans.
+
 ## A Concrete Example
 
 Consider a $10,000 loan at 8% interest over 3 years with no fee: the interest
@@ -29,6 +35,130 @@ payment calculated on $10,000 at 8% — but you only received $9,500. Measured
 against what you actually got, the true annual cost is higher than 8%, and
 that higher figure is the APR.
 
+## How APR Is Actually Calculated
+
+Regulation Z defines APR as the rate that makes the present value of your
+payment schedule equal to the **amount financed** — roughly, the loan amount
+minus prepaid finance charges such as a fee deducted at closing. There's no
+closed-form formula; it's solved by trial and error or with a financial
+calculator.
+
+### Step 1: Find the Payment and the Amount Financed
+
+For the $10,000, 8%, 36-month loan above, the standard amortization formula
+gives:
+
+```
+Payment = $10,000 × (0.08 ÷ 12) ÷ (1 − (1 + 0.08 ÷ 12)^−36) = $313.36
+```
+
+Over 36 months you pay $313.36 × 36 = **$11,281.09**, of which **$1,281.09**
+is interest. With the $500 fee deducted, the amount financed is **$9,500**.
+
+### Step 2: Solve for the Rate
+
+Find the annual rate at which 36 monthly payments of $313.36 have a present
+value of exactly $9,500:
+
+| Trial annual rate | Present value of 36 payments |
+| --- | --- |
+| 8.00% | $10,000 |
+| 11.00% | about $9,572 |
+| 11.52% | about $9,500 |
+| 12.00% | about $9,435 |
+
+The rate that balances the equation is about **11.52%** — the APR. The fee
+costs you the equivalent of more than three and a half percentage points a
+year, even though the contract rate is 8%. The interest plus the fee,
+$1,781.09, is what Regulation Z calls the finance charge.
+
+### The Term Changes the Answer
+
+The same $500 fee looks very different over different terms:
+
+| Term | Monthly payment | APR with $500 fee |
+| --- | --- | --- |
+| 1 year | $869.88 | 17.76% |
+| 3 years | $313.36 | 11.52% |
+| 5 years | $202.76 | 10.20% |
+
+A fixed-dollar fee spread across fewer payments pushes the APR up much more.
+You can reproduce these figures in the [loan
+calculator](/calculators/loan-calculator) or the [auto loan
+calculator](/calculators/auto-loan-calculator).
+
+## What Counts as a Finance Charge
+
+APR can only be as complete as the costs fed into it. Regulation Z defines
+the **finance charge** as charges you pay as a condition of getting credit.
+At a high level, it includes:
+
+- **Interest**
+- **Points, loan fees, assumption fees, and finder's fees**
+- **Premiums for insurance that protects the lender** against your default,
+  such as mortgage insurance
+
+For loans secured by real estate, several common closing costs are
+**excluded**: title examination and title insurance, document preparation
+and notary fees, appraisal and credit report fees, and amounts paid into
+escrow for taxes and insurance. Application fees charged to every applicant
+and points paid by the seller are excluded too.
+
+So a mortgage APR captures the lender's charges but not all the cash you'll
+need at closing. Compare the closing cost section of each Loan Estimate
+alongside the APR.
+
+## A Mortgage Example: Points vs. No Points
+
+Suppose you're borrowing **$300,000 on a 30-year fixed loan** with two
+offers. The rates are examples chosen for the arithmetic, not market quotes:
+
+| | Loan A | Loan B |
+| --- | --- | --- |
+| Interest rate | 6.25% | 6.50% |
+| Discount points | 2 points ($6,000) | None |
+| Origination fee | $1,500 | $1,500 |
+| Monthly principal and interest | $1,847.15 | $1,896.20 |
+| APR | **6.49%** | **6.55%** |
+
+Loan A has the lower APR, and held for the full 30 years it's cheaper. But
+APR assumes you keep the loan to maturity, and many people sell or refinance
+sooner. Here's the total of interest plus upfront charges if each loan is
+paid off early:
+
+| Paid off after | Loan A cost | Loan B cost | Cheaper option |
+| --- | --- | --- | --- |
+| 5 years | $98,341 | $96,105 | B, by $2,236 |
+| 10 years | $181,871 | $183,373 | A, by $1,502 |
+| 30 years | $372,475 | $384,133 | A, by $11,659 |
+
+The break-even in this example is **8 years** (96 months). If you expect to
+move or refinance sooner, the upfront fees deserve more weight than the APR
+gives them. The [mortgage calculator](/calculators/mortgage-calculator)
+shows the payment on each offer, and the [refinance
+calculator](/calculators/refinance-calculator) runs the same break-even math
+when you're replacing an existing loan.
+
+## APR vs. APY
+
+On the savings side, banks quote **annual percentage yield (APY)**, defined
+under the Truth in Savings Act. APR is a simple annual rate — 6% APR charged
+monthly is 0.5% a month — while APY includes the effect of interest earning
+interest within the year:
+
+```
+APY = (1 + APR ÷ 12)^12 − 1
+```
+
+| APR | APY, monthly compounding | APY, daily compounding |
+| --- | --- | --- |
+| 6% | 6.17% | 6.18% |
+| 24% | 26.82% | 27.11% |
+
+Because APR leaves out compounding, it understates the true annual cost of
+a balance that compounds. When comparing a loan to a savings account, or a
+credit card to an investment return, convert both to the same basis first.
+
 ## Why This Matters When Comparing Loans
 
 A loan with a lower interest rate but a large origination fee can end up more
@@ -37,13 +167,36 @@ over a shorter term, where the fee makes up a bigger share of the total cost.
 Comparing by interest rate alone can lead to the wrong choice; comparing by
 APR accounts for the fee automatically.
 
+APR comparisons work best between loans of the same amount and term. On an
+adjustable-rate loan, the APR rests on assumptions about future rates and
+can't predict what you'll actually pay.
+
 ## Where This Doesn't Apply the Same Way
 
 Credit cards quote APR too, but typically without an origination fee baked
 in, so the "interest rate vs. APR" gap described here is mainly relevant to
-instalment loans like mortgages, auto loans, and personal loans.
+installment loans like mortgages, auto loans, and personal loans. The
+[credit card payoff calculator](/calculators/credit-card-payoff-calculator)
+shows what a card's APR costs over time.
+
+## Putting It Together
+
+The interest rate sets your payment; the APR folds in the lender's fees and
+restates the cost as the rate at which your payments equal the money you
+actually received. It's the best single number for comparing loans of the
+same size and term, as long as you remember it assumes you'll keep the loan
+to the end and leaves out some closing costs.
 
 Use the [loan calculator](/calculators/loan-calculator) to see the exact gap
 between a loan's stated rate and its effective APR once you enter an
 origination fee, or the [mortgage calculator](/calculators/mortgage-calculator)
 for the mortgage-specific version of this same math.
+
+## Sources
+
+- [A Consumer's Guide to Mortgage Refinancings: Glossary (Annual Percentage Rate) — Federal Reserve](https://www.federalreserve.gov/pubs/refinancings/glossary.htm)
+- [What's the Difference Between Interest Rate and APR? — Freddie Mac](https://myhome.freddiemac.com/blog/homebuying/whats-difference-between-interest-rate-and-apr)
+- [12 CFR 1026.4, Finance Charge (Regulation Z) — Cornell LII](https://www.law.cornell.edu/cfr/text/12/1026.4)
+- [12 CFR 1026.22, Determination of Annual Percentage Rate (Regulation Z) — Cornell LII](https://www.law.cornell.edu/cfr/text/12/1026.22)
+- [12 CFR Part 1026, Appendix J: Annual Percentage Rate Computations for Closed-End Credit Transactions — Cornell LII](https://www.law.cornell.edu/cfr/text/12/appendix-J_to_part_1026)
+- [12 CFR Part 1030, Appendix A: Annual Percentage Yield Calculation (Regulation DD) — Cornell LII](https://www.law.cornell.edu/cfr/text/12/appendix-A_to_part_1030)

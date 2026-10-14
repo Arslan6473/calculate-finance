@@ -25,6 +25,15 @@ describe('calculateRentVsBuy', () => {
     expect(result.yearly).toHaveLength(10)
   })
 
+  it('counts invested monthly savings as cash out, so 0% return leaves renting costing exactly the rent paid', () => {
+    const result = calculateRentVsBuy({ ...baseInput, investmentReturnRate: 0 })
+    let expectedRent = 0
+    for (let year = 0; year < baseInput.yearsStaying; year++) {
+      expectedRent += 12 * baseInput.monthlyRent * Math.pow(1 + baseInput.annualRentIncrease / 100, year)
+    }
+    expect(result.totalRentCost).toBeCloseTo(expectedRent, 0)
+  })
+
   it('favours buying when appreciation is strong and the stay is long', () => {
     const result = calculateRentVsBuy({ ...baseInput, yearsStaying: 20, homeAppreciationRate: 5 })
     expect(result.recommendation).toBe('buy')

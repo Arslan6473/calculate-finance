@@ -11,7 +11,8 @@ under "additional costs" — they're part of what you actually spent. If the
 investment paid you income along the way, such as dividends or rent, add that
 under "income received." Enter the holding period in months to also see your
 return expressed as an annualized rate, which is what makes returns over
-different time periods comparable.
+different time periods comparable. The results show your ROI, net profit,
+annualized ROI, total invested, and total returned.
 
 ## How ROI Is Calculated
 
@@ -19,28 +20,58 @@ different time periods comparable.
 ROI = (Total Returned − Total Invested) / Total Invested × 100%
 ```
 
-Total invested includes your initial amount plus any additional costs. Total
-returned includes the final value plus any income received. Leaving out fees
-or income is the most common way ROI calculations mislead — a $10,000
-investment with $500 in fees has $10,500 truly at risk, not $10,000.
+- **Total Invested** is your initial investment plus any additional costs —
+  fees, commissions, maintenance, or anything else you paid to own the
+  investment.
+- **Total Returned** is the final value plus any income received during the
+  holding period, such as dividends, rent, or interest.
+- **Total Returned − Total Invested** is your net profit, which is negative
+  on a loss.
+
+Leaving out fees or income is the most common way ROI calculations mislead —
+a $10,000 investment with $500 in fees has $10,500 truly at risk, not
+$10,000.
 
 ## Why Annualized ROI Isn't Just ROI Divided by Time
 
 A 100% return over two years is not a 50% annual return — it's about 41.4%.
 The difference is compounding: growing by 41.4% twice in a row multiplies your
-money by roughly 2×, not by adding 41.4% + 41.4%. This calculator uses the
-correct compounding formula:
+money by 2×, not by adding 41.4% + 41.4%. This calculator uses the
+compounding formula:
 
 ```
 Annualized ROI = (Total Returned / Total Invested)^(1 / years) − 1
 ```
 
+Here **years** is the holding period in months divided by 12. The ratio
+inside the brackets is the multiple of your money you got back; raising it to
+the power of one over the number of years finds the constant yearly growth
+rate that would produce that same multiple.
+
+When you enter a holding period and the investment is profitable, the
+calculator also estimates a break-even time: how many months your average
+monthly profit would take to add up to the full amount you invested.
+
 ## Example Calculation
 
 $10,000 invested and grown to $15,000 over 24 months, with no additional
-costs or income, has a straightforward ROI of 50%. Annualized, that's about
-22.5% per year — the constant yearly rate that compounds to the same 50%
-total gain over two years.
+costs or income, has an ROI of 50%. Annualized, that's 22.47% per year — the
+constant yearly rate that compounds to the same 50% total gain over two
+years.
+
+Now add the real-world details: $500 in purchase commissions and fees, and
+$300 in dividends received along the way. Total invested becomes $10,500,
+total returned becomes $15,300, and net profit is $4,800. ROI falls to 45.71%,
+and the annualized return to 20.71%.
+
+The holding period changes the picture far more than the fees did. The same
+45.71% gain earned over 60 months annualizes to just 7.82% a year. Earned
+over 6 months, it annualizes to 112.33% — a figure that looks impressive but
+assumes you could repeat that performance every half-year, which is rarely
+realistic.
+
+Losses work the same way in reverse: $10,000 that falls to $8,000 over 24
+months is an ROI of −20%, or −10.56% annualized.
 
 ## What Affects Your ROI
 
@@ -51,3 +82,33 @@ total gain over two years.
   if the asset's value alone didn't grow much.
 - **Holding period** — the same total ROI is a very different result
   annualized over one year versus ten.
+- **Exit costs** — selling often carries its own commissions or closing
+  costs. Subtract them from the final value, or add them to costs, so the
+  return reflects what you actually keep.
+
+## Common Mistakes to Avoid
+
+- **Comparing total ROI across different time periods.** A 45% gain over five
+  years and a 30% gain over two years can't be ranked by the headline number.
+  Compare annualized ROI instead.
+- **Dividing total ROI by the number of years.** That ignores compounding and
+  overstates the yearly return on multi-year gains. A 100% two-year return
+  is 41.42% a year, not 50%.
+- **Leaving out the costs of owning the investment.** Purchase fees,
+  advisory fees, repairs on a property, and platform charges all belong in
+  additional costs. Omitting them flatters the result.
+- **Forgetting income you received.** Reinvested dividends or rent you spent
+  are still part of the return. Leave them out and you understate ROI.
+- **Annualizing very short holding periods.** Annualizing a few months of
+  gains assumes the same pace continues all year. Treat those figures as
+  descriptive, not as an expected rate.
+- **Ignoring taxes.** ROI here is pre-tax. Gains on assets held more than a
+  year are generally taxed differently from gains on assets held a year or
+  less, so the same pre-tax ROI can leave you with different after-tax
+  amounts.
+
+## Sources
+
+- [Understanding Fees — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/getting-started/understanding-fees)
+- [Dividend (glossary) — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend)
+- [Topic No. 409, Capital Gains and Losses — IRS](https://www.irs.gov/taxtopics/tc409)

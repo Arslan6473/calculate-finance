@@ -1,0 +1,111 @@
+Most savings goals start as a number and a date: a $20,000 down payment in
+four years, a $10,000 emergency fund by next summer, a $50,000 college fund
+by the time a child turns eighteen. The hard part is turning that into a
+plan you can follow every month. This calculator works backward from the
+goal to the one figure that matters day to day — how much to set aside each
+month — and shows how much of the finished balance comes from your deposits
+versus interest.
+
+## How to Use This Savings Goal Calculator
+
+Enter the amount you want to have and what you have already saved toward
+it. Then set the number of years until you need the money and the annual
+interest or return rate you expect. For a high-yield savings account or CD,
+use its APY; for an investment account, use a conservative estimate; for
+plain cash, enter 0%.
+
+Choose how often interest compounds — monthly is typical for savings
+accounts — and whether you will deposit at the start or the end of each
+month. The results show the required monthly deposit, your total
+contributions, the interest you can expect to earn, and a year-by-year chart
+of your progress. If your current savings are already enough, or will grow
+to the goal on their own, the calculator tells you so instead of asking for
+deposits you do not need.
+
+## How the Required Deposit Is Calculated
+
+The calculator first grows your current savings forward to the goal date.
+Whatever is still missing — the shortfall — has to come from monthly
+deposits. It then divides that shortfall by the future value of depositing
+one dollar a month at your rate, which gives the exact deposit that closes
+the gap on time.
+
+## Savings Goal Formula
+
+```
+Shortfall = Goal − PV × (1 + i)^N
+
+PMT = Shortfall ÷ [ ((1 + i)^N − 1) ÷ i ]          (end-of-month deposits)
+PMT = Shortfall ÷ [ ((1 + i)^N − 1) ÷ i × (1 + i) ]  (start-of-month deposits)
+```
+
+**PV** is your current savings, **N** is the number of months, and **i** is
+the monthly rate. With monthly compounding, i is simply the annual rate
+divided by 12. For any other compounding frequency, the calculator converts
+to the equivalent monthly rate, (1 + r/n)^(n/12) − 1, so every option is
+handled exactly. At a 0% rate the formula reduces to the shortfall divided
+evenly across the months.
+
+## Example Calculation
+
+Suppose your goal is $50,000 in 10 years, you already have $5,000 saved,
+and you expect to earn 5% a year, compounded monthly, with deposits at the
+end of each month.
+
+- **Monthly rate**: 5% ÷ 12 = 0.4167%, over 120 months.
+- **Current savings at the goal date**: $5,000 × (1.004167)^120 = $8,235.05.
+- **Shortfall**: $50,000 − $8,235.05 = $41,764.95.
+- **Annuity factor**: ((1.004167)^120 − 1) ÷ 0.004167 ≈ 155.28.
+- **Required deposit**: $41,764.95 ÷ 155.28 ≈ **$268.96 a month**.
+
+Over the 10 years you contribute $37,275.38 in total — the $5,000 you
+started with plus about $32,275 in monthly deposits — and interest supplies
+the remaining $12,724.62. Moving the deposits to the start of each month
+lowers the requirement slightly, to $267.85. With no interest at all, you
+would need $375 a month to cover the same $45,000 gap.
+
+## What Affects How Much You Need to Save
+
+- **Time** — the more months you have, the smaller each deposit and the
+  more of the goal interest can cover. Starting even a year or two earlier
+  makes a noticeable difference.
+- **Your starting balance** — money already saved gets the longest time to
+  compound, so it reduces the required deposit by more than its face value.
+- **The rate** — a higher rate lowers the deposit, but only if it is a rate
+  you can actually earn. For short goals, the safety of the money usually
+  matters more than squeezing out extra return.
+- **Deposit timing** — depositing at the start of the month gives each
+  deposit one more month of growth. The effect is small but free.
+- **Inflation** — a goal set in today's dollars will cost more by the time
+  you reach it. Consider raising a long-term target to allow for rising
+  prices.
+
+## Where to Keep Money for a Savings Goal
+
+For goals a few years away, many savers use insured savings accounts,
+money market deposit accounts, or CDs. Deposits at FDIC-insured banks are
+protected up to the standard insurance limit per depositor, per bank, per
+ownership category, so the balance cannot fall because of a market drop.
+Longer goals can tolerate investments with higher expected returns and more
+risk, but the closer you get to the date, the less time there is to recover
+from a downturn.
+
+## Common Mistakes to Avoid
+
+- **Using an optimistic rate** — planning around a best-case return makes
+  the required deposit look smaller than it really is. Use a rate you are
+  confident of, and recalculate if it changes.
+- **Ignoring inflation on long goals** — $50,000 in ten years will not buy
+  what $50,000 buys today. Inflate the target if it is tied to a real cost.
+- **Investing short-term money in volatile assets** — a market decline in
+  the final year can leave you short just when you need the money.
+- **Forgetting taxes on interest** — interest in a regular savings account
+  is generally taxable, which slightly reduces your effective rate.
+- **Skipping months** — the plan assumes every deposit is made. Automating
+  a transfer on payday is the easiest way to stay on schedule.
+
+## Sources
+
+- [Savings Goal Calculator — Investor.gov (U.S. Securities and Exchange Commission)](https://www.investor.gov/financial-tools-calculators/calculators/savings-goal-calculator)
+- [Compound Interest Calculator — Investor.gov (U.S. Securities and Exchange Commission)](https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator)
+- [Deposit Insurance — Federal Deposit Insurance Corporation](https://www.fdic.gov/resources/deposit-insurance)

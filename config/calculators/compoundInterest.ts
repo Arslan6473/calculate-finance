@@ -5,6 +5,7 @@ export const compoundInterestConfig: CalculatorConfig = {
   name: 'Compound Interest Calculator',
   shortName: 'Compound Interest',
   category: 'investment',
+  updated: '2026-10-14',
   summary: 'See how your savings grow with compound interest and regular contributions.',
   inputs: [
     {

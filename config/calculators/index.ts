@@ -1,14 +1,26 @@
 import { CATEGORIES } from '../categories'
+import { autoLoanConfig } from './autoLoan'
+import { cagrConfig } from './cagr'
 import { compoundInterestConfig } from './compoundInterest'
 import { creditCardConfig } from './creditCard'
 import { debtPayoffConfig } from './debtPayoff'
+import { debtToIncomeConfig } from './debtToIncome'
+import { homeAffordabilityConfig } from './homeAffordability'
+import { hourlyToSalaryConfig } from './hourlyToSalary'
+import { inflationConfig } from './inflation'
 import { investmentConfig } from './investment'
 import { loanConfig } from './loan'
 import { mortgageConfig } from './mortgage'
+import { overtimeConfig } from './overtime'
+import { raiseConfig } from './raise'
+import { refinanceConfig } from './refinance'
+import { rentAffordabilityConfig } from './rentAffordability'
+import { rentalPropertyConfig } from './rentalProperty'
 import { rentVsBuyConfig } from './rentVsBuy'
 import { retirementConfig } from './retirement'
 import { roiConfig } from './roi'
 import { salaryConfig } from './salary'
+import { savingsGoalConfig } from './savingsGoal'
 import type { CalculatorConfig } from './types'
 
 /**
@@ -21,14 +33,26 @@ import type { CalculatorConfig } from './types'
 export const CALCULATORS: CalculatorConfig[] = [
   mortgageConfig,
   loanConfig,
+  autoLoanConfig,
+  refinanceConfig,
   compoundInterestConfig,
   investmentConfig,
+  savingsGoalConfig,
+  inflationConfig,
+  cagrConfig,
   roiConfig,
   retirementConfig,
   salaryConfig,
+  hourlyToSalaryConfig,
+  raiseConfig,
+  overtimeConfig,
   debtPayoffConfig,
+  debtToIncomeConfig,
   creditCardConfig,
   rentVsBuyConfig,
+  homeAffordabilityConfig,
+  rentAffordabilityConfig,
+  rentalPropertyConfig,
 ]
 
 const bySlug = new Map(CALCULATORS.map((c) => [c.slug, c]))

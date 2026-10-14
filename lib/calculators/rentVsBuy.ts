@@ -166,9 +166,14 @@ export function calculateRentVsBuy(input: RentVsBuyInput): RentVsBuyResult {
       renterCashSpent += renterMonthly
 
       // Grow the renter's portfolio, then invest the monthly saving (if any).
+      // The saving is still cash the renter paid out — it's counted as spent
+      // and held as an asset, so only its investment growth reduces their cost.
       portfolio += portfolio * monthlyInvestmentRate
       const monthlySaving = ownerMonthly - renterMonthly
-      if (monthlySaving > 0) portfolio += monthlySaving
+      if (monthlySaving > 0) {
+        portfolio += monthlySaving
+        renterCashSpent += monthlySaving
+      }
 
       homeValue *= Math.pow(1 + appreciationRate / 100, 1 / 12)
     }
@@ -189,7 +194,8 @@ export function calculateRentVsBuy(input: RentVsBuyInput): RentVsBuyResult {
     */
     const netBuyCost = buyerCashSpent + downPayment + closingCosts - (equity - sellingCosts)
 
-    // Net cost of renting = rent paid minus the portfolio the renter holds.
+    // Net cost of renting = everything paid out (rent, up-front cash, monthly
+    // contributions) minus the portfolio held — i.e. rent less investment growth.
     const netRentCost = renterCashSpent - portfolio + (downPayment + closingCosts)
 
     yearly.push({

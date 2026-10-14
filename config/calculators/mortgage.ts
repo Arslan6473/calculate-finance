@@ -5,6 +5,7 @@ export const mortgageConfig: CalculatorConfig = {
   name: 'Mortgage Calculator',
   shortName: 'Mortgage',
   category: 'loans-mortgages',
+  updated: '2026-10-14',
   summary: 'Estimate your monthly mortgage payment, amortization schedule, and total cost.',
   inputs: [
     {

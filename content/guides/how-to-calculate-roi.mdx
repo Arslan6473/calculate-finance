@@ -1,6 +1,9 @@
 Return on investment is one of the simplest formulas in finance — and one of
 the easiest to get wrong in practice, because getting it right depends on
-what you count as "invested" and what you count as "returned."
+what you count as "invested" and what you count as "returned." This guide
+covers the formula, a complete worked example, how to compare investments
+held for different lengths of time, and the common mistakes that make an ROI
+look better or worse than it really is.
 
 ## The Basic Formula
 
@@ -11,6 +14,11 @@ ROI = (Amount Returned − Amount Invested) / Amount Invested × 100%
 If you put in $10,000 and end up with $12,000, that's a $2,000 gain on a
 $10,000 base — a 20% ROI. The formula itself is not the hard part.
 
+ROI is a ratio, so it works for anything with a cost and a payoff — a stock,
+a rental property, a business project, or a home improvement. That
+flexibility is also its weakness: the formula will accept whatever numbers you
+give it, so the answer is only as good as your inputs.
+
 ## The Mistake: Ignoring Real Costs
 
 The "amount invested" should include everything you spent to make and hold
@@ -20,6 +28,10 @@ and leaving them out inflates your ROI. A $10,000 investment with $500 in
 fees has $10,500 truly invested; using $10,000 as the base overstates the
 return.
 
+Costs at the exit count too. Selling commissions, transaction fees, and — for
+real estate — agent fees and closing costs reduce what you actually receive,
+so subtract them from the amount returned.
+
 ## The Other Mistake: Ignoring Income Along the Way
 
 Some investments pay you before you ever sell — dividends from stocks, rent
@@ -27,6 +39,29 @@ from a property, interest from a bond. That income is part of your return
 and belongs in the numerator, not just the change in the asset's price. A
 property that gained little in value but paid steady rent might have a much
 better ROI than its price change alone suggests.
+
+## A Complete Worked Example
+
+Suppose you buy $10,000 of a stock fund and pay $50 in transaction fees. Over
+4 years it pays $250 a year in dividends, which you take as cash. You then
+sell for $12,400 and pay another $50 to sell.
+
+| Item | Amount |
+| --- | --- |
+| Purchase price | $10,000 |
+| Fees to buy | $50 |
+| **Total invested** | **$10,050** |
+| Sale proceeds after fees ($12,400 − $50) | $12,350 |
+| Dividends received ($250 × 4) | $1,000 |
+| **Total returned** | **$13,350** |
+
+```
+ROI = ($13,350 − $10,050) / $10,050 × 100% ≈ 32.8%
+```
+
+Looking only at the price change — $10,000 to $12,400 — would suggest 24%.
+Counting fees lowers the result a little; counting dividends raises it a lot.
+The complete figure is 32.8% over 4 years.
 
 ## Why Annualizing Matters for Comparison
 
@@ -44,6 +79,101 @@ short-term return actually is and overstates how good a long-term one is,
 because it ignores that returns compound rather than accumulate in a straight
 line.
 
+With the numbers above: 20% over six months annualizes to 44% (1.2 ^ 2 − 1),
+not the 40% that simple division gives. 20% over five years annualizes to
+about 3.71% a year, not 4%. In the stock example, 32.8% over 4 years is about
+7.36% a year.
+
+Annualizing changes which investment looks better:
+
+| | Investment A | Investment B |
+| --- | --- | --- |
+| Total ROI | 50% | 30% |
+| Holding period | 6 years | 3 years |
+| Annualized ROI | 6.99% | 9.14% |
+
+Investment A has the larger total return, but B grew faster each year. If you
+could reinvest B's proceeds at a similar rate, B is the better performer.
+Annualized ROI is the same idea as compound annual growth rate, which the
+[CAGR calculator](/calculators/cagr-calculator) computes directly.
+
+## When Simple ROI Isn't Enough
+
+The basic formula assumes one amount goes in at the start and one amount
+comes out at the end. That breaks down in two common situations:
+
+- **Ongoing contributions.** If you add money every month to a retirement
+  account, the dollars invested last month haven't had time to grow. Dividing
+  the gain by total contributions and annualizing over the whole period
+  treats every dollar as if it were invested on day one, which makes the
+  investments look worse than they performed. Statements often report a
+  time-weighted or money-weighted return for this reason.
+- **Income received at different times.** In the stock example, dividends
+  arrived throughout the 4 years, but the annualized figure treats them as if
+  they arrived at the end. For a rough comparison that's fine; for a precise
+  one, an internal rate of return (IRR) calculation accounts for when each
+  cash flow happened.
+
+## Common Misconceptions
+
+**"An average annual return tells me how much I made."** Average returns can
+mislead when results swing. A $10,000 investment that gains 50% one year and
+loses 50% the next has an average annual return of 0%, but the balance is
+$7,500 — a 25% loss. Annualized ROI uses the compounding formula and gets this
+right.
+
+**"A loss and a gain of the same size cancel out."** After a loss, you need a
+larger percentage gain to get back to even:
+
+| Loss | Gain needed to break even |
+| --- | --- |
+| 10% | 11.1% |
+| 20% | 25% |
+| 30% | 42.9% |
+| 50% | 100% |
+
+**"A positive ROI means I came out ahead."** Not necessarily in purchasing
+power. A 40% ROI over 5 years is about 6.96% a year. With 3% annual inflation
+over the same period, prices rise about 15.9%, so the real return is about
+20.8% in total, or roughly 3.85% a year. The [inflation
+calculator](/calculators/inflation-calculator) helps convert past dollars into
+today's.
+
+**"Higher ROI is always better."** ROI says nothing about risk, liquidity, or
+how much effort an investment demands. A rental property's return depends on
+your time and your exposure to repairs and vacancies; a fund requires
+neither. Compare ROI between investments with similar risk.
+
+## ROI for Rental Property
+
+Real estate investors often use two versions:
+
+- **Cash-on-cash return** looks at one year: annual pre-tax cash flow divided
+  by the cash you put in. A property that took $60,000 down, $8,000 in
+  closing costs, and $7,000 in initial repairs — $75,000 in total — and
+  produces $4,500 a year of cash flow after all expenses and the mortgage
+  payment has a 6% cash-on-cash return.
+- **Total ROI** at sale adds appreciation and the loan principal you paid
+  down, minus selling costs, for the whole holding period.
+
+Borrowing magnifies ROI in both directions, because the return is measured
+against the cash you put in, not the full price. The guide to [how to analyze
+a rental property](/guides/how-to-analyze-a-rental-property) and the [rental
+property calculator](/calculators/rental-property-calculator) go further.
+
+## A Quick Checklist
+
+Before you trust an ROI figure, check that:
+
+1. The amount invested includes every purchase, holding, and improvement
+   cost.
+2. The amount returned is net of selling costs and includes all income
+   received.
+3. The result is annualized if you're comparing different holding periods.
+4. Taxes and inflation are accounted for if you want to know what you really
+   kept.
+5. The investments being compared carry similar risk.
+
 ## Putting It Together
 
 Calculate ROI using the total amount genuinely at risk (including fees), add
@@ -53,4 +183,12 @@ time.
 
 The [ROI calculator](/calculators/roi-calculator) handles all three steps
 automatically — enter your costs and any income received, and it reports both
-your straight ROI and the correctly annualized figure.
+your straight ROI and the correctly annualized figure. To project what a
+target return could grow into over time, use the [investment
+calculator](/calculators/investment-calculator).
+
+## Sources
+
+- [Calculating Your Investment Returns — FINRA](https://www.finra.org/investors/insights/investment-returns)
+- [Understanding Fees — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/getting-started/understanding-fees)
+- [Annual Return — Investor.gov (SEC)](https://www.investor.gov/introduction-investing/investing-basics/glossary/annual-return)

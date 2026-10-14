@@ -9,6 +9,16 @@ export const SITE = {
     'Results are estimates for general informational purposes only, not financial, investment, tax, or legal advice.',
 } as const
 
+/**
+ * Who stands behind the guides. A team byline rather than a named individual —
+ * deliberately, so no credentials are implied that aren't real. The policy
+ * page it links to explains how content is researched, checked, and corrected.
+ */
+export const EDITORIAL = {
+  name: `${SITE.name} Editorial Team`,
+  href: '/editorial-policy',
+} as const
+
 export const NAV_LINKS = [
   { label: 'Calculators', href: '/calculators' },
   { label: 'Loans', href: '/category/loans-mortgages' },
@@ -33,6 +43,8 @@ export const POPULAR_CALCULATOR_SLUGS = [
 
 export const FOOTER_LEGAL_LINKS = [
   { label: 'About', href: '/about' },
+  { label: 'Editorial Policy', href: '/editorial-policy' },
+  { label: 'Changelog', href: '/changelog' },
   { label: 'Disclaimer', href: '/disclaimer' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
