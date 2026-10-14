@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
   },
+  // Google Search Console ownership verification.
+  verification: {
+    google: 'Id8_5a_g-zNFNdMKpQDPx-8Z3SIU0ur8z1y8CPCxqKY',
+  },
 }
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
