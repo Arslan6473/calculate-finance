@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, BarChart3, BookOpen, Calculator, CheckCircle2, LineChart, ShieldCheck, Zap } from 'lucide-react'
 
@@ -16,6 +17,10 @@ const BENEFITS = [
   { icon: LineChart, title: 'Interactive charts', description: 'See how your numbers change over time, visually.' },
   { icon: Calculator, title: 'No signup required', description: 'Start calculating immediately — nothing to create or install.' },
 ]
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function HomePage() {
   const popular = POPULAR_CALCULATOR_SLUGS.map((slug) => CALCULATORS.find((c) => c.slug === slug)).filter(

@@ -4,7 +4,7 @@ export const SITE = {
   description:
     'Free calculators for mortgages, loans, investments, savings, retirement, debt, salary, and more.',
   /** Used to build absolute URLs for metadata, sitemap, and JSON-LD. Override with NEXT_PUBLIC_SITE_URL in production. */
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.calcxs.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.calcxs.site',
   disclaimerShort:
     'Results are estimates for general informational purposes only, not financial, investment, tax, or legal advice.',
 } as const
