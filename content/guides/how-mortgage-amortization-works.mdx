@@ -15,23 +15,40 @@ payment is fixed, whatever's left after covering that interest is what goes
 toward principal. High balance means high interest means a small principal
 portion, especially in the loan's first years.
 
-## How the Monthly Payment Is Calculated
+## Monthly Mortgage Payment Formula
 
 A fixed-rate mortgage payment is set so that, if every payment is made on
 schedule, the balance reaches exactly zero with the final payment. The
-standard formula is:
+standard amortizing loan payment formula is:
 
 ```
 Payment = P × r × (1 + r) ^ n ÷ ((1 + r) ^ n − 1)
 ```
 
+You'll often see the same formula written as
+M = P [ r(1 + r)^n ] / [ (1 + r)^n − 1 ], where M is the monthly payment.
+
 - **P** is the amount borrowed.
 - **r** is the monthly interest rate — the annual rate divided by 12.
 - **n** is the total number of monthly payments (360 for a 30-year loan).
 
-For a $320,000 loan at an example rate of 6.5%, r is 0.065 ÷ 12, or about
-0.005417, and n is 360. The formula gives a monthly principal-and-interest
-payment of **$2,022.62**. Each month's split is then simple arithmetic:
+### Working Through the Formula Step by Step
+
+For a $320,000 loan at an example rate of 6.5% over 30 years:
+
+1. **Monthly rate:** r = 0.065 ÷ 12 ≈ 0.005417.
+2. **Number of payments:** n = 30 × 12 = 360.
+3. **Growth factor:** (1 + r) ^ 360 ≈ 6.9918.
+4. **Plug in:** $320,000 × 0.005417 × 6.9918 ÷ (6.9918 − 1) ≈
+   **$2,022.62**.
+
+That's the monthly principal-and-interest payment. Taxes, homeowners
+insurance, and any mortgage insurance are added on top, so your total
+monthly housing payment will be higher. The same loan over 15 years
+(n = 180) would cost about $2,787.54 a month — higher payments, but far less
+total interest.
+
+Each month's split is then simple arithmetic:
 
 ```
 Interest this month  = remaining balance × r
@@ -93,6 +110,8 @@ A few milestones on this loan are worth noticing:
 
 The [15 vs. 30-year mortgage](/guides/15-vs-30-year-mortgage) guide shows how
 much faster this curve moves on a shorter term.
+
+![Stacked bar chart of yearly principal and interest on a $320,000 30-year mortgage at 6.5%: interest dominates early years and principal dominates later years](/images/guides/how-mortgage-amortization-works-split.svg "Every year costs the same $24,271; only the split between interest and principal changes.")
 
 ## What Amortization Means for Your Equity
 

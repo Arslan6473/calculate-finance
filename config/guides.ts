@@ -27,7 +27,7 @@ export const GUIDES: GuideConfig[] = [
       'A clear explanation of compound interest, why it accelerates over time, and how compounding frequency changes the result.',
     relatedCalculators: ['compound-interest-calculator', 'investment-calculator'],
     seo: {
-      title: 'How Does Compound Interest Work? | Calcxs Guides',
+      title: 'How Does Compound Interest Work? Formula & Examples | Calcxs',
       description:
         'Learn how compound interest actually works, why it grows faster than simple interest, and how to use it to your advantage.',
       keywords: ['how does compound interest work', 'compound interest explained'],
@@ -41,7 +41,7 @@ export const GUIDES: GuideConfig[] = [
       'How lenders and financial planners think about affordability, and the income, debt, and down payment rules that determine your budget.',
     relatedCalculators: ['mortgage-calculator', 'rent-vs-buy-calculator'],
     seo: {
-      title: 'How Much House Can I Afford? | Calcxs Guides',
+      title: 'How Much House Can I Afford? The 28/36 Rule Explained | Calcxs',
       description:
         'A practical guide to figuring out how much home you can afford based on income, debt, and down payment.',
       keywords: ['how much house can i afford', 'home affordability'],
@@ -55,7 +55,7 @@ export const GUIDES: GuideConfig[] = [
       'Why a loan\'s APR and its interest rate are not the same number, and which one actually tells you the true cost of borrowing.',
     relatedCalculators: ['loan-calculator', 'mortgage-calculator'],
     seo: {
-      title: 'APR vs Interest Rate: What Is the Difference? | Calcxs Guides',
+      title: "APR vs Interest Rate: What's the Difference? | Calcxs",
       description:
         'A clear breakdown of the difference between APR and interest rate, and why APR is the better number for comparing loans.',
       keywords: ['apr vs interest rate', 'what is apr'],
@@ -63,29 +63,29 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-mortgage-amortization-works',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How Mortgage Amortization Works',
     description:
       'Why your early mortgage payments are mostly interest, how that shifts over time, and what an amortization schedule actually shows.',
     relatedCalculators: ['mortgage-calculator', 'loan-calculator'],
     seo: {
-      title: 'How Mortgage Amortization Works | Calcxs Guides',
+      title: 'Mortgage Amortization & Monthly Payment Formula | Calcxs',
       description:
-        'Understand how mortgage amortization works, why interest dominates early payments, and how extra payments change your schedule.',
+        'The monthly mortgage payment formula worked step by step, why early payments are mostly interest, and how to read an amortization schedule.',
       keywords: ['how does amortization work', 'mortgage amortization explained'],
     },
   },
   {
     slug: 'how-to-calculate-roi',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How to Calculate ROI (Return on Investment)',
     description:
       'The ROI formula, common mistakes that overstate returns, and how to annualize a return for fair comparison across time periods.',
     relatedCalculators: ['roi-calculator', 'investment-calculator'],
     seo: {
-      title: 'How to Calculate ROI (Return on Investment) | Calcxs Guides',
+      title: 'ROI Formula: How to Calculate Return on Investment | Calcxs',
       description:
-        'Learn the ROI formula, how to account for costs and income correctly, and how to annualize returns for fair comparison.',
+        'The ROI formula is (gain − cost) ÷ cost × 100. See step-by-step examples, how to annualize ROI, calculate it in Excel, and the mistakes that inflate returns.',
       keywords: ['how to calculate roi', 'roi formula'],
     },
   },
@@ -97,7 +97,7 @@ export const GUIDES: GuideConfig[] = [
       'The 2,080-hour formula, how unpaid time off and overtime change the result, and how to compare hourly and salaried offers once benefits are counted.',
     relatedCalculators: ['hourly-to-salary-calculator', 'salary-calculator', 'overtime-calculator'],
     seo: {
-      title: 'How to Convert Hourly Pay to an Annual Salary | Calcxs Guides',
+      title: 'Hourly to Salary: How to Convert Your Wage (2026) | Calcxs',
       description:
         'Learn how to convert an hourly wage to an annual salary and back, account for unpaid time off and overtime, and compare job offers including benefits.',
       keywords: ['hourly to salary', 'convert hourly to salary', 'how much is hourly pay per year'],
@@ -111,7 +111,7 @@ export const GUIDES: GuideConfig[] = [
       'How to compare the true costs of renting and owning, including down payment opportunity cost, transaction costs, the break-even horizon, and the price-to-rent ratio.',
     relatedCalculators: ['rent-vs-buy-calculator', 'home-affordability-calculator', 'mortgage-calculator'],
     seo: {
-      title: 'Should You Rent or Buy a Home? | Calcxs Guides',
+      title: 'Rent vs. Buy: How to Decide (With Break-Even Math) | Calcxs',
       description:
         'A practical framework for deciding whether to rent or buy: unrecoverable costs, opportunity cost, break-even years, the price-to-rent ratio, and lifestyle factors.',
       keywords: ['rent vs buy', 'should i rent or buy a house', 'price to rent ratio'],
@@ -125,7 +125,7 @@ export const GUIDES: GuideConfig[] = [
       'The 30% rule, the 50/30/20 budget, and the landlord 40x income rule explained, plus how debts and hidden costs change what rent you can really afford.',
     relatedCalculators: ['rent-affordability-calculator', 'salary-calculator', 'rent-vs-buy-calculator'],
     seo: {
-      title: 'How Much Rent Can I Afford? | Calcxs Guides',
+      title: 'How Much Rent Can I Afford? 30% & 40x Rules | Calcxs',
       description:
         'Find a rent you can comfortably afford using the 30% rule, the 50/30/20 budget, and the 40x income rule, with debts, utilities, and move-in costs included.',
       keywords: ['how much rent can i afford', '30% rent rule', '40x rent rule'],
@@ -139,7 +139,7 @@ export const GUIDES: GuideConfig[] = [
       'How to evaluate a rental property using NOI, cap rate, cash flow, and cash-on-cash return, with realistic reserves and a fully worked example.',
     relatedCalculators: ['rental-property-calculator', 'mortgage-calculator', 'roi-calculator'],
     seo: {
-      title: 'How to Analyze a Rental Property | Calcxs Guides',
+      title: 'How to Analyze a Rental Property: Cap Rate & Cash Flow | Calcxs',
       description:
         'Learn to analyze a rental property step by step: net operating income, cap rate, cash flow, cash-on-cash return, the 1% rule, and expense reserves.',
       keywords: ['how to analyze a rental property', 'cap rate', 'cash on cash return', 'rental property analysis'],
@@ -153,7 +153,7 @@ export const GUIDES: GuideConfig[] = [
       'How the debt snowball and debt avalanche methods work, a side-by-side worked example, and how to choose between motivation and interest savings.',
     relatedCalculators: ['debt-payoff-calculator', 'credit-card-payoff-calculator', 'loan-calculator'],
     seo: {
-      title: 'Debt Snowball vs. Debt Avalanche: Which Is Better? | Calcxs Guides',
+      title: 'Debt Snowball vs Avalanche: Which Saves More? | Calcxs',
       description:
         'Compare the debt snowball and debt avalanche methods with a worked example, learn the tradeoff between quick wins and lower interest, and explore hybrid approaches.',
       keywords: ['debt snowball vs avalanche', 'debt avalanche method', 'debt snowball method'],
@@ -161,13 +161,13 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-to-calculate-debt-to-income-ratio',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How to Calculate Your Debt-to-Income Ratio',
     description:
       'The debt-to-income formula, what counts as debt, front-end vs. back-end ratios, a worked example, and how to lower your DTI before applying for a loan.',
     relatedCalculators: ['debt-to-income-calculator', 'home-affordability-calculator', 'debt-payoff-calculator'],
     seo: {
-      title: 'How to Calculate Your Debt-to-Income Ratio | Calcxs Guides',
+      title: 'How to Calculate Debt-to-Income Ratio (DTI) + Example | Calcxs',
       description:
         'Learn how to calculate your debt-to-income ratio step by step, which debts lenders count, what DTI limits mean for a mortgage, and how to lower yours.',
       keywords: ['how to calculate debt to income ratio', 'debt-to-income ratio', 'front-end vs back-end dti', 'dti for mortgage'],
@@ -175,15 +175,15 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'fixed-vs-adjustable-rate-mortgage',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'Fixed vs. Adjustable-Rate Mortgage: Which Is Right for You?',
     description:
       'How fixed-rate mortgages and ARMs work, what 5/1 and 5/6 mean, how index, margin, and rate caps set your future rate, and a worst-case payment example.',
     relatedCalculators: ['mortgage-calculator', 'refinance-calculator', 'home-affordability-calculator'],
     seo: {
-      title: 'Fixed vs. Adjustable-Rate Mortgage: Which Is Right for You? | Calcxs Guides',
+      title: 'Fixed vs Adjustable-Rate Mortgage: Which Is Better? | Calcxs',
       description:
-        'Compare fixed-rate and adjustable-rate mortgages with a worked example. Learn how ARM caps, index, and margin work and when an ARM makes sense.',
+        'Fixed vs. adjustable-rate mortgage compared side by side: how ARM caps, index, and margin work, a worst-case payment example, and when an ARM makes sense.',
       keywords: ['fixed vs adjustable rate mortgage', 'arm vs fixed', '5/6 arm', 'arm rate caps'],
     },
   },
@@ -195,7 +195,7 @@ export const GUIDES: GuideConfig[] = [
       'A side-by-side comparison of 15-year and 30-year mortgages: monthly payments, total interest, equity over time, and how to decide which term fits you.',
     relatedCalculators: ['mortgage-calculator', 'refinance-calculator', 'home-affordability-calculator'],
     seo: {
-      title: '15-Year vs. 30-Year Mortgage | Calcxs Guides',
+      title: '15 vs 30-Year Mortgage: Payments & Interest Compared | Calcxs',
       description:
         'Compare 15-year and 30-year mortgages with real numbers on payments, interest, and equity, plus the invest-the-difference argument and how to choose.',
       keywords: ['15 vs 30 year mortgage', '15 year mortgage vs 30 year', '15 year mortgage savings'],
@@ -209,7 +209,7 @@ export const GUIDES: GuideConfig[] = [
       'Why extra principal payments save so much interest, with amortization results for monthly extras, one extra payment a year, and lump-sum prepayments.',
     relatedCalculators: ['mortgage-calculator', 'loan-calculator', 'refinance-calculator'],
     seo: {
-      title: 'How Extra Mortgage Payments Save Interest | Calcxs Guides',
+      title: 'How Much Do Extra Mortgage Payments Save? | Calcxs',
       description:
         'See how much interest and time extra mortgage payments save, why paying early matters most, and what to check before you prepay your mortgage.',
       keywords: ['extra mortgage payments', 'pay off mortgage early', 'extra principal payment', 'biweekly mortgage payments'],
@@ -217,15 +217,15 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-much-house-can-i-afford-on-60k',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How Much House Can I Afford on a $60,000 Salary?',
     description:
       'The 28/36 rule worked through on a $60,000 income, with stated assumptions and how rates, property taxes, debts, and down payment change the answer.',
     relatedCalculators: ['home-affordability-calculator', 'mortgage-calculator', 'debt-to-income-calculator'],
     seo: {
-      title: 'How Much House Can I Afford on a $60,000 Salary? | Calcxs Guides',
+      title: 'How Much House Can I Afford on $60K a Year? (2026) | Calcxs',
       description:
-        'Find out how much house you can afford on $60,000 a year using the 28/36 rule, with worked examples at different rates, down payments, and tax levels.',
+        'How much house can you afford on $60,000 a year? The 28/36 rule worked through with home prices, mortgage amounts, and down payments at different rates and tax levels.',
       keywords: ['how much house can i afford on 60k', 'how much house can i afford on 60000 a year', '60k salary mortgage'],
     },
   },
@@ -237,7 +237,7 @@ export const GUIDES: GuideConfig[] = [
       'How to size an emergency fund from your essential expenses, where in the three-to-six-month range you should land, and how to build and store it.',
     relatedCalculators: ['savings-goal-calculator', 'salary-calculator', 'compound-interest-calculator'],
     seo: {
-      title: 'How Much Should You Have in an Emergency Fund? | Calcxs Guides',
+      title: 'How Much Should Be in an Emergency Fund? | Calcxs',
       description:
         'Calculate your emergency fund target from essential monthly expenses, decide between three and six months of coverage, and learn how to build it and where to keep it.',
       keywords: ['how much emergency fund', 'emergency fund calculator', 'how many months emergency fund', 'emergency savings'],
@@ -245,15 +245,15 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-credit-card-interest-works',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How Credit Card Interest Works',
     description:
       'How card issuers turn an APR into a daily rate, calculate interest on your average daily balance, and why grace periods and minimum payments matter so much.',
     relatedCalculators: ['credit-card-payoff-calculator', 'debt-payoff-calculator', 'debt-to-income-calculator'],
     seo: {
-      title: 'How Credit Card Interest Works | Calcxs Guides',
+      title: "Credit Card Interest: How It's Calculated Daily | Calcxs",
       description:
-        'Learn how credit card interest is calculated: daily periodic rate, average daily balance, the grace period, and the real cost of paying only the minimum, with worked examples.',
+        'How credit card interest is calculated: APR to daily rate, the average daily balance method, daily compounding, the grace period, and the real cost of minimum payments.',
       keywords: ['how credit card interest works', 'how is credit card interest calculated', 'average daily balance', 'credit card minimum payment'],
     },
   },
@@ -265,7 +265,7 @@ export const GUIDES: GuideConfig[] = [
       'The difference between simple and compound interest, side-by-side examples over 10 to 30 years, how compounding frequency matters, and where you see each type.',
     relatedCalculators: ['compound-interest-calculator', 'investment-calculator', 'savings-goal-calculator'],
     seo: {
-      title: 'Simple vs. Compound Interest | Calcxs Guides',
+      title: 'Simple vs Compound Interest: Differences & Examples | Calcxs',
       description:
         'Compare simple and compound interest with worked examples, see how compounding frequency and time change the result, and learn which loans and accounts use each.',
       keywords: ['simple vs compound interest', 'simple interest vs compound interest', 'difference between simple and compound interest'],
@@ -273,15 +273,15 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-inflation-affects-savings',
-    updated: '2026-10-14',
+    updated: '2026-10-24',
     title: 'How Inflation Affects Your Savings',
     description:
       'How inflation erodes purchasing power, the difference between nominal and real returns, the Rule of 72, and ways to protect your savings.',
     relatedCalculators: ['inflation-calculator', 'compound-interest-calculator', 'retirement-calculator'],
     seo: {
-      title: 'How Inflation Affects Your Savings | Calcxs Guides',
+      title: 'How Inflation Affects Savings & How to Protect Them | Calcxs',
       description:
-        'See how inflation reduces the purchasing power of your savings, calculate real vs. nominal returns, use the Rule of 72, and learn about inflation-protected options like I bonds and TIPS.',
+        'How inflation erodes the purchasing power of your savings, whether savings rates rise with inflation, real vs. nominal returns, and how I bonds and TIPS protect you.',
       keywords: ['how inflation affects savings', 'real vs nominal return', 'purchasing power', 'inflation and savings'],
     },
   },
@@ -293,7 +293,7 @@ export const GUIDES: GuideConfig[] = [
       'Estimate your retirement number from expected spending, Social Security, and the 4% rule, with a worked example and the caveats that matter.',
     relatedCalculators: ['retirement-calculator', 'investment-calculator', 'inflation-calculator'],
     seo: {
-      title: 'How Much Do I Need to Retire? | Calcxs Guides',
+      title: 'How Much Do I Need to Retire? Use the 4% Rule | Calcxs',
       description:
         'A step-by-step way to estimate how much you need to retire: income replacement, expense-based budgets, Social Security, the 4% rule and its caveats, and the monthly savings required.',
       keywords: ['how much do i need to retire', 'retirement number', '4% rule', 'how much to save for retirement'],

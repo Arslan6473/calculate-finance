@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps<'/guides/[slug]'>):
   if (!guide) return {}
 
   return {
-    // `guide.seo.title` already includes the "Calcxs Guides" suffix, so
+    // `guide.seo.title` already includes the "| Calcxs" suffix, so
     // it's set as absolute — see the same note on the calculator page.
     title: { absolute: guide.seo.title },
     description: guide.seo.description,

@@ -5,14 +5,32 @@ covers the formula, a complete worked example, how to compare investments
 held for different lengths of time, and the common mistakes that make an ROI
 look better or worse than it really is.
 
-## The Basic Formula
+## ROI Formula (Return on Investment Equation)
 
 ```
 ROI = (Amount Returned − Amount Invested) / Amount Invested × 100%
 ```
 
-If you put in $10,000 and end up with $12,000, that's a $2,000 gain on a
-$10,000 base — a 20% ROI. The formula itself is not the hard part.
+You'll also see the same equation written as net profit divided by the cost
+of the investment:
+
+```
+ROI = Net Profit / Cost of Investment × 100%
+```
+
+Both give the same answer, because net profit is simply the amount returned
+minus the amount invested. If you put in $10,000 and end up with $12,000,
+that's a $2,000 gain on a $10,000 base — a 20% ROI. The formula itself is not
+the hard part.
+
+### How to Calculate ROI in Three Steps
+
+1. **Add up the total amount invested** — the purchase price plus every fee
+   and cost to buy and hold the investment.
+2. **Add up the total amount returned** — what you received when you sold,
+   after selling costs, plus any income paid along the way.
+3. **Subtract, divide, and multiply by 100** — (returned − invested) ÷
+   invested × 100 gives ROI as a percentage.
 
 ROI is a ratio, so it works for anything with a cost and a payoff — a stock,
 a rental property, a business project, or a home improvement. That
@@ -63,6 +81,43 @@ Looking only at the price change — $10,000 to $12,400 — would suggest 24%.
 Counting fees lowers the result a little; counting dividends raises it a lot.
 The complete figure is 32.8% over 4 years.
 
+![ROI formula diagram: $13,350 returned minus $10,050 invested equals $3,300 net profit; $3,300 divided by $10,050 equals 32.8% ROI](/images/guides/how-to-calculate-roi-formula.svg "The worked example step by step: net profit first, then divide by the total invested.")
+
+## More ROI Calculation Examples
+
+The same formula works well beyond stocks. Three quick examples:
+
+**A marketing campaign.** A business spends $5,000 on an ad campaign that
+brings in sales producing $8,000 of gross profit (revenue minus the cost of
+the goods sold — not revenue alone, which would overstate the return).
+
+```
+ROI = ($8,000 − $5,000) / $5,000 × 100% = 60%
+```
+
+**A home renovation.** A $30,000 kitchen remodel raises the home's sale price
+by an estimated $21,000. Judged purely as an investment, the remodel loses
+money:
+
+```
+ROI = ($21,000 − $30,000) / $30,000 × 100% = −30%
+```
+
+A negative ROI means you got back less than you put in. That doesn't make the
+project a mistake — you also get years of using the kitchen — but it does
+mean the remodel didn't pay for itself.
+
+**Business equipment.** A $12,000 machine saves $4,000 a year in labor for 5
+years and is then sold for $1,000. Total returned is $4,000 × 5 + $1,000 =
+$21,000.
+
+```
+ROI = ($21,000 − $12,000) / $12,000 × 100% = 75%
+```
+
+Over 5 years, that's about 11.8% a year annualized — a figure you can compare
+against what the same $12,000 would have earned elsewhere.
+
 ## Why Annualizing Matters for Comparison
 
 A 20% ROI over six months and a 20% ROI over five years are very different
@@ -96,6 +151,33 @@ Investment A has the larger total return, but B grew faster each year. If you
 could reinvest B's proceeds at a similar rate, B is the better performer.
 Annualized ROI is the same idea as compound annual growth rate, which the
 [CAGR calculator](/calculators/cagr-calculator) computes directly.
+
+### How to Calculate ROI in Months
+
+For an investment held less than a year — or any period you track in months —
+swap years for months in the exponent:
+
+```
+Annualized ROI = (Total Returned / Total Invested)^(12 / months) − 1
+Monthly ROI    = (Total Returned / Total Invested)^(1 / months) − 1
+```
+
+An 8% ROI earned over 9 months works out to about 10.8% annualized
+(1.08 ^ (12 ÷ 9) − 1), or roughly 0.86% per month.
+
+## How to Calculate ROI in Excel or Google Sheets
+
+Put the total amount invested in cell A1, the total amount returned in B1,
+and the holding period in years in C1. Then:
+
+| What you want | Formula |
+| --- | --- |
+| ROI | `=(B1-A1)/A1` |
+| Annualized ROI | `=(B1/A1)^(1/C1)-1` |
+| Net profit | `=B1-A1` |
+
+Format the ROI cells as percentages. If your holding period is in months,
+use `=(B1/A1)^(12/C1)-1` for the annualized figure.
 
 ## When Simple ROI Isn't Enough
 
@@ -132,6 +214,8 @@ larger percentage gain to get back to even:
 | 30% | 42.9% |
 | 50% | 100% |
 
+![Bar chart of the gain needed to recover from a loss: 11.1% after a 10% loss, 25% after 20%, 42.9% after 30%, and 100% after 50%](/images/guides/how-to-calculate-roi-break-even.svg "The deeper the loss, the faster the required recovery grows.")
+
 **"A positive ROI means I came out ahead."** Not necessarily in purchasing
 power. A 40% ROI over 5 years is about 6.96% a year. With 3% annual inflation
 over the same period, prices rise about 15.9%, so the real return is about
@@ -161,6 +245,18 @@ against the cash you put in, not the full price. The guide to [how to analyze
 a rental property](/guides/how-to-analyze-a-rental-property) and the [rental
 property calculator](/calculators/rental-property-calculator) go further.
 
+## ROI vs. ROE and Rate of Return
+
+These terms get mixed up, but they measure different things:
+
+- **ROI** measures the return on a specific investment against what you put
+  into it.
+- **Return on equity (ROE)** is a company-level ratio: a business's net
+  income divided by its shareholders' equity. It tells you how efficiently a
+  company uses its owners' money, not how your own investment performed.
+- **Rate of return** is often used interchangeably with ROI, though it
+  usually implies a figure expressed per year — the annualized ROI.
+
 ## A Quick Checklist
 
 Before you trust an ROI figure, check that:
@@ -186,6 +282,31 @@ automatically — enter your costs and any income received, and it reports both
 your straight ROI and the correctly annualized figure. To project what a
 target return could grow into over time, use the [investment
 calculator](/calculators/investment-calculator).
+
+## Frequently Asked Questions
+
+**What is a good ROI?** It depends on the risk and the time involved. A
+common benchmark is the broad U.S. stock market, which has historically
+returned roughly 10% a year before inflation over long periods, with large
+swings from year to year. An investment with more risk or more work should
+offer more than that to be worth it; a safer one, like a savings account,
+will offer less.
+
+**What does a 30% ROI mean?** You earned $0.30 of profit for every $1 you put
+in. On a $10,000 investment, a 30% ROI means $3,000 of profit, for $13,000 in
+total. Whether it's impressive depends on how long it took — 30% in one year
+is very different from 30% over ten.
+
+**Can ROI be negative?** Yes. A negative ROI means you got back less than you
+invested. Spending $125,000 and getting back $100,000 is an ROI of −20%.
+
+**What is net ROI?** It's ROI calculated after every cost — fees, taxes,
+maintenance, and selling costs — rather than on price changes alone. Net ROI
+is the figure that tells you what you actually kept.
+
+**Is ROI the same as profit?** No. Profit is a dollar amount; ROI is that
+profit expressed as a percentage of what you invested, which lets you compare
+investments of different sizes.
 
 ## Sources
 

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "figures": "node scripts/generate-guide-figures.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.20",
