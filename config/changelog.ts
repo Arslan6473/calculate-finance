@@ -8,6 +8,27 @@ export interface ChangelogEntry {
 /** Public record of what changed on the site and when. Add new entries at the top. */
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    date: '2026-10-27',
+    title: 'About, contact, and FAQ updates',
+    changes: [
+      'Expanded the about page with who runs the site, why it exists, and how formulas are checked.',
+      'Added a direct contact email to the contact, about, and privacy pages, and an effective date to the privacy policy.',
+      'Calculator FAQ answers are now shown in full instead of in collapsed panels.',
+      'Calculator pages now link to the guides that explain them.',
+      "Clarified two Salary calculator FAQ answers: the effective rate shown includes FICA and state tax, so it can exceed the marginal federal rate, and some cafeteria-plan deductions such as HSA contributions are also exempt from FICA.",
+    ],
+  },
+  {
+    date: '2026-10-27',
+    title: 'Nine new guides',
+    changes: [
+      'Published guides on whether savings rates rise with inflation, how to calculate rate of return, and the compound interest formula with step-by-step examples.',
+      'Published guides on whether credit cards compound interest daily, when credit card interest starts, and how credit card interest rates are determined.',
+      'Published guides on how much to borrow when trading in a car, whether $60,000 is a good down payment, and what counts as a good debt-to-income ratio by loan type.',
+      'Each new guide includes worked examples, a chart, an FAQ, and official source links.',
+    ],
+  },
+  {
     date: '2026-10-24',
     title: 'Expanded guides',
     changes: [

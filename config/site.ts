@@ -9,14 +9,17 @@ export const SITE = {
     'Results are estimates for general informational purposes only, not financial, investment, tax, or legal advice.',
 } as const
 
+/** Shown on the contact, about, and privacy pages, and used as the contact form's mailto target. */
+export const CONTACT_EMAIL = 'arslansarwarwebdev@gmail.com'
+
 /**
- * Who stands behind the guides. A team byline rather than a named individual —
- * deliberately, so no credentials are implied that aren't real. The policy
- * page it links to explains how content is researched, checked, and corrected.
+ * Who stands behind the guides and calculators. The byline links to the about
+ * page, which says who the author is and how formulas are checked — and makes
+ * no claim to finance credentials the author doesn't hold.
  */
 export const EDITORIAL = {
-  name: `${SITE.name} Editorial Team`,
-  href: '/editorial-policy',
+  name: 'Arslan Sarwar',
+  href: '/about',
 } as const
 
 export const NAV_LINKS = [
@@ -39,6 +42,16 @@ export const POPULAR_CALCULATOR_SLUGS = [
   'salary-calculator',
   'debt-payoff-calculator',
   'roi-calculator',
+] as const
+
+/** The guides listed in the footer; the rest are one click away on /guides. */
+export const FOOTER_GUIDE_SLUGS = [
+  'how-much-house-can-i-afford',
+  'how-much-house-can-i-afford-on-60k',
+  'is-60000-a-good-down-payment',
+  'how-compound-interest-works',
+  'good-debt-to-income-ratio',
+  'debt-snowball-vs-avalanche',
 ] as const
 
 export const FOOTER_LEGAL_LINKS = [

@@ -1,6 +1,9 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import type { CalculatorFaq } from '@/config/calculators/types'
 
+/**
+ * Answers are always rendered open — not in an accordion — so every answer is
+ * in the server HTML for readers and crawlers alike, matching the FAQ schema.
+ */
 export function FaqSection({ faqs }: { faqs: CalculatorFaq[] }) {
   if (faqs.length === 0) return null
 
@@ -9,14 +12,14 @@ export function FaqSection({ faqs }: { faqs: CalculatorFaq[] }) {
       <h2 id="faq-heading" className="mb-4 text-2xl font-semibold text-ink">
         Frequently Asked Questions
       </h2>
-      <Accordion type="single" collapsible>
-        {faqs.map((faq, index) => (
-          <AccordionItem key={faq.question} value={`faq-${index}`}>
-            <AccordionTrigger>{faq.question}</AccordionTrigger>
-            <AccordionContent>{faq.answer}</AccordionContent>
-          </AccordionItem>
+      <div className="divide-y divide-line border-y border-line">
+        {faqs.map((faq) => (
+          <div key={faq.question} className="py-4">
+            <h3 className="font-semibold text-ink">{faq.question}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-ink-muted">{faq.answer}</p>
+          </div>
         ))}
-      </Accordion>
+      </div>
     </section>
   )
 }

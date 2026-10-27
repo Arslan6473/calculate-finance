@@ -5,7 +5,7 @@ export const salaryConfig: CalculatorConfig = {
   name: 'Salary Calculator',
   shortName: 'Salary',
   category: 'salary-income',
-  updated: '2026-10-14',
+  updated: '2026-10-27',
   summary: 'Estimate your take-home pay after 2026 US federal tax and FICA.',
   inputs: [
     {
@@ -109,12 +109,12 @@ export const salaryConfig: CalculatorConfig = {
     {
       question: 'How do pre-tax deductions affect my paycheck?',
       answer:
-        'Contributions like a traditional 401(k) or HSA reduce your taxable income before federal and state tax are calculated, which lowers your tax bill. They do not, however, reduce the wages that Social Security and Medicare tax is based on — that detail is modeled correctly here.',
+        'Contributions to a traditional 401(k) reduce your taxable income before federal and state tax are calculated, which lowers your tax bill. They do not, however, reduce the wages that Social Security and Medicare tax is based on, and this calculator models that. Some other pre-tax deductions, such as health premiums or HSA contributions made through a cafeteria plan, are also exempt from FICA, so with those your actual FICA may be slightly lower than shown.',
     },
     {
       question: 'What is the difference between my marginal rate and my effective rate?',
       answer:
-        'Your marginal rate is what you pay on your next dollar of income — the rate of your highest tax bracket. Your effective rate is your total tax divided by your total income, which is always lower because earlier brackets are taxed at lower rates.',
+        'Your marginal rate is what you pay on your next dollar of income — the rate of your highest federal tax bracket. Your federal effective rate, income tax divided by gross income, is always lower than that, because earlier brackets are taxed at lower rates. The effective rate this calculator shows also includes FICA and state tax, so it can be higher than your marginal federal rate.',
     },
     {
       question: 'Does this work for hourly pay?',

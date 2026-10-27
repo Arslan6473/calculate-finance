@@ -20,16 +20,19 @@ export default function EditorialPolicyPage() {
 
       <div className="space-y-4 text-ink-muted">
         <p>
-          Every guide and calculator explanation on {SITE.name} is written and reviewed by the{' '}
-          {EDITORIAL.name}. This page explains how that content is produced, what it is based on,
+          Every guide and calculator explanation on {SITE.name} is written and reviewed by{' '}
+          <Link href={EDITORIAL.href} className={linkClass}>
+            {EDITORIAL.name}
+          </Link>
+          . This page explains how that content is produced, what it is based on,
           and what to do if you find a mistake.
         </p>
 
-        <h2 className="pt-4 text-xl font-semibold text-ink">Who We Are</h2>
+        <h2 className="pt-4 text-xl font-semibold text-ink">Who Writes the Content</h2>
         <p>
-          The {EDITORIAL.name} is the small team that builds and maintains {SITE.name}. We are not
-          licensed financial advisors, tax preparers, or lenders, and nothing on this site is
-          personalized advice. Our goal is narrower: to explain how common financial calculations
+          {EDITORIAL.name}, a software developer, builds and maintains {SITE.name}. Arslan is not a
+          licensed financial advisor, tax preparer, or lender, and nothing on this site is
+          personalized advice. The goal is narrower: to explain how common financial calculations
           work, accurately and in plain language, so you can understand the numbers before you
           talk to a professional or make a decision.
         </p>

@@ -44,7 +44,7 @@ export function calculatorWebApplicationSchema(config: CalculatorConfig) {
     url: `${SITE.url}/calculators/${config.slug}`,
     description: config.summary,
     dateModified: config.updated,
-    author: { '@type': 'Organization', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
+    author: { '@type': 'Person', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -59,7 +59,7 @@ export function guideArticleSchema(guide: GuideConfig) {
     description: guide.description,
     url: `${SITE.url}/guides/${guide.slug}`,
     dateModified: guide.updated,
-    author: { '@type': 'Organization', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
+    author: { '@type': 'Person', name: EDITORIAL.name, url: `${SITE.url}${EDITORIAL.href}` },
     publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
   }
 }

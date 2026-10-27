@@ -1,0 +1,202 @@
+The compound interest formula tells you what a balance will grow to when
+interest earns interest of its own. It has only four inputs, but each one
+can be misread: the rate has to be a decimal, the compounding frequency
+changes two parts of the formula, and regular deposits need a second formula
+of their own. This guide breaks the formula down piece by piece and works
+through examples step by step, including how to solve it backward for the
+rate or the time.
+
+## The Compound Interest Formula
+
+```
+A = P × (1 + r ÷ n)^(n × t)
+```
+
+| Symbol | Meaning | Example |
+| --- | --- | --- |
+| A | Final amount (principal plus interest) | What you're solving for |
+| P | Principal — the starting balance | $10,000 |
+| r | Annual interest rate, as a decimal | 5% = 0.05 |
+| n | Number of times interest compounds per year | Monthly = 12 |
+| t | Time in years | 10 |
+
+The interest earned is simply A − P.
+
+Two parts of the formula use *n*: dividing the annual rate by *n* gives the
+rate per compounding period, and multiplying *n* by *t* gives the number of
+periods.
+
+## Example 1: Annual Compounding
+
+**$10,000 at 5% compounded once a year for 10 years.**
+
+1. **Rate per period:** r ÷ n = 0.05 ÷ 1 = 0.05
+2. **Number of periods:** n × t = 1 × 10 = 10
+3. **Growth factor:** (1 + 0.05)^10 = 1.62889
+4. **Final amount:** $10,000 × 1.62889 = **$16,288.95**
+
+Interest earned: $6,288.95. Simple interest at the same rate would have
+earned only $5,000 ($500 a year for 10 years). The extra $1,288.95 is
+interest earned on interest.
+
+## Example 2: Monthly Compounding
+
+**Same $10,000 at 5% for 10 years, compounded monthly.**
+
+1. **Rate per period:** 0.05 ÷ 12 = 0.0041667
+2. **Number of periods:** 12 × 10 = 120
+3. **Growth factor:** (1.0041667)^120 = 1.64701
+4. **Final amount:** $10,000 × 1.64701 = **$16,470.09**
+
+Monthly compounding adds about $181 compared with annual compounding.
+
+### How Much Compounding Frequency Matters
+
+| Compounding | n | Balance after 10 years |
+| --- | --- | --- |
+| Annually | 1 | $16,288.95 |
+| Quarterly | 4 | $16,436.19 |
+| Monthly | 12 | $16,470.09 |
+| Daily | 365 | $16,486.65 |
+| Continuously | — | $16,487.21 |
+
+More frequent compounding helps, but the gains shrink quickly. Going from
+annual to monthly matters; going from daily to continuous is worth 56
+cents. The rate and the time matter far more than the frequency.
+
+### Continuous Compounding
+
+The limit of compounding more and more often is **continuous compounding**,
+which uses the constant *e* (about 2.71828):
+
+```
+A = P × e^(r × t)
+```
+
+For the example: $10,000 × e^(0.05 × 10) = $10,000 × 1.64872 = **$16,487.21**.
+
+## Example 3: Adding Regular Deposits
+
+Most savers don't make a single deposit; they add money every month. The
+basic formula doesn't cover that. Add the **future value of a series of
+deposits**:
+
+```
+A = P × (1 + r/n)^(n×t) + PMT × [((1 + r/n)^(n×t) − 1) ÷ (r/n)]
+```
+
+where PMT is the deposit each period, made at the end of the period, with
+deposits on the same schedule as compounding.
+
+**$10,000 to start, plus $200 a month, at 5% compounded monthly for 30
+years:**
+
+1. **Rate per period:** 0.05 ÷ 12 = 0.0041667
+2. **Number of periods:** 12 × 30 = 360
+3. **Growth factor:** (1.0041667)^360 = 4.46774
+4. **Starting balance grows to:** $10,000 × 4.46774 = $44,677.44
+5. **Deposits grow to:** $200 × (4.46774 − 1) ÷ 0.0041667 = $166,451.73
+6. **Total:** $44,677.44 + $166,451.73 = **$211,129.17**
+
+You contributed $82,000 in total ($10,000 plus 360 deposits of $200). The
+other **$129,129** is interest. Without the monthly deposits, the account
+would hold $44,677.
+
+![Line chart of $10,000 at 5% compounded monthly over 30 years: $211,129 with $200 monthly deposits versus $44,677 with no deposits](/images/guides/compound-interest-formula-deposits.svg "Regular deposits give compounding far more to work with.")
+
+If deposits are made at the start of each period instead, multiply the
+deposit part by (1 + r/n). That's the version spreadsheets call an
+"annuity due."
+
+## Solving the Formula Backward
+
+### How Long Will It Take?
+
+To find the time needed to reach a target, solve for *t* with logarithms:
+
+```
+t = ln(A ÷ P) ÷ (n × ln(1 + r ÷ n))
+```
+
+**How long until $10,000 doubles at 5% compounded monthly?**
+
+t = ln(2) ÷ (12 × ln(1.0041667)) = 0.69315 ÷ 0.04990 = **13.89 years**
+
+The **Rule of 72** gives a quick estimate: 72 ÷ 5 = 14.4 years.
+
+### What Rate Do You Need?
+
+To find the annual rate that grows P to A in *t* years with annual
+compounding:
+
+```
+r = (A ÷ P)^(1 ÷ t) − 1
+```
+
+**What rate turns $10,000 into $20,000 in 12 years?**
+
+r = (20,000 ÷ 10,000)^(1 ÷ 12) − 1 = 2^0.08333 − 1 = **5.95%**
+
+## Common Mistakes
+
+- **Using the rate as a whole number.** 5% must be 0.05, not 5.
+- **Forgetting to divide the rate by n.** With monthly compounding, the
+  rate per period is the annual rate ÷ 12.
+- **Using t instead of n × t as the exponent.** The exponent is the number
+  of compounding periods, not the number of years.
+- **Mismatched deposit and compounding schedules.** The deposit formula
+  above assumes they match; if they don't, convert the rate to the deposit
+  frequency first.
+- **Confusing APR and APY.** An APY already reflects compounding. If a bank
+  quotes 5% APY, the balance grows 5% a year — don't compound it again.
+
+## Doing It in a Spreadsheet
+
+- **Single deposit:** `=10000*(1+0.05/12)^(12*10)` returns $16,470.09.
+- **With monthly deposits:** `=FV(0.05/12, 360, -200, -10000)` returns
+  $211,129.17. The negative signs mark money you pay in.
+- **Time to a target:** `=NPER(0.05/12, 0, -10000, 20000)/12` returns
+  13.89 years.
+
+## Putting It Together
+
+The compound interest formula, A = P(1 + r/n)^(nt), comes down to a rate
+per period raised to the number of periods. Add the deposit formula when you
+contribute regularly, and rearrange it to solve for the time or rate you
+need. Frequency matters a little; rate, time, and steady contributions matter
+a lot.
+
+The [compound interest
+calculator](/calculators/compound-interest-calculator) runs these
+calculations with your own numbers, including monthly deposits, and the
+[savings goal calculator](/calculators/savings-goal-calculator) works
+backward from a target. For the bigger picture, see [how compound interest
+works](/guides/how-compound-interest-works) and [simple vs. compound
+interest](/guides/simple-vs-compound-interest).
+
+## Frequently Asked Questions
+
+**What is the formula for compound interest compounded monthly?**
+A = P × (1 + r/12)^(12 × t). Divide the annual rate by 12 and multiply the
+number of years by 12.
+
+**How do I calculate compound interest by hand?** Find the rate per period
+(r ÷ n), add 1, raise it to the number of periods (n × t), and multiply by
+the principal. Subtract the principal to get the interest.
+
+**What's the difference between the compound interest formula and the
+simple interest formula?** Simple interest is P × r × t and grows by the
+same amount each year. Compound interest multiplies by (1 + r/n) each period,
+so each period's interest is earned on a larger balance.
+
+**What is the compound interest formula for daily compounding?** Use n =
+365: A = P × (1 + r/365)^(365 × t).
+
+## Sources
+
+- [Investor.gov: What is Compound
+  Interest?](https://www.investor.gov/additional-resources/information/youth/teachers-classroom-resources/what-compound-interest)
+- [Investor.gov: Compound Interest
+  (glossary)](https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest)
+- [Investor.gov: Compound Interest
+  Calculator](https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator)

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { SITE } from '@/config/site'
+import { CONTACT_EMAIL, SITE } from '@/config/site'
 import { Breadcrumbs } from '@/components/seo/breadcrumbs'
 
 export const metadata: Metadata = {
@@ -13,7 +13,10 @@ export default function PrivacyPage() {
   return (
     <div className="container-page max-w-2xl py-8">
       <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy' }]} />
-      <h1 className="mb-6 text-3xl font-bold text-ink">Privacy Policy</h1>
+      <h1 className="mb-2 text-3xl font-bold text-ink">Privacy Policy</h1>
+      <p className="mb-6 text-sm text-ink-subtle">
+        Effective date: <time dateTime="2026-10-27">October 27, 2026</time>
+      </p>
 
       <div className="space-y-4 text-ink-muted">
         <p>
@@ -72,7 +75,11 @@ export default function PrivacyPage() {
         </p>
         <h2 className="pt-4 text-xl font-semibold text-ink">Contact</h2>
         <p>
-          Questions about this policy can be sent through our{' '}
+          Questions about this policy can be sent to{' '}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent underline underline-offset-2">
+            {CONTACT_EMAIL}
+          </a>{' '}
+          or through our{' '}
           <a href="/contact" className="text-accent underline underline-offset-2">
             contact page
           </a>

@@ -1,0 +1,203 @@
+Rate of return answers a simple question: how much did your money grow,
+relative to what you put in? The basic formula takes seconds. The harder
+part is choosing the right version — whether to include dividends, how to
+compare investments held for different lengths of time, and what to do when
+you added or withdrew money along the way. This guide walks through each
+method with worked examples so you can calculate a return you can actually
+compare.
+
+## The Basic Rate of Return Formula
+
+The simple rate of return compares what an investment is worth now (or what
+you sold it for) to what you paid:
+
+```
+Rate of return = (Ending value − Starting value + Income) ÷ Starting value × 100
+```
+
+"Income" is any cash the investment paid you while you held it —
+dividends, interest, or rent. Leaving it out understates your return.
+
+### Worked Example
+
+You buy 100 shares at $50, for **$5,000**. Over three years the shares pay
+**$300** in dividends, and you sell them at $62, for **$6,200**.
+
+```
+Rate of return = ($6,200 − $5,000 + $300) ÷ $5,000 = $1,500 ÷ $5,000 = 30%
+```
+
+Your **total return** is 30%. Without the dividends, it would have looked
+like 24%.
+
+If you paid trading fees, subtract them from the gain (or add them to your
+cost). A $20 fee on the purchase and another on the sale would lower the
+gain to $1,460 and the return to 29.2%.
+
+## Annualized Rate of Return
+
+A 30% total return is excellent over one year and mediocre over ten. To
+compare investments held for different periods, convert the total return to
+an **annualized return** — the steady yearly rate that would produce the
+same result with compounding:
+
+```
+Annualized return = (1 + total return)^(1 ÷ years) − 1
+```
+
+For the example above, held for three years:
+
+```
+(1 + 0.30)^(1 ÷ 3) − 1 = 1.0914 − 1 = 9.14% per year
+```
+
+This is the same calculation as the **compound annual growth rate (CAGR)**.
+Notice it's lower than 30% ÷ 3 = 10%. Simply dividing by the number of years
+ignores compounding and overstates the yearly return.
+
+Here's how much the holding period changes the picture for the same 30%
+total return:
+
+| Holding period | Total return | Annualized return |
+| --- | --- | --- |
+| 1 year | 30% | 30.00% |
+| 3 years | 30% | 9.14% |
+| 5 years | 30% | 5.39% |
+| 10 years | 30% | 2.66% |
+
+![Bar chart of a 30% total return annualized over different holding periods: 30% over 1 year, 9.14% over 3 years, 5.39% over 5 years, and 2.66% over 10 years](/images/guides/how-to-calculate-rate-of-return-annualized.svg "The same total return means very different things over different time frames.")
+
+### For Periods That Aren't Whole Years
+
+Use the exact time in years. An investment held 18 months uses 1.5; one held
+200 days uses 200 ÷ 365. Be cautious annualizing very short periods — a 5%
+gain in one month annualizes to almost 80%, which says little about what to
+expect going forward.
+
+## Rate of Return When You Add or Withdraw Money
+
+The formulas above assume you invested once and didn't touch the account.
+Most real portfolios have deposits and withdrawals, and those distort the
+simple formula: a deposit makes the balance rise without any investment
+gain.
+
+There are two standard ways to handle this.
+
+### Money-Weighted Return (IRR)
+
+The **money-weighted return**, or internal rate of return (IRR), finds the
+single annual rate that makes all your deposits and withdrawals grow to the
+ending value. It reflects your actual experience, including the timing of
+your contributions.
+
+Say you invest **$10,000** at the start, add **$5,000** after one year, and
+the account is worth **$17,600** at the end of year two. The IRR is the rate
+*r* that solves:
+
+```
+$10,000 × (1 + r)² + $5,000 × (1 + r) = $17,600
+```
+
+The answer is **r = 10%** per year. You can find it by trial and error or
+with the spreadsheet function `=IRR()` for evenly spaced cash flows, or
+`=XIRR()` when the dates are irregular.
+
+### Time-Weighted Return
+
+The **time-weighted return** removes the effect of deposits and
+withdrawals, so it measures how the investments themselves performed. You
+calculate the return for each period between cash flows and chain them
+together.
+
+Continuing the example, suppose the account fell to **$9,000** by the end of
+year one, just before the $5,000 deposit, bringing it to $14,000:
+
+- **Year 1:** $9,000 ÷ $10,000 − 1 = **−10%**
+- **Year 2:** $17,600 ÷ $14,000 − 1 = **+25.71%**
+- **Combined:** (1 − 0.10) × (1 + 0.2571) − 1 = **13.14%** over two years, or
+  **6.37%** a year
+
+Why the gap between 10% and 6.37%? You added money right before the strong
+year, so more of your dollars earned the 25.71%. The money-weighted return
+rewards that timing; the time-weighted return ignores it. Fund managers
+report time-weighted returns because they don't control when investors add
+money. For judging your own results, the money-weighted return is usually
+the more relevant number.
+
+## Real Rate of Return
+
+A return in dollars isn't the same as a gain in purchasing power. The
+**real rate of return** adjusts for inflation:
+
+```
+Real return = (1 + nominal return) ÷ (1 + inflation rate) − 1
+```
+
+The 9.14% annualized return from the first example, with 3% inflation, is a
+real return of 1.0914 ÷ 1.03 − 1 = **5.96%** a year. Subtracting taxes, if
+the investment is in a taxable account, lowers it further.
+
+## Rate of Return vs. ROI
+
+The terms overlap. **ROI** (return on investment) is the same idea as the
+simple rate of return and is used for everything from stock trades to
+marketing campaigns and rental properties. "Rate of return" usually
+implies a percentage over a period, and in investing it's common to quote
+it annualized. Whatever you call it, say which version you mean — total or
+annualized, with or without income, before or after fees and inflation.
+
+## Common Mistakes
+
+- **Ignoring dividends and interest.** Price change alone isn't your full
+  return.
+- **Dividing the total return by the number of years.** Use the annualized
+  formula instead.
+- **Counting deposits as gains.** If you added money, use IRR or a
+  time-weighted return.
+- **Forgetting fees.** Expense ratios, advisory fees, and trading costs all
+  reduce what you actually earned.
+- **Comparing nominal and real returns.** Make sure both numbers are
+  measured the same way before comparing them.
+
+## Putting It Together
+
+For a single investment you bought and sold, add income to the price change
+and divide by what you paid. To compare investments held for different
+lengths of time, annualize the result. If you added or withdrew money,
+use the money-weighted return (IRR) for your own results or the
+time-weighted return to judge the investment itself. Then adjust for
+inflation to see your real gain.
+
+The [ROI calculator](/calculators/roi-calculator) computes total and
+annualized return from your own numbers, the [CAGR
+calculator](/calculators/cagr-calculator) finds the annual growth rate
+between two values, and the [investment
+calculator](/calculators/investment-calculator) projects growth at a given
+rate. For more ROI examples, see [how to calculate
+ROI](/guides/how-to-calculate-roi).
+
+## Frequently Asked Questions
+
+**What is a good rate of return on an investment?** It depends on the risk.
+Insured savings typically return a few percent at most. Diversified stock
+portfolios have historically returned more over long periods, with large
+swings from year to year. Compare an investment to alternatives with similar
+risk.
+
+**How do I calculate rate of return in Excel?** For a simple return,
+`=(B2-A2+C2)/A2` with the starting value in A2, ending value in B2, and
+income in C2. To annualize, `=(1+D2)^(1/E2)-1` with the total return in D2
+and years in E2. For irregular cash flows, use `=XIRR(values, dates)`.
+
+**Is rate of return the same as yield?** No. Yield usually refers to the
+income an investment pays (such as dividends or interest) as a percentage
+of its price. Rate of return includes both income and the change in value.
+
+**Can a rate of return be negative?** Yes. If the ending value plus income
+is less than what you invested, the return is negative.
+
+## Sources
+
+- [Investor.gov: Annual Return](https://www.investor.gov/introduction-investing/investing-basics/glossary/annual-return)
+- [FINRA: Investment Returns](https://www.finra.org/investors/insights/investment-returns)
+- [Investor.gov: Understanding Fees](https://www.investor.gov/introduction-investing/getting-started/understanding-fees)

@@ -2,13 +2,11 @@
 
 import * as React from 'react'
 
+import { CONTACT_EMAIL } from '@/config/site'
 import { contactFormSchema } from '@/lib/validation/contact'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-
-// Not rendered anywhere on the page — only used as the mailto target on submit.
-const CONTACT_EMAIL = 'arslansarwarwebdev@gmail.com'
 
 /**
  * A validated contact form with no backend wired up yet. On successful

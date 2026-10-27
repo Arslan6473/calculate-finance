@@ -884,6 +884,111 @@ figures['how-much-do-i-need-to-retire-savings'] = columnChart({
   valueFmt: (v) => money(v),
 })
 
+figures['do-savings-rates-rise-with-inflation-real-value'] = columnChart({
+  title: 'Interest earned on $10,000 vs. 3% inflation',
+  subtitle: 'One year — accounts below the line lose purchasing power',
+  categories: ['Average savings (0.38%)', 'Middling savings (2.0%)', 'High-yield savings (4.0%)'],
+  series: [{ name: 'Interest earned', values: [38, 200, 400] }],
+  valueFmt: (v) => money(v),
+  refLines: [{ y: 300, label: 'Inflation: $300' }],
+})
+
+figures['how-to-calculate-rate-of-return-annualized'] = columnChart({
+  title: 'The same 30% total return, annualized',
+  subtitle: 'Annualized return = (1 + total return)^(1 ÷ years) − 1',
+  categories: ['1 year', '3 years', '5 years', '10 years'],
+  series: [{ name: 'Annualized return', values: [30, 9.14, 5.39, 2.66] }],
+  xLabel: 'Holding period',
+  yFmt: (v) => pct(v),
+  valueFmt: (v) => pct(v, 2),
+})
+
+{
+  const i = 0.05 / 12
+  const months = Array.from({ length: 31 }, (_, y) => y)
+  const fv = (y, dep) => 10000 * (1 + i) ** (12 * y) + dep * (((1 + i) ** (12 * y) - 1) / i)
+  figures['compound-interest-formula-deposits'] = lineChart({
+    title: '$10,000 at 5% compounded monthly',
+    subtitle: 'Adding $200 a month turns $44,677 into $211,129 after 30 years',
+    series: [
+      { name: 'With $200 monthly deposits', points: months.map((y) => [y, fv(y, 200)]) },
+      { name: 'No deposits', points: months.map((y) => [y, fv(y, 0)]) },
+    ],
+    xLabel: 'Years',
+    endLabel: (s, y) => money(Math.round(y)),
+  })
+}
+
+figures['do-credit-cards-compound-daily-effective-rate'] = columnChart({
+  title: 'APR vs. effective annual rate',
+  subtitle: 'Effective rate = (1 + APR ÷ 365)^365 − 1 with daily compounding',
+  categories: ['18% APR', '24% APR', '30% APR'],
+  series: [
+    { name: 'Stated APR', values: [18, 24, 30] },
+    { name: 'Effective rate, compounded daily', values: [19.72, 27.11, 34.97] },
+  ],
+  yFmt: (v) => pct(v),
+  valueFmt: (v) => (Number.isInteger(v) ? pct(v) : pct(v, 2)),
+})
+
+figures['how-much-loan-do-i-need-trading-in-car-scenarios'] = barChart({
+  title: 'Loan needed for a $35,000 car with a trade-in',
+  subtitle: '$15,000 trade-in, 7% tax on the difference, $800 fees, $2,000 down',
+  rows: [
+    { label: 'Owe $12,000 (+$3,000 equity)', value: 32200 },
+    { label: 'Owe $18,000 (−$3,000 equity)', value: 38200, color: SERIES[1] },
+  ],
+  labelWidth: 260,
+  footnote: 'At 7% for 60 months: $638 vs. $756 a month',
+})
+
+figures['when-does-credit-card-interest-start-grace-days'] = columnChart({
+  title: 'Interest-free days on a purchase',
+  subtitle: '30-day billing cycle, payment due 25 days after the statement closes',
+  categories: ['Bought on day 1', 'Bought on day 15', 'Bought on day 30'],
+  series: [{ name: 'Days until payment is due', values: [54, 40, 25] }],
+  yFmt: (v) => String(v),
+  valueFmt: (v) => `${v} days`,
+})
+
+figures['is-60000-a-good-down-payment-percent'] = columnChart({
+  title: '$60,000 as a share of the home price',
+  subtitle: 'It reaches the 20% that avoids PMI on homes up to $300,000',
+  categories: ['$200K', '$300K', '$400K', '$500K', '$600K', '$750K'],
+  series: [{ name: 'Down payment', values: [30, 20, 15, 12, 10, 8] }],
+  xLabel: 'Home price',
+  yFmt: (v) => pct(v),
+  refLines: [{ y: 20, label: '20% — no PMI' }],
+})
+
+figures['good-debt-to-income-ratio-limits'] = barChart({
+  title: 'Typical maximum back-end DTI by loan type',
+  subtitle: 'Approvals above these depend on compensating factors',
+  rows: [
+    { label: 'Conventional, automated', value: 50 },
+    { label: 'Conventional, manual + factors', value: 45 },
+    { label: 'FHA (manual benchmark)', value: 43 },
+    { label: 'VA (guideline)', value: 41 },
+    { label: 'USDA', value: 41 },
+    { label: 'Conventional, manual', value: 36 },
+  ],
+  valueFmt: (v) => pct(v),
+  labelWidth: 260,
+  refLine: { value: 36, label: '28/36 guideline' },
+})
+
+figures['how-are-credit-card-interest-rates-determined-prime'] = columnChart({
+  title: 'Credit card APR = prime rate + margin',
+  subtitle: 'Illustrative margins at the 2020–22 and 2023–24 prime rates',
+  categories: ['11-point margin', '15-point margin', '19-point margin'],
+  series: [
+    { name: 'Prime at 3.25%', values: [14.25, 18.25, 22.25] },
+    { name: 'Prime at 8.50%', values: [19.5, 23.5, 27.5] },
+  ],
+  yFmt: (v) => pct(v),
+  valueFmt: (v) => pct(v, 2),
+})
+
 mkdirSync(OUT_DIR, { recursive: true })
 for (const [name, svg] of Object.entries(figures)) writeFileSync(join(OUT_DIR, `${name}.svg`), svg)
 console.log(`Wrote ${Object.keys(figures).length} figures to ${OUT_DIR}`)

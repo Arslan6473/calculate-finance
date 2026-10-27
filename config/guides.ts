@@ -299,10 +299,141 @@ export const GUIDES: GuideConfig[] = [
       keywords: ['how much do i need to retire', 'retirement number', '4% rule', 'how much to save for retirement'],
     },
   },
+  {
+    slug: 'do-savings-rates-rise-with-inflation',
+    updated: '2026-10-27',
+    title: 'Do Savings Rates Rise With Inflation?',
+    description:
+      'How inflation reaches your savings rate through the Federal Reserve and your bank, why yields usually lag behind, and how to keep your cash from losing ground.',
+    relatedCalculators: ['inflation-calculator', 'compound-interest-calculator', 'savings-goal-calculator'],
+    seo: {
+      title: 'Do Savings Rates Rise With Inflation? Explained | Calcxs',
+      description:
+        'Savings rates rise with inflation only indirectly and with a lag. See how Fed rate hikes reach savings accounts, real vs. nominal returns, and accounts that track inflation.',
+      keywords: ['do savings rates rise with inflation', 'savings interest rates and inflation', 'real interest rate savings', 'high yield savings inflation'],
+    },
+  },
+  {
+    slug: 'how-to-calculate-rate-of-return',
+    updated: '2026-10-27',
+    title: 'How to Calculate Rate of Return on an Investment',
+    description:
+      'The rate of return formula with dividends, how to annualize it, and how to measure returns when you add or withdraw money, with worked examples.',
+    relatedCalculators: ['roi-calculator', 'cagr-calculator', 'investment-calculator'],
+    seo: {
+      title: 'How to Calculate Rate of Return on an Investment | Calcxs',
+      description:
+        'Calculate rate of return step by step: the basic formula, annualized return, money-weighted (IRR) and time-weighted returns, and real return after inflation.',
+      keywords: ['how to calculate rate of return', 'rate of return formula', 'annualized rate of return', 'rate of return on investment'],
+    },
+  },
+  {
+    slug: 'compound-interest-formula',
+    updated: '2026-10-27',
+    title: 'The Compound Interest Formula, Step by Step',
+    description:
+      'Each part of the compound interest formula explained, with worked examples for annual, monthly, and continuous compounding, regular deposits, and solving for time or rate.',
+    relatedCalculators: ['compound-interest-calculator', 'savings-goal-calculator', 'investment-calculator'],
+    seo: {
+      title: 'Compound Interest Formula: Step-by-Step Examples | Calcxs',
+      description:
+        'Learn the compound interest formula A = P(1 + r/n)^(nt) with step-by-step examples, monthly deposits, continuous compounding, and how to solve for time or rate.',
+      keywords: ['compound interest formula', 'compound interest formula monthly', 'compound interest formula with examples', 'how to calculate compound interest'],
+    },
+  },
+  {
+    slug: 'do-credit-cards-compound-daily',
+    updated: '2026-10-27',
+    title: 'Do Credit Cards Compound Interest Daily?',
+    description:
+      'How most credit cards turn an APR into a daily rate and add interest to the balance each day, how much that really costs, and how to check your own card.',
+    relatedCalculators: ['credit-card-payoff-calculator', 'debt-payoff-calculator'],
+    seo: {
+      title: 'Do Credit Cards Compound Daily? How Interest Is Calculated | Calcxs',
+      description:
+        'Most credit cards compound interest daily. See how the daily rate works, how much compounding adds to your APR, and how to find your card\'s method.',
+      keywords: ['do credit cards compound daily', 'credit card interest compounded daily', 'daily periodic rate', 'credit card effective annual rate'],
+    },
+  },
+  {
+    slug: 'how-much-loan-do-i-need-trading-in-car',
+    updated: '2026-10-27',
+    title: 'How Much Loan Do I Need When Trading In a Car?',
+    description:
+      'The formula for your new car loan with a trade-in, including sales tax, fees, and positive or negative equity, with worked examples.',
+    relatedCalculators: ['auto-loan-calculator', 'loan-calculator'],
+    seo: {
+      title: 'How Much Loan Do I Need When Trading In a Car? | Calcxs',
+      description:
+        'Work out how much to finance when you trade in a car: price, taxes, fees, trade-in value, loan payoff, and what negative equity does to the new loan.',
+      keywords: ['how much loan do i need trading in car', 'trade in car loan calculation', 'negative equity trade in', 'car trade in equity'],
+    },
+  },
+  {
+    slug: 'when-does-credit-card-interest-start',
+    updated: '2026-10-27',
+    title: 'When Does Credit Card Interest Start?',
+    description:
+      'How the grace period works, how many interest-free days you get, what happens when you carry a balance, and which transactions start charging interest immediately.',
+    relatedCalculators: ['credit-card-payoff-calculator', 'debt-payoff-calculator'],
+    seo: {
+      title: 'When Does Credit Card Interest Start? Grace Period Explained | Calcxs',
+      description:
+        'Credit card interest starts only if you carry a balance. Learn how the grace period works, when interest begins on purchases and cash advances, and how to avoid it.',
+      keywords: ['when does credit card interest start', 'credit card grace period', 'when is credit card interest charged', 'residual interest'],
+    },
+  },
+  {
+    slug: 'is-60000-a-good-down-payment',
+    updated: '2026-10-27',
+    title: 'Is $60,000 a Good Down Payment on a House?',
+    description:
+      'What $60,000 covers at different home prices, how it affects PMI and your monthly payment, and whether to put all of it down.',
+    relatedCalculators: ['mortgage-calculator', 'home-affordability-calculator'],
+    seo: {
+      title: 'Is $60,000 a Good Down Payment on a House? | Calcxs',
+      description:
+        '$60,000 is 20% down on a $300,000 home. See the percentage at other prices, monthly payments, PMI, and how much cash to keep for closing costs and emergencies.',
+      keywords: ['is 60000 a good down payment', '60k down payment house', '60000 down payment how much house', '20 percent down payment'],
+    },
+  },
+  {
+    slug: 'good-debt-to-income-ratio',
+    updated: '2026-10-27',
+    title: 'What Is a Good Debt-to-Income Ratio?',
+    description:
+      'What counts as a good DTI and the limits for conventional, FHA, VA, USDA, and jumbo loans, with a worked example and ways to lower your ratio.',
+    relatedCalculators: ['debt-to-income-calculator', 'home-affordability-calculator', 'debt-payoff-calculator'],
+    seo: {
+      title: 'What Is a Good Debt-to-Income Ratio? DTI by Loan Type | Calcxs',
+      description:
+        'A good DTI is under 36%. See the maximum debt-to-income ratio for conventional, FHA, VA, USDA, and jumbo loans, and how lenders weigh a high ratio.',
+      keywords: ['good debt to income ratio', 'max dti for fha loan', 'va loan dti', 'conventional loan dti limit'],
+    },
+  },
+  {
+    slug: 'how-are-credit-card-interest-rates-determined',
+    updated: '2026-10-27',
+    title: 'How Are Credit Card Interest Rates Determined?',
+    description:
+      'How issuers set your APR from the prime rate plus a margin, what decides your margin, and the federal rules that limit rate increases.',
+    relatedCalculators: ['credit-card-payoff-calculator', 'debt-payoff-calculator'],
+    seo: {
+      title: 'How Are Credit Card Interest Rates Determined? | Calcxs',
+      description:
+        'Credit card APRs are the prime rate plus a margin. Learn what sets your margin, why rates change with the Fed, and the rules on when issuers can raise your rate.',
+      keywords: ['how are credit card interest rates determined', 'credit card apr prime rate', 'credit card interest rate margin', 'why is my credit card interest rate so high'],
+    },
+  },
 ]
 
 const bySlug = new Map(GUIDES.map((g) => [g.slug, g]))
 
 export function getGuide(slug: string): GuideConfig | undefined {
   return bySlug.get(slug)
+}
+
+/** Guides that list the given calculator among their related calculators, in registry order. */
+export function getGuidesForCalculator(calculatorSlug: string): GuideConfig[] {
+  return GUIDES.filter((g) => g.relatedCalculators.includes(calculatorSlug))
 }

@@ -2,13 +2,14 @@ import Link from 'next/link'
 
 import { CALCULATORS } from '@/config/calculators'
 import { CATEGORIES } from '@/config/categories'
-import { GUIDES } from '@/config/guides'
-import { FOOTER_LEGAL_LINKS, POPULAR_CALCULATOR_SLUGS, SITE } from '@/config/site'
+import { getGuide, type GuideConfig } from '@/config/guides'
+import { FOOTER_GUIDE_SLUGS, FOOTER_LEGAL_LINKS, POPULAR_CALCULATOR_SLUGS, SITE } from '@/config/site'
 
 export function Footer() {
   const popular = POPULAR_CALCULATOR_SLUGS.map((slug) => CALCULATORS.find((c) => c.slug === slug)).filter(
     (c): c is (typeof CALCULATORS)[number] => !!c
   )
+  const guides = FOOTER_GUIDE_SLUGS.map((slug) => getGuide(slug)).filter((g): g is GuideConfig => !!g)
   const categories = Object.values(CATEGORIES).filter((c) =>
     CALCULATORS.some((calc) => calc.category === c.slug)
   )
@@ -45,13 +46,18 @@ export function Footer() {
         <div>
           <h3 className="mb-3 text-sm font-semibold text-ink">Financial Guides</h3>
           <ul className="space-y-2 text-sm">
-            {GUIDES.map((guide) => (
+            {guides.map((guide) => (
               <li key={guide.slug}>
                 <Link href={`/guides/${guide.slug}`} className="text-ink-muted hover:text-ink">
                   {guide.title}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/guides" className="font-medium text-accent hover:underline">
+                View all guides →
+              </Link>
+            </li>
           </ul>
         </div>
 

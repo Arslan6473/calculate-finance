@@ -60,7 +60,7 @@ export const debtPayoffConfig: CalculatorConfig = {
     {
       question: 'Should I include my mortgage in this calculator?',
       answer:
-        'This tool is built for revolving and instalment debt you are actively trying to eliminate faster than scheduled — credit cards, personal loans, and car loans. A mortgage is usually left on its own schedule; use the Mortgage Calculator to explore extra payments there instead.',
+        'This tool is built for revolving and installment debt you are actively trying to eliminate faster than scheduled — credit cards, personal loans, and car loans. A mortgage is usually left on its own schedule; use the Mortgage Calculator to explore extra payments there instead.',
     },
   ],
   related: [

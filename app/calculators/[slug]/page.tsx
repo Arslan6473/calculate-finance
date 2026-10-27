@@ -7,11 +7,13 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 import { CALCULATORS, getCalculator, getRelatedCalculators } from '@/config/calculators'
 import { getCategory } from '@/config/categories'
+import { getGuidesForCalculator } from '@/config/guides'
 import { SITE } from '@/config/site'
 import { AFFILIATE_PLACEMENTS } from '@/config/affiliate'
 import { readCalculatorContent } from '@/lib/content/read-content'
 import { mdxComponents } from '@/components/content/mdx-components'
 import { EditorialByline } from '@/components/content/editorial-byline'
+import { RelatedGuides } from '@/components/content/related-guides'
 import { CALCULATOR_COMPONENTS } from '@/components/calculators/instances'
 import { Breadcrumbs } from '@/components/seo/breadcrumbs'
 import { JsonLd } from '@/components/seo/json-ld'
@@ -61,6 +63,7 @@ export default async function CalculatorPage({ params }: PageProps<'/calculators
 
   const category = getCategory(config.category)
   const related = getRelatedCalculators(config)
+  const guides = getGuidesForCalculator(config.slug)
   const CalculatorComponent = CALCULATOR_COMPONENTS[config.slug]
   const source = await readCalculatorContent(config.slug)
 
@@ -103,6 +106,7 @@ export default async function CalculatorPage({ params }: PageProps<'/calculators
         <AffiliateCardList placements={AFFILIATE_PLACEMENTS} calculatorSlug={config.slug} />
         {AFFILIATE_PLACEMENTS.length > 0 && <AffiliateDisclosure />}
         <FaqSection faqs={config.faqs} />
+        <RelatedGuides guides={guides} />
         <RelatedCalculators calculators={related} />
       </div>
     </div>
