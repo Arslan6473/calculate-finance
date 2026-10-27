@@ -6,7 +6,24 @@
  * operate on plain numbers so the same maths serves every currency (brief §9).
  */
 
-export const CURRENCIES = ['USD', 'EUR', 'GBP', 'CAD', 'AUD'] as const
+/** Order is the switcher's order. */
+export const CURRENCIES = [
+  'USD',
+  'PKR',
+  'EUR',
+  'GBP',
+  'CAD',
+  'AUD',
+  'INR',
+  'AED',
+  'SAR',
+  'JPY',
+  'CNY',
+  'CHF',
+  'NZD',
+  'SGD',
+  'ZAR',
+] as const
 
 export type CurrencyCode = (typeof CURRENCIES)[number]
 
@@ -18,6 +35,8 @@ interface CurrencyMeta {
   symbol: string
   /** BCP 47 locale used for grouping and decimal separators. */
   locale: string
+  /** Decimal places when cents are shown. Defaults to 2; 0 for currencies with no minor unit in use. */
+  fractionDigits?: number
 }
 
 export const CURRENCY_META: Record<CurrencyCode, CurrencyMeta> = {
@@ -26,6 +45,16 @@ export const CURRENCY_META: Record<CurrencyCode, CurrencyMeta> = {
   GBP: { code: 'GBP', label: 'British Pound', symbol: '£', locale: 'en-GB' },
   CAD: { code: 'CAD', label: 'Canadian Dollar', symbol: '$', locale: 'en-CA' },
   AUD: { code: 'AUD', label: 'Australian Dollar', symbol: '$', locale: 'en-AU' },
+  PKR: { code: 'PKR', label: 'Pakistani Rupee', symbol: 'Rs', locale: 'en-PK' },
+  INR: { code: 'INR', label: 'Indian Rupee', symbol: '₹', locale: 'en-IN' },
+  AED: { code: 'AED', label: 'UAE Dirham', symbol: 'AED', locale: 'en-AE' },
+  SAR: { code: 'SAR', label: 'Saudi Riyal', symbol: 'SAR', locale: 'en-SA' },
+  JPY: { code: 'JPY', label: 'Japanese Yen', symbol: '¥', locale: 'en-JP', fractionDigits: 0 },
+  CNY: { code: 'CNY', label: 'Chinese Yuan', symbol: '¥', locale: 'en-CN' },
+  CHF: { code: 'CHF', label: 'Swiss Franc', symbol: 'CHF', locale: 'de-CH' },
+  NZD: { code: 'NZD', label: 'New Zealand Dollar', symbol: '$', locale: 'en-NZ' },
+  SGD: { code: 'SGD', label: 'Singapore Dollar', symbol: '$', locale: 'en-SG' },
+  ZAR: { code: 'ZAR', label: 'South African Rand', symbol: 'R', locale: 'en-ZA' },
 }
 
 export function isCurrencyCode(value: unknown): value is CurrencyCode {
@@ -66,14 +95,17 @@ export function formatCurrency(
   const { whole = true, compact = false } = options
   const meta = CURRENCY_META[currency] ?? CURRENCY_META[DEFAULT_CURRENCY]
   const key = `cur:${currency}:${whole}:${compact}`
+  const cents = meta.fractionDigits ?? 2
 
   const formatter = getFormatter(key, () =>
     new Intl.NumberFormat(meta.locale, {
       style: 'currency',
       currency,
+      // "¥" rather than "CN¥" for yuan; every other currency renders the same either way.
+      currencyDisplay: 'narrowSymbol',
       notation: compact ? 'compact' : 'standard',
-      maximumFractionDigits: compact ? 1 : whole ? 0 : 2,
-      minimumFractionDigits: compact ? 0 : whole ? 0 : 2,
+      maximumFractionDigits: compact ? 1 : whole ? 0 : cents,
+      minimumFractionDigits: compact ? 0 : whole ? 0 : cents,
     })
   )
 

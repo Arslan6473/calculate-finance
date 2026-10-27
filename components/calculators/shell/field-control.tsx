@@ -109,7 +109,7 @@ export function FieldControl({
           onChange={(e) => onRawChange(e.target.value)}
           aria-invalid={!!error}
           aria-describedby={describedBy || undefined}
-          className={unit && field.type === 'currency' ? 'pl-7' : unit ? 'pr-12' : undefined}
+          className={unit && field.type === 'currency' ? CURRENCY_PADDING[Math.min(unit.length, 3)] : unit ? 'pr-12' : undefined}
         />
         {unit && field.type !== 'currency' && (
           <span className="figures pointer-events-none absolute inset-y-0 right-3 flex items-center text-sm text-ink-subtle">
@@ -130,6 +130,9 @@ export function FieldControl({
     </div>
   )
 }
+
+/** Left padding that clears a one-, two-, or three-character currency symbol ("$", "Rs", "AED"). */
+const CURRENCY_PADDING: Record<number, string> = { 1: 'pl-7', 2: 'pl-9', 3: 'pl-12' }
 
 function FieldHelp({ text }: { text: string }) {
   return (

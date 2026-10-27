@@ -15,7 +15,8 @@ export function CurrencySwitcher() {
       <SelectContent align="end">
         {CURRENCIES.map((code) => (
           <SelectItem key={code} value={code}>
-            {code} {CURRENCY_META[code].symbol}
+            {code}
+            {CURRENCY_META[code].symbol !== code && ` ${CURRENCY_META[code].symbol}`}
           </SelectItem>
         ))}
       </SelectContent>

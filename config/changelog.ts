@@ -11,6 +11,8 @@ export const CHANGELOG: ChangelogEntry[] = [
     date: '2026-10-27',
     title: 'About, contact, and FAQ updates',
     changes: [
+      'Added 10 more display currencies: Pakistani rupee, Indian rupee, UAE dirham, Saudi riyal, Japanese yen, Chinese yuan, Swiss franc, New Zealand dollar, Singapore dollar, and South African rand.',
+      'Added a Frequently Asked Questions section to the 15 guides that did not have one, so every guide and calculator now has an FAQ.',
       'Expanded the about page with who runs the site, why it exists, and how formulas are checked.',
       'Added a direct contact email to the contact, about, and privacy pages, and an effective date to the privacy policy.',
       'Calculator FAQ answers are now shown in full instead of in collapsed panels.',

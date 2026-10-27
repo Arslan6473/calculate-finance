@@ -21,7 +21,7 @@ export interface GuideConfig {
 export const GUIDES: GuideConfig[] = [
   {
     slug: 'how-compound-interest-works',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Does Compound Interest Work?',
     description:
       'A clear explanation of compound interest, why it accelerates over time, and how compounding frequency changes the result.',
@@ -35,7 +35,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-much-house-can-i-afford',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Much House Can I Afford?',
     description:
       'How lenders and financial planners think about affordability, and the income, debt, and down payment rules that determine your budget.',
@@ -49,7 +49,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'apr-vs-interest-rate',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'APR vs Interest Rate: What Is the Difference?',
     description:
       'Why a loan\'s APR and its interest rate are not the same number, and which one actually tells you the true cost of borrowing.',
@@ -63,7 +63,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-mortgage-amortization-works',
-    updated: '2026-10-24',
+    updated: '2026-10-27',
     title: 'How Mortgage Amortization Works',
     description:
       'Why your early mortgage payments are mostly interest, how that shifts over time, and what an amortization schedule actually shows.',
@@ -91,7 +91,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-to-convert-hourly-to-salary',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How to Convert Hourly Pay to an Annual Salary',
     description:
       'The 2,080-hour formula, how unpaid time off and overtime change the result, and how to compare hourly and salaried offers once benefits are counted.',
@@ -105,7 +105,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'rent-vs-buy-how-to-decide',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'Should You Rent or Buy a Home?',
     description:
       'How to compare the true costs of renting and owning, including down payment opportunity cost, transaction costs, the break-even horizon, and the price-to-rent ratio.',
@@ -119,7 +119,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-much-rent-can-i-afford',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Much Rent Can I Afford?',
     description:
       'The 30% rule, the 50/30/20 budget, and the landlord 40x income rule explained, plus how debts and hidden costs change what rent you can really afford.',
@@ -133,7 +133,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-to-analyze-a-rental-property',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How to Analyze a Rental Property',
     description:
       'How to evaluate a rental property using NOI, cap rate, cash flow, and cash-on-cash return, with realistic reserves and a fully worked example.',
@@ -147,7 +147,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'debt-snowball-vs-avalanche',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'Debt Snowball vs. Debt Avalanche: Which Is Better?',
     description:
       'How the debt snowball and debt avalanche methods work, a side-by-side worked example, and how to choose between motivation and interest savings.',
@@ -161,7 +161,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-to-calculate-debt-to-income-ratio',
-    updated: '2026-10-24',
+    updated: '2026-10-27',
     title: 'How to Calculate Your Debt-to-Income Ratio',
     description:
       'The debt-to-income formula, what counts as debt, front-end vs. back-end ratios, a worked example, and how to lower your DTI before applying for a loan.',
@@ -189,7 +189,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: '15-vs-30-year-mortgage',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: '15-Year vs. 30-Year Mortgage',
     description:
       'A side-by-side comparison of 15-year and 30-year mortgages: monthly payments, total interest, equity over time, and how to decide which term fits you.',
@@ -203,7 +203,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-extra-mortgage-payments-save-interest',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Extra Mortgage Payments Save Interest',
     description:
       'Why extra principal payments save so much interest, with amortization results for monthly extras, one extra payment a year, and lump-sum prepayments.',
@@ -231,7 +231,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-much-emergency-fund',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Much Should You Have in an Emergency Fund?',
     description:
       'How to size an emergency fund from your essential expenses, where in the three-to-six-month range you should land, and how to build and store it.',
@@ -259,7 +259,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'simple-vs-compound-interest',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'Simple vs. Compound Interest',
     description:
       'The difference between simple and compound interest, side-by-side examples over 10 to 30 years, how compounding frequency matters, and where you see each type.',
@@ -287,7 +287,7 @@ export const GUIDES: GuideConfig[] = [
   },
   {
     slug: 'how-much-do-i-need-to-retire',
-    updated: '2026-10-14',
+    updated: '2026-10-27',
     title: 'How Much Do I Need to Retire?',
     description:
       'Estimate your retirement number from expected spending, Social Security, and the 4% rule, with a worked example and the caveats that matter.',
